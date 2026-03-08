@@ -1,0 +1,30 @@
+{
+    "name": "Nucleares",
+    "key": "nuke",
+    "measurements": [
+        {
+            "name": "Core Temperature",
+            "key": "CORE_TEMP",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "℃",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "nucleares-time",
+		    "source": "timestamp",
+                    "name": "Time",
+                    "format": "nucleares-time-format",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

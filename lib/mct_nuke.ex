@@ -1,18 +1,33 @@
 defmodule MctNuke do
-  @moduledoc """
-  Documentation for `MctNuke`.
-  """
+  use Application
 
-  @doc """
-  Hello world.
+  def start(_type, _args) do
+    children = [
+      PubSub,
+      MctNuke.Collector,
+      {Bandit, web_options()}
+    ]
 
-  ## Examples
+    opts = [strategy: :one_for_one, name: MctNuke.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
 
-      iex> MctNuke.hello()
-      :world
+  defp web_options do
+    ip = Application.get_env(:mct_nuke, :bind_to_ip, "127.0.0.1")
+    port = Application.get_env(:mct_nuke, :bind_to_port, 8081)
 
-  """
-  def hello do
-    :world
+    [
+      plug: MctNuke.Router,
+      scheme: :http,
+      ip: ip_tuple(ip),
+      port: port
+    ]
+  end
+
+  defp ip_tuple(ip) when is_tuple(ip), do: ip
+
+  defp ip_tuple(str) when is_binary(str) do
+    {:ok, ip} = str |> String.to_charlist() |> :inet.parse_address()
+    ip
   end
 end
