@@ -6,7 +6,6 @@ defmodule MctNuke.Router do
 
   plug(CORSPlug)
   plug(Plug.Logger)
-  plug(:fetch_query_params)
   plug(:match)
   plug(:dispatch)
 
@@ -17,11 +16,17 @@ defmodule MctNuke.Router do
   end
 
   get "/history/:key" do
-    IO.inspect(conn.query_params, label: "history")
+    conn = fetch_query_params(conn)
+
+    range =
+      case conn.query_params do
+        %{"start" => min, "end" => max} -> String.to_integer(min)..String.to_integer(max)//1
+        %{} -> nil
+      end
 
     data =
       Collector.get()
-      |> Stats.history(key)
+      |> Stats.history(key, range)
       |> Jason.encode!()
 
     conn
