@@ -3,6 +3,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   @shortdoc "Build API dictionary"
 
   use Mix.Task
+  alias MctNuke.Dictionary.Metric
 
   def run([]) do
     {:ok, _} = Application.ensure_all_started([:req])
@@ -11,49 +12,53 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
       MctNuke.API.get_json("WEBSERVER_BATCH_GET")
       |> Map.fetch!("values")
 
-    entries =
+    metrics =
       MctNuke.API.get_json("WEBSERVER_LIST_VARIABLES_JSON")
       |> Map.fetch!("GET")
       |> Enum.flat_map(fn key ->
         case Map.fetch(api_values, key) do
-          {:ok, value} -> [build_entry(key, value, api_values)]
+          {:ok, value} -> [build_metric(key, value, api_values)]
           :error -> []
         end
       end)
 
     version = api_values |> Map.fetch!("GAME_VERSION")
 
-    entries_code =
-      entries
+    metrics_code =
+      metrics
       |> inspect(pretty: true, width: 500, limit: :infinity)
-      |> String.replace("\n", "\n    ")
+      |> String.replace("MctNuke.Dictionary.Metric", "Metric")
+      |> String.replace("\n", "\n  ")
 
-    IO.puts("""
+    File.write!("lib/mct_nuke/dictionary/data.ex", """
     # Auto-generated on #{DateTime.utc_now()} from Nucleares version #{version}.
     # DO NOT EDIT.  Changes will be overwritten on next generation.
 
     defmodule MctNuke.Dictionary.Data do
-      def entries do
-        #{entries_code}
-      end
+      alias MctNuke.Dictionary.Metric
+
+      @metrics #{metrics_code}
+
+      def metrics, do: @metrics
     end
     """)
   end
 
-  defp build_entry(key, value, all_values) do
+  defp build_metric(key, value, all_values) do
     name = guess_name(key, value)
-    type = guess_type(key, value, all_values)
 
-    [
-      name: name,
-      key: key
-    ]
-    |> then(fn v ->
-      case type do
-        {format, units} -> v ++ [format: format, units: units]
-        format -> v ++ [format: format]
+    {format, units} =
+      case guess_type(key, value, all_values) do
+        {f, u} -> {f, u}
+        f -> {f, nil}
       end
-    end)
+
+    %Metric{
+      name: name,
+      key: key,
+      format: format,
+      units: units
+    }
   end
 
   defp guess_name(key, _) do
