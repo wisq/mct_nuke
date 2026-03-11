@@ -21,6 +21,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
           :error -> []
         end
       end)
+      |> renumber_groups()
 
     version = api_values |> Map.fetch!("GAME_VERSION")
 
@@ -193,5 +194,58 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
 
   defp zero_digits(key) do
     String.replace(key, ~r{[1-9]}, "0")
+  end
+
+  defp renumber_groups(metrics) do
+    metrics
+    |> Enum.group_by(fn %Metric{name: n} ->
+      case String.split(n, ~r{[0-9]+}, parts: 2) do
+        [before, _] -> before
+        [_] -> nil
+      end
+    end)
+    |> Enum.flat_map(&renumber_group/1)
+    |> in_original_order(metrics)
+  end
+
+  defp renumber_group({nil, metrics}), do: metrics
+
+  defp renumber_group({before, metrics}) do
+    regex = ~r{^#{before}0+(\s|$)}
+
+    has_zero =
+      metrics
+      |> Enum.any?(fn %Metric{name: n} -> n =~ regex end)
+
+    if has_zero do
+      metrics
+      |> Enum.map(fn m ->
+        %Metric{m | name: increment_number(m.name)}
+      end)
+    else
+      metrics
+    end
+  end
+
+  defp increment_number(name) do
+    name
+    |> String.replace(~r{\d+}, fn number ->
+      digits = String.length(number)
+
+      number
+      |> String.to_integer()
+      |> Kernel.+(1)
+      |> Integer.to_string()
+      |> String.pad_leading(digits, "0")
+    end)
+  end
+
+  defp in_original_order(new, orig) do
+    by_key = new |> Map.new(fn m -> {m.key, m} end)
+
+    orig
+    |> Enum.map(fn %Metric{key: k} ->
+      Map.fetch!(by_key, k)
+    end)
   end
 end
