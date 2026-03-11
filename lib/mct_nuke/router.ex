@@ -3,6 +3,7 @@ defmodule MctNuke.Router do
 
   alias MctNuke.Collector
   alias MctNuke.Stats
+  alias MctNuke.Dictionary
 
   plug(CORSPlug)
   plug(Plug.Logger)
@@ -10,9 +11,16 @@ defmodule MctNuke.Router do
   plug(:dispatch)
 
   get "/dictionary.json" do
+    metrics = Dictionary.metrics_json()
+
+    json = %{
+      name: "Nucleares",
+      key: "nuke",
+      measurements: metrics
+    }
+
     conn
-    |> put_resp_header("content-type", "application/json")
-    |> send_file(200, priv("dictionary.json"))
+    |> send_json(200, json)
   end
 
   get "/history/:key" do
@@ -27,11 +35,9 @@ defmodule MctNuke.Router do
     data =
       Collector.get()
       |> Stats.history(key, range)
-      |> Jason.encode!()
 
     conn
-    |> put_resp_header("content-type", "application/json")
-    |> send_resp(200, data)
+    |> send_json(200, data)
   end
 
   get "/realtime" do
@@ -43,8 +49,11 @@ defmodule MctNuke.Router do
     send_resp(conn, 404, "oops")
   end
 
-  defp priv(path) do
-    :code.priv_dir(:mct_nuke)
-    |> Path.join(path)
+  defp send_json(conn, code, data) do
+    json = Jason.encode!(data)
+
+    conn
+    |> put_resp_header("content-type", "application/json")
+    |> send_resp(code, json)
   end
 end

@@ -1,4 +1,4 @@
-# Auto-generated on 2026-03-11 21:04:30.007939Z from Nucleares version V 2.2.25.213.
+# Auto-generated on 2026-03-11 21:19:15.812871Z from Nucleares version V 2.2.25.213.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
@@ -24,7 +24,7 @@ defmodule MctNuke.Dictionary.Data do
     %Metric{name: "Core State", key: "CORE_STATE", format: :integer, units: nil},
     %Metric{name: "Core State Criticality", key: "CORE_STATE_CRITICALITY", format: :float, units: nil},
     %Metric{name: "Core Critical Mass Reached", key: "CORE_CRITICAL_MASS_REACHED", format: :boolean, units: nil},
-    %Metric{name: "Core Critical Mass Reached Counter", key: "CORE_CRITICAL_MASS_REACHED_COUNTER", format: :int, units: "x"},
+    %Metric{name: "Core Critical Mass Reached Counter", key: "CORE_CRITICAL_MASS_REACHED_COUNTER", format: :integer, units: "x"},
     %Metric{name: "Core Imminent Fusion", key: "CORE_IMMINENT_FUSION", format: :boolean, units: nil},
     %Metric{name: "Core Ready For Start", key: "CORE_READY_FOR_START", format: :boolean, units: nil},
     %Metric{name: "Core Steam Present", key: "CORE_STEAM_PRESENT", format: :boolean, units: nil},

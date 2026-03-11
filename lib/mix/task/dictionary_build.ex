@@ -107,7 +107,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     cond do
       key =~ ~r{_STAT(E|US)$} -> :integer
       key =~ ~r{_MODE$} -> :integer
-      key =~ ~r{_COUNTER$} -> {:int, "x"}
+      key =~ ~r{_COUNTER$} -> {:integer, "x"}
       key =~ ~r{_TEMP(ERATURE)?($|_)} -> {:float, @degrees_celsius}
       key =~ ~r{_QUANTITY_.*_PUMPS_PRESENT$} -> {:integer, "pumps"}
       key =~ ~r{_GENERATOR_[0-9]_FUEL$} -> {:integer, "L"}
