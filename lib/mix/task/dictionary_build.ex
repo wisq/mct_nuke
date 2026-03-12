@@ -72,6 +72,8 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     |> Enum.map(&String.capitalize/1)
     |> Enum.map(&replace_word/1)
     |> Enum.reject(&is_nil/1)
+    # Remove duplicate words, e.g. "Power From External Power"
+    |> Enum.uniq()
     |> Enum.join(" ")
   end
 

@@ -1,4 +1,4 @@
-# Auto-generated on 2026-03-12 02:12:53.550125Z from Nucleares version V 2.2.25.213.
+# Auto-generated on 2026-03-12 06:51:19.006295Z from Nucleares version V 2.2.25.213.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
@@ -1193,14 +1193,14 @@ defmodule MctNuke.Dictionary.Data do
         metrics: [
           %Metric{
             api_index: 180,
-            name: "Power From Turbine Power",
+            name: "Power From Turbine",
             key: "POWER_FROM_TURBINE_KW",
             format: :float,
             units: "kW"
           },
           %Metric{
             api_index: 181,
-            name: "Power From External Power",
+            name: "Power From External",
             key: "POWER_FROM_EXTERNAL_KW",
             format: :float,
             units: "kW"
@@ -1320,14 +1320,14 @@ defmodule MctNuke.Dictionary.Data do
         metrics: [
           %Metric{
             api_index: 182,
-            name: "Emergency Generator Power Output Power",
+            name: "Emergency Generator Power Output",
             key: "EMERGENCY_GENERATOR_POWER_OUTPUT_KW",
             format: :float,
             units: "kW"
           },
           %Metric{
             api_index: 183,
-            name: "Emergency Batteries Power Output Power",
+            name: "Emergency Batteries Power Output",
             key: "EMERGENCY_BATTERIES_POWER_OUTPUT_KW",
             format: :float,
             units: "kW"
