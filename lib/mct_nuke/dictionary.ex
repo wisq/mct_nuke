@@ -1,9 +1,9 @@
 defmodule MctNuke.Dictionary do
-  alias MctNuke.Dictionary.Metric
   alias MctNuke.Dictionary.Data
+  alias MctNuke.Dictionary.Folder
 
-  def metrics_json do
-    Data.metrics()
-    |> Enum.map(&Metric.to_dictionary_json/1)
+  def json do
+    Data.root()
+    |> Folder.to_json()
   end
 end

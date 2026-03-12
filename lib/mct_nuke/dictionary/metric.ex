@@ -1,14 +1,18 @@
 defmodule MctNuke.Dictionary.Metric do
-  @enforce_keys [:name, :key, :format]
+  @enforce_keys [:name, :key, :format, :api_index]
   defstruct(
+    api_index: nil,
     name: nil,
     key: nil,
     format: nil,
     units: nil
   )
 
-  def to_dictionary_json(metric) do
+  alias __MODULE__
+
+  def to_json(metric) do
     %{
+      type: :telemetry,
       name: metric.name,
       key: metric.key,
       values: [
@@ -29,6 +33,8 @@ defmodule MctNuke.Dictionary.Metric do
       ]
     }
   end
+
+  def sort_key(%Metric{api_index: i, name: n}), do: {i, n}
 
   defp apply_format(map, :boolean) do
     map

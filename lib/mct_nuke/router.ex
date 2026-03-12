@@ -11,16 +11,8 @@ defmodule MctNuke.Router do
   plug(:dispatch)
 
   get "/dictionary.json" do
-    metrics = Dictionary.metrics_json()
-
-    json = %{
-      name: "Nucleares",
-      key: "nuke",
-      measurements: metrics
-    }
-
     conn
-    |> send_json(200, json)
+    |> send_json(200, Dictionary.json())
   end
 
   get "/history/:key" do

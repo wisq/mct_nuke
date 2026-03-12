@@ -16,9 +16,10 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     metrics =
       MctNuke.API.get_json("WEBSERVER_LIST_VARIABLES_JSON")
       |> Map.fetch!("GET")
-      |> Enum.flat_map(fn key ->
+      |> Enum.with_index()
+      |> Enum.flat_map(fn {key, index} ->
         case Map.fetch(api_values, key) do
-          {:ok, value} -> [build_metric(key, value, api_values)]
+          {:ok, value} -> [build_metric(index, key, value, api_values)]
           :error -> []
         end
       end)
@@ -47,7 +48,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     """)
   end
 
-  defp build_metric(key, value, all_values) do
+  defp build_metric(index, key, value, all_values) do
     name = guess_name(key, value)
 
     {format, units} =
@@ -57,6 +58,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
       end
 
     %Metric{
+      api_index: index,
       name: name,
       key: key,
       format: format,
