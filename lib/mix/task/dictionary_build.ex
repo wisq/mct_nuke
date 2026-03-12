@@ -4,6 +4,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
 
   use Mix.Task
   alias MctNuke.Dictionary.Metric
+  alias MctNuke.Dictionary.Folder
 
   def run([]) do
     {:ok, _} = Application.ensure_all_started([:req])
@@ -22,13 +23,14 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
         end
       end)
       |> renumber_groups()
+      |> nest_in_folders()
 
     version = api_values |> Map.fetch!("GAME_VERSION")
 
-    metrics_code =
+    data =
       metrics
-      |> inspect(pretty: true, width: 500, limit: :infinity)
-      |> String.replace("MctNuke.Dictionary.Metric", "Metric")
+      |> inspect(pretty: true, width: 90, limit: :infinity)
+      |> String.replace("%MctNuke.Dictionary.", "%")
       |> String.replace("\n", "\n  ")
 
     File.write!("lib/mct_nuke/dictionary/data.ex", """
@@ -36,11 +38,11 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     # DO NOT EDIT.  Changes will be overwritten on next generation.
 
     defmodule MctNuke.Dictionary.Data do
-      alias MctNuke.Dictionary.Metric
+      alias MctNuke.Dictionary.{Metric, Folder}
 
-      @metrics #{metrics_code}
+      @root #{data}
 
-      def metrics, do: @metrics
+      def root, do: @root
     end
     """)
   end
@@ -205,7 +207,6 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
       end
     end)
     |> Enum.flat_map(&renumber_group/1)
-    |> in_original_order(metrics)
   end
 
   defp renumber_group({nil, metrics}), do: metrics
@@ -219,7 +220,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
 
     if has_zero do
       metrics
-      |> Enum.map(fn m ->
+      |> Enum.map(fn %Metric{} = m ->
         %Metric{m | name: increment_number(m.name)}
       end)
     else
@@ -240,12 +241,58 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     end)
   end
 
-  defp in_original_order(new, orig) do
-    by_key = new |> Map.new(fn m -> {m.key, m} end)
+  defp nest_in_folders(metrics) do
+    by_folder =
+      metrics
+      |> Enum.group_by(fn %Metric{key: key} -> guess_folder(key) end)
 
-    orig
-    |> Enum.map(fn %Metric{key: k} ->
-      Map.fetch!(by_key, k)
-    end)
+    Folder.generate(:root, by_folder)
   end
+
+  defp guess_folder("ALARMS_ACTIVE"), do: "misc"
+  defp guess_folder("AMBIENT_TEMPERATURE"), do: "misc"
+  defp guess_folder("FUN_IS_ENABLED"), do: "misc"
+  defp guess_folder("GAME_" <> _), do: "misc"
+  defp guess_folder("TIME"), do: "misc"
+  defp guess_folder("TIME_" <> _), do: "misc"
+
+  defp guess_folder("CORE_" <> _), do: "core"
+  defp guess_folder("COOLANT_CORE_" <> _), do: "core.coolant"
+  defp guess_folder("RODS_" <> _), do: "core.rods"
+
+  defp guess_folder("CONDENSER_" <> _), do: "condenser"
+  defp guess_folder("VACUUM_" <> _), do: "condenser.vacuum"
+  defp guess_folder("STEAM_EJECTOR_" <> _), do: "condenser.vacuum"
+
+  defp guess_folder("POWER_" <> _), do: "power"
+  defp guess_folder("RES_" <> _), do: "power.resistors"
+  defp guess_folder("RESISTOR_BANK_" <> _), do: "power.resistors"
+  defp guess_folder("RESISTOR_BANKS_" <> _), do: "power.resistors"
+
+  defp guess_folder("CHEM_" <> _), do: "chemicals"
+  defp guess_folder("CHEMICAL_" <> _), do: "chemicals"
+
+  defp guess_folder(<<"ROD_BANK_POS_", n::binary-size(1), "_", _::binary>>), do: "core.#{n}"
+
+  defp guess_folder(<<"COOLANT_SEC_", n::binary-size(1), "_", _::binary>>),
+    do: "secondary.#{n}"
+
+  defp guess_folder(<<"COOLANT_SEC_CIRCULATION_PUMP_", n::binary-size(1), "_", _::binary>>),
+    do: "secondary.#{n}"
+
+  defp guess_folder(<<"GENERATOR_", n::binary-size(1), "_", _::binary>>),
+    do: "secondary.#{n}.generator"
+
+  defp guess_folder(<<"MSCV_", n::binary-size(1), "_", _::binary>>),
+    do: "secondary.#{n}.steam"
+
+  defp guess_folder(<<"STEAM_GEN_", n::binary-size(1), "_", _::binary>>),
+    do: "secondary.#{n}.steam"
+
+  defp guess_folder(<<"STEAM_TURBINE_", n::binary-size(1), "_", _::binary>>),
+    do: "secondary.#{n}.turbine"
+
+  defp guess_folder("EMERGENCY_" <> _), do: "emergency"
+  defp guess_folder("FREIGHT_" <> _), do: "freight"
+  defp guess_folder("VALVE_" <> _), do: "valve"
 end

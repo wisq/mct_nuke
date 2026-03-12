@@ -1,323 +1,2127 @@
-# Auto-generated on 2026-03-11 22:44:16.385314Z from Nucleares version V 2.2.25.213.
+# Auto-generated on 2026-03-12 00:56:23.657598Z from Nucleares version V 2.2.25.213.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
-  alias MctNuke.Dictionary.Metric
+  alias MctNuke.Dictionary.{Metric, Folder}
 
-  @metrics [
-    %Metric{name: "Game Version", key: "GAME_VERSION", format: :string, units: nil},
-    %Metric{name: "Game Difficulty", key: "GAME_DIFFICULTY", format: :integer, units: nil},
-    %Metric{name: "Time", key: "TIME", format: :string, units: nil},
-    %Metric{name: "Time Stamp", key: "TIME_STAMP", format: :integer, units: nil},
-    %Metric{name: "Time Day", key: "TIME_DAY", format: :integer, units: nil},
-    %Metric{name: "Alarms Active", key: "ALARMS_ACTIVE", format: :string, units: nil},
-    %Metric{name: "Core Temperature", key: "CORE_TEMP", format: :float, units: "℃"},
-    %Metric{name: "Core Temperature Operative", key: "CORE_TEMP_OPERATIVE", format: :float, units: "℃"},
-    %Metric{name: "Core Temperature Maximum", key: "CORE_TEMP_MAX", format: :float, units: "℃"},
-    %Metric{name: "Core Temperature Minimum", key: "CORE_TEMP_MIN", format: :float, units: "℃"},
-    %Metric{name: "Core Temperature Residual", key: "CORE_TEMP_RESIDUAL", format: :boolean, units: nil},
-    %Metric{name: "Core Pressure", key: "CORE_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Core Pressure Maximum", key: "CORE_PRESSURE_MAX", format: :float, units: "bar"},
-    %Metric{name: "Core Pressure Operative", key: "CORE_PRESSURE_OPERATIVE", format: :float, units: "bar"},
-    %Metric{name: "Core Integrity", key: "CORE_INTEGRITY", format: :float, units: "%"},
-    %Metric{name: "Core Wear", key: "CORE_WEAR", format: :float, units: "%"},
-    %Metric{name: "Core State", key: "CORE_STATE", format: :integer, units: nil},
-    %Metric{name: "Core State Criticality", key: "CORE_STATE_CRITICALITY", format: :float, units: nil},
-    %Metric{name: "Core Critical Mass Reached", key: "CORE_CRITICAL_MASS_REACHED", format: :boolean, units: nil},
-    %Metric{name: "Core Critical Mass Reached Counter", key: "CORE_CRITICAL_MASS_REACHED_COUNTER", format: :integer, units: "x"},
-    %Metric{name: "Core Imminent Fusion", key: "CORE_IMMINENT_FUSION", format: :boolean, units: nil},
-    %Metric{name: "Core Ready For Start", key: "CORE_READY_FOR_START", format: :boolean, units: nil},
-    %Metric{name: "Core Steam Present", key: "CORE_STEAM_PRESENT", format: :boolean, units: nil},
-    %Metric{name: "Core High Steam Present", key: "CORE_HIGH_STEAM_PRESENT", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel Average Fissionable", key: "CORE_FUEL_AVG_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel Average Temperature", key: "CORE_FUEL_AVG_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel Average Power Factor", key: "CORE_FUEL_AVG_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Fuel 1 Temperature", key: "CORE_FUEL_1_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 1 Fissionable", key: "CORE_FUEL_1_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 1 Power Factor", key: "CORE_FUEL_1_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 1 State", key: "CORE_BAY_1_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 1 Hatch Open", key: "CORE_BAY_1_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 2 Temperature", key: "CORE_FUEL_2_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 2 Fissionable", key: "CORE_FUEL_2_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 2 Power Factor", key: "CORE_FUEL_2_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 2 State", key: "CORE_BAY_2_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 2 Hatch Open", key: "CORE_BAY_2_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 3 Temperature", key: "CORE_FUEL_3_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 3 Fissionable", key: "CORE_FUEL_3_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 3 Power Factor", key: "CORE_FUEL_3_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 3 State", key: "CORE_BAY_3_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 3 Hatch Open", key: "CORE_BAY_3_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 4 Temperature", key: "CORE_FUEL_4_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 4 Fissionable", key: "CORE_FUEL_4_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 4 Power Factor", key: "CORE_FUEL_4_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 4 State", key: "CORE_BAY_4_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 4 Hatch Open", key: "CORE_BAY_4_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 5 Temperature", key: "CORE_FUEL_5_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 5 Fissionable", key: "CORE_FUEL_5_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 5 Power Factor", key: "CORE_FUEL_5_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 5 State", key: "CORE_BAY_5_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 5 Hatch Open", key: "CORE_BAY_5_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 6 Temperature", key: "CORE_FUEL_6_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 6 Fissionable", key: "CORE_FUEL_6_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 6 Power Factor", key: "CORE_FUEL_6_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 6 State", key: "CORE_BAY_6_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 6 Hatch Open", key: "CORE_BAY_6_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 7 Temperature", key: "CORE_FUEL_7_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 7 Fissionable", key: "CORE_FUEL_7_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 7 Power Factor", key: "CORE_FUEL_7_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 7 State", key: "CORE_BAY_7_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 7 Hatch Open", key: "CORE_BAY_7_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 8 Temperature", key: "CORE_FUEL_8_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 8 Fissionable", key: "CORE_FUEL_8_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 8 Power Factor", key: "CORE_FUEL_8_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 8 State", key: "CORE_BAY_8_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 8 Hatch Open", key: "CORE_BAY_8_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Core Fuel 9 Temperature", key: "CORE_FUEL_9_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Core Fuel 9 Fissionable", key: "CORE_FUEL_9_FISSIONABLE", format: :float, units: "%"},
-    %Metric{name: "Core Fuel 9 Power Factor", key: "CORE_FUEL_9_POWER_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Bay 9 State", key: "CORE_BAY_9_STATE", format: :integer, units: nil},
-    %Metric{name: "Core Bay 9 Hatch Open", key: "CORE_BAY_9_HATCH_OPEN", format: :boolean, units: nil},
-    %Metric{name: "Condenser Vacuum", key: "CONDENSER_VACUUM", format: :float, units: "%"},
-    %Metric{name: "Condenser Vacuum Relief Valve Opening", key: "CONDENSER_VACUUM_RELIEF_VALVE_OPENING", format: :float, units: "%"},
-    %Metric{name: "Condenser Vacuum Pump Active", key: "CONDENSER_VACUUM_PUMP_ACTIVE", format: :boolean, units: nil},
-    %Metric{name: "Condenser Vacuum Pump Mode", key: "CONDENSER_VACUUM_PUMP_MODE", format: :string, units: nil},
-    %Metric{name: "Condenser Vacuum Pump Power", key: "CONDENSER_VACUUM_PUMP_POWER", format: :float, units: "%"},
-    %Metric{name: "Vacuum Retention Tank Volume", key: "VACUUM_RETENTION_TANK_VOLUME", format: :float, units: "L"},
-    %Metric{name: "Steam Ejector Motive", key: "STEAM_EJECTOR_MOTIVE", format: :float, units: "%"},
-    %Metric{name: "Vacuum Retention Tank Pressure", key: "VACUUM_RETENTION_TANK_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Steam Ejector Startup Motive Valve Ordered", key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Steam Ejector Startup Motive Valve Actual", key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Steam Ejector Operational Motive Valve Ordered", key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Steam Ejector Operational Motive Valve Actual", key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Steam Ejector Condenser Return Valve Ordered", key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Steam Ejector Condenser Return Valve Actual", key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Core Pool Pump", key: "CORE_POOL_PUMP", format: :integer, units: nil},
-    %Metric{name: "Coolant Core State", key: "COOLANT_CORE_STATE", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Pressure", key: "COOLANT_CORE_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Coolant Core Maximum Pressure", key: "COOLANT_CORE_MAX_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Coolant Core Vessel Temperature", key: "COOLANT_CORE_VESSEL_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Coolant Core Quantity In Vessel", key: "COOLANT_CORE_QUANTITY_IN_VESSEL", format: :float, units: "kL"},
-    %Metric{name: "Coolant Core Primary Loop Level", key: "COOLANT_CORE_PRIMARY_LOOP_LEVEL", format: :float, units: "%"},
-    %Metric{name: "Coolant Core Flow In", key: "COOLANT_CORE_FLOW_IN", format: :float, units: "L/min"},
-    %Metric{name: "Coolant Core Flow Out", key: "COOLANT_CORE_FLOW_OUT", format: :float, units: "L/min"},
-    %Metric{name: "Coolant Core Flow Speed", key: "COOLANT_CORE_FLOW_SPEED", format: :float, units: "L/min"},
-    %Metric{name: "Coolant Core Flow Ordered Speed", key: "COOLANT_CORE_FLOW_ORDERED_SPEED", format: :float, units: "L/min"},
-    %Metric{name: "Coolant Core Flow Reached Speed", key: "COOLANT_CORE_FLOW_REACHED_SPEED", format: :boolean, units: nil},
-    %Metric{name: "Coolant Core Quantity Circulation Pumps Present", key: "COOLANT_CORE_QUANTITY_CIRCULATION_PUMPS_PRESENT", format: :integer, units: "pumps"},
-    %Metric{name: "Coolant Core Quantity Freight Pumps Present", key: "COOLANT_CORE_QUANTITY_FREIGHT_PUMPS_PRESENT", format: :integer, units: "pumps"},
-    %Metric{name: "Coolant Core Circulation Pump 1 Status", key: "COOLANT_CORE_CIRCULATION_PUMP_0_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 2 Status", key: "COOLANT_CORE_CIRCULATION_PUMP_1_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 3 Status", key: "COOLANT_CORE_CIRCULATION_PUMP_2_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 1 Dry Status", key: "COOLANT_CORE_CIRCULATION_PUMP_0_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 2 Dry Status", key: "COOLANT_CORE_CIRCULATION_PUMP_1_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 3 Dry Status", key: "COOLANT_CORE_CIRCULATION_PUMP_2_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 1 Overload Status", key: "COOLANT_CORE_CIRCULATION_PUMP_0_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 2 Overload Status", key: "COOLANT_CORE_CIRCULATION_PUMP_1_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 3 Overload Status", key: "COOLANT_CORE_CIRCULATION_PUMP_2_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 1 Ordered Speed", key: "COOLANT_CORE_CIRCULATION_PUMP_0_ORDERED_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Core Circulation Pump 2 Ordered Speed", key: "COOLANT_CORE_CIRCULATION_PUMP_1_ORDERED_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Core Circulation Pump 3 Ordered Speed", key: "COOLANT_CORE_CIRCULATION_PUMP_2_ORDERED_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Core Circulation Pump 1 Speed", key: "COOLANT_CORE_CIRCULATION_PUMP_0_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Core Circulation Pump 2 Speed", key: "COOLANT_CORE_CIRCULATION_PUMP_1_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Core Circulation Pump 3 Speed", key: "COOLANT_CORE_CIRCULATION_PUMP_2_SPEED", format: :float, units: "%"},
-    %Metric{name: "Control Rods Status", key: "RODS_STATUS", format: :string, units: nil},
-    %Metric{name: "Control Rods Movement Speed", key: "RODS_MOVEMENT_SPEED", format: :string, units: nil},
-    %Metric{name: "Control Rods Movement Speed Decreased High Temperature", key: "RODS_MOVEMENT_SPEED_DECREASED_HIGH_TEMPERATURE", format: :string, units: nil},
-    %Metric{name: "Control Rods Deformed", key: "RODS_DEFORMED", format: :string, units: nil},
-    %Metric{name: "Control Rods Temperature", key: "RODS_TEMPERATURE", format: :string, units: nil},
-    %Metric{name: "Control Rods Maximum Temperature", key: "RODS_MAX_TEMPERATURE", format: :string, units: nil},
-    %Metric{name: "Control Rods Pos Ordered", key: "RODS_POS_ORDERED", format: :string, units: nil},
-    %Metric{name: "Control Rods Pos Actual", key: "RODS_POS_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rods Pos Reached", key: "RODS_POS_REACHED", format: :string, units: nil},
-    %Metric{name: "Control Rods Quantity", key: "RODS_QUANTITY", format: :integer, units: "rods"},
-    %Metric{name: "Control Rods Aligned", key: "RODS_ALIGNED", format: :string, units: nil},
-    %Metric{name: "Generator 1 Power", key: "GENERATOR_0_KW", format: :float, units: "kW"},
-    %Metric{name: "Generator 2 Power", key: "GENERATOR_1_KW", format: :float, units: "kW"},
-    %Metric{name: "Generator 3 Power", key: "GENERATOR_2_KW", format: :float, units: "kW"},
-    %Metric{name: "Generator 1 Voltage", key: "GENERATOR_0_V", format: :float, units: "V"},
-    %Metric{name: "Generator 2 Voltage", key: "GENERATOR_1_V", format: :float, units: "V"},
-    %Metric{name: "Generator 3 Voltage", key: "GENERATOR_2_V", format: :float, units: "V"},
-    %Metric{name: "Generator 1 Amperage", key: "GENERATOR_0_A", format: :float, units: "A"},
-    %Metric{name: "Generator 2 Amperage", key: "GENERATOR_1_A", format: :float, units: "A"},
-    %Metric{name: "Generator 3 Amperage", key: "GENERATOR_2_A", format: :float, units: "A"},
-    %Metric{name: "Generator 1 Hertz", key: "GENERATOR_0_HERTZ", format: :float, units: "Hz"},
-    %Metric{name: "Generator 2 Hertz", key: "GENERATOR_1_HERTZ", format: :float, units: "Hz"},
-    %Metric{name: "Generator 3 Hertz", key: "GENERATOR_2_HERTZ", format: :float, units: "Hz"},
-    %Metric{name: "Generator 1 Breaker", key: "GENERATOR_0_BREAKER", format: :boolean, units: nil},
-    %Metric{name: "Generator 2 Breaker", key: "GENERATOR_1_BREAKER", format: :boolean, units: nil},
-    %Metric{name: "Generator 3 Breaker", key: "GENERATOR_2_BREAKER", format: :boolean, units: nil},
-    %Metric{name: "Steam Turbine 1 RPM", key: "STEAM_TURBINE_0_RPM", format: :float, units: "RPM"},
-    %Metric{name: "Steam Turbine 2 RPM", key: "STEAM_TURBINE_1_RPM", format: :float, units: "RPM"},
-    %Metric{name: "Steam Turbine 3 RPM", key: "STEAM_TURBINE_2_RPM", format: :float, units: "RPM"},
-    %Metric{name: "Steam Turbine 1 Temperature", key: "STEAM_TURBINE_0_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Steam Turbine 2 Temperature", key: "STEAM_TURBINE_1_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Steam Turbine 3 Temperature", key: "STEAM_TURBINE_2_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Steam Turbine 1 Pressure", key: "STEAM_TURBINE_0_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Steam Turbine 2 Pressure", key: "STEAM_TURBINE_1_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Steam Turbine 3 Pressure", key: "STEAM_TURBINE_2_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Steam Turbine 1 Torque", key: "STEAM_TURBINE_0_TORQUE", format: :float, units: "%"},
-    %Metric{name: "Steam Turbine 2 Torque", key: "STEAM_TURBINE_1_TORQUE", format: :float, units: "%"},
-    %Metric{name: "Steam Turbine 3 Torque", key: "STEAM_TURBINE_2_TORQUE", format: :float, units: "%"},
-    %Metric{name: "Steam Turbine 1 Installed", key: "STEAM_TURBINE_0_INSTALLED", format: :boolean, units: nil},
-    %Metric{name: "Steam Turbine 2 Installed", key: "STEAM_TURBINE_1_INSTALLED", format: :boolean, units: nil},
-    %Metric{name: "Steam Turbine 3 Installed", key: "STEAM_TURBINE_2_INSTALLED", format: :boolean, units: nil},
-    %Metric{name: "Steam Generator 1 Status", key: "STEAM_GEN_0_STATUS", format: :integer, units: nil},
-    %Metric{name: "Steam Generator 2 Status", key: "STEAM_GEN_1_STATUS", format: :integer, units: nil},
-    %Metric{name: "Steam Generator 3 Status", key: "STEAM_GEN_2_STATUS", format: :integer, units: nil},
-    %Metric{name: "Resistor Bank Divert Surplus From", key: "RES_DIVERT_SURPLUS_FROM_MW", format: :float, units: "MW"},
-    %Metric{name: "Resistor Bank Effectively Derived Energy", key: "RES_EFFECTIVELY_DERIVED_ENERGY_MW", format: :float, units: "MW"},
-    %Metric{name: "Resistor Bank Absorption Capacity", key: "RES_ABSORPTION_CAPACITY_MW", format: :float, units: "MW"},
-    %Metric{name: "Resistor Bank 01 Switch", key: "RESISTOR_BANK_01_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Resistor Bank 02 Switch", key: "RESISTOR_BANK_02_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Resistor Bank 03 Switch", key: "RESISTOR_BANK_03_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Resistor Bank 04 Switch", key: "RESISTOR_BANK_04_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Resistor Banks Main Switch", key: "RESISTOR_BANKS_MAIN_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Emergency Generator 1 Mode", key: "EMERGENCY_GENERATOR_1_MODE", format: :string, units: nil},
-    %Metric{name: "Emergency Generator 1 Status", key: "EMERGENCY_GENERATOR_1_STATUS", format: :string, units: nil},
-    %Metric{name: "Emergency Generator 1 Pressurizer", key: "EMERGENCY_GENERATOR_1_PRESSURIZER", format: :string, units: nil},
-    %Metric{name: "Emergency Generator 1 Fuel", key: "EMERGENCY_GENERATOR_1_FUEL", format: :integer, units: "L"},
-    %Metric{name: "Emergency Generator 1 Maintenance Needed", key: "EMERGENCY_GENERATOR_1_MAINTENANCE_NEEDED", format: :boolean, units: nil},
-    %Metric{name: "Emergency Generator 2 Mode", key: "EMERGENCY_GENERATOR_2_MODE", format: :string, units: nil},
-    %Metric{name: "Emergency Generator 2 Status", key: "EMERGENCY_GENERATOR_2_STATUS", format: :string, units: nil},
-    %Metric{name: "Emergency Generator 2 Pressurizer", key: "EMERGENCY_GENERATOR_2_PRESSURIZER", format: :string, units: nil},
-    %Metric{name: "Emergency Generator 2 Fuel", key: "EMERGENCY_GENERATOR_2_FUEL", format: :integer, units: "L"},
-    %Metric{name: "Emergency Generator 2 Maintenance Needed", key: "EMERGENCY_GENERATOR_2_MAINTENANCE_NEEDED", format: :boolean, units: nil},
-    %Metric{name: "Power From Turbine Power", key: "POWER_FROM_TURBINE_KW", format: :float, units: "kW"},
-    %Metric{name: "Power From External Power", key: "POWER_FROM_EXTERNAL_KW", format: :float, units: "kW"},
-    %Metric{name: "Emergency Generator Power Output Power", key: "EMERGENCY_GENERATOR_POWER_OUTPUT_KW", format: :float, units: "kW"},
-    %Metric{name: "Emergency Batteries Power Output Power", key: "EMERGENCY_BATTERIES_POWER_OUTPUT_KW", format: :float, units: "kW"},
-    %Metric{name: "Emergency Batteries Mode", key: "EMERGENCY_BATTERIES_MODE", format: :integer, units: nil},
-    %Metric{name: "Core Factor", key: "CORE_FACTOR", format: :float, units: nil},
-    %Metric{name: "Core Factor Change", key: "CORE_FACTOR_CHANGE", format: :float, units: nil},
-    %Metric{name: "Core Operation Mode", key: "CORE_OPERATION_MODE", format: :integer, units: nil},
-    %Metric{name: "Core Iodine Generation", key: "CORE_IODINE_GENERATION", format: :float, units: nil},
-    %Metric{name: "Core Iodine Cumulative", key: "CORE_IODINE_CUMULATIVE", format: :float, units: nil},
-    %Metric{name: "Core Xenon Generation", key: "CORE_XENON_GENERATION", format: :float, units: nil},
-    %Metric{name: "Core Xenon Cumulative", key: "CORE_XENON_CUMULATIVE", format: :float, units: nil},
-    %Metric{name: "Chemical Truck In Zone", key: "CHEM_TRUCK_IN_ZONE", format: :boolean, units: nil},
-    %Metric{name: "Chemical Truck Connected", key: "CHEM_TRUCK_CONNECTED", format: :boolean, units: nil},
-    %Metric{name: "Chemical Boron Dosage Ordered", key: "CHEM_BORON_DOSAGE_ORDERED", format: :float, units: "g/min"},
-    %Metric{name: "Chemical Boron Dosage Actual", key: "CHEM_BORON_DOSAGE_ACTUAL", format: :float, units: "g/min"},
-    %Metric{name: "Chemical Boron Filter Ordered", key: "CHEM_BORON_FILTER_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Chemical Boron Filter Actual", key: "CHEM_BORON_FILTER_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Chemical Boron Ppm", key: "CHEM_BORON_PPM", format: :float, units: "ppm"},
-    %Metric{name: "Chemical Dosing Pump Status", key: "CHEMICAL_DOSING_PUMP_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Dosing Pump Dry Status", key: "CHEMICAL_DOSING_PUMP_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Dosing Pump Overload Status", key: "CHEMICAL_DOSING_PUMP_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Filter Pump Status", key: "CHEMICAL_FILTER_PUMP_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Filter Pump Dry Status", key: "CHEMICAL_FILTER_PUMP_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Filter Pump Overload Status", key: "CHEMICAL_FILTER_PUMP_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Cleaning Pump Status", key: "CHEMICAL_CLEANING_PUMP_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Cleaning Pump Dry Status", key: "CHEMICAL_CLEANING_PUMP_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Chemical Cleaning Pump Overload Status", key: "CHEMICAL_CLEANING_PUMP_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 1 Status", key: "COOLANT_SEC_CIRCULATION_PUMP_0_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 2 Status", key: "COOLANT_SEC_CIRCULATION_PUMP_1_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 3 Status", key: "COOLANT_SEC_CIRCULATION_PUMP_2_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 1 Dry Status", key: "COOLANT_SEC_CIRCULATION_PUMP_0_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 2 Dry Status", key: "COOLANT_SEC_CIRCULATION_PUMP_1_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 3 Dry Status", key: "COOLANT_SEC_CIRCULATION_PUMP_2_DRY_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 1 Overload Status", key: "COOLANT_SEC_CIRCULATION_PUMP_0_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 2 Overload Status", key: "COOLANT_SEC_CIRCULATION_PUMP_1_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 3 Overload Status", key: "COOLANT_SEC_CIRCULATION_PUMP_2_OVERLOAD_STATUS", format: :integer, units: nil},
-    %Metric{name: "Coolant Secondary Circulation Pump 1 Ordered Speed", key: "COOLANT_SEC_CIRCULATION_PUMP_0_ORDERED_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Secondary Circulation Pump 2 Ordered Speed", key: "COOLANT_SEC_CIRCULATION_PUMP_1_ORDERED_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Secondary Circulation Pump 3 Ordered Speed", key: "COOLANT_SEC_CIRCULATION_PUMP_2_ORDERED_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Secondary Circulation Pump 1 Speed", key: "COOLANT_SEC_CIRCULATION_PUMP_0_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Secondary Circulation Pump 2 Speed", key: "COOLANT_SEC_CIRCULATION_PUMP_1_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Secondary Circulation Pump 3 Speed", key: "COOLANT_SEC_CIRCULATION_PUMP_2_SPEED", format: :float, units: "%"},
-    %Metric{name: "Coolant Secondary 1 Volume", key: "COOLANT_SEC_0_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Coolant Secondary 2 Volume", key: "COOLANT_SEC_1_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Coolant Secondary 3 Volume", key: "COOLANT_SEC_2_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Coolant Secondary 1 Liquid Volume", key: "COOLANT_SEC_0_LIQUID_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Coolant Secondary 2 Liquid Volume", key: "COOLANT_SEC_1_LIQUID_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Coolant Secondary 3 Liquid Volume", key: "COOLANT_SEC_2_LIQUID_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Coolant Secondary 1 Pressure", key: "COOLANT_SEC_0_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Coolant Secondary 2 Pressure", key: "COOLANT_SEC_1_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Coolant Secondary 3 Pressure", key: "COOLANT_SEC_2_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Coolant Secondary 1 Temperature", key: "COOLANT_SEC_0_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Coolant Secondary 2 Temperature", key: "COOLANT_SEC_1_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Coolant Secondary 3 Temperature", key: "COOLANT_SEC_2_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Condenser Circulation Pump Overload Status", key: "CONDENSER_CIRCULATION_PUMP_OVERLOAD_STATUS", format: :boolean, units: nil},
-    %Metric{name: "Condenser Circulation Pump Speed", key: "CONDENSER_CIRCULATION_PUMP_SPEED", format: :float, units: "%"},
-    %Metric{name: "Condenser Circulation Pump Ordered Speed", key: "CONDENSER_CIRCULATION_PUMP_ORDERED_SPEED", format: :float, units: "%"},
-    %Metric{name: "Condenser Temperature", key: "CONDENSER_TEMPERATURE", format: :float, units: "℃"},
-    %Metric{name: "Condenser Volume", key: "CONDENSER_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Condenser Vapor Volume", key: "CONDENSER_VAPOR_VOLUME", format: :float, units: "hL"},
-    %Metric{name: "Condenser Condensate Flow Rate", key: "CONDENSER_CONDENSATE_FLOW_RATE", format: :float, units: "kg/min"},
-    %Metric{name: "Condenser Extraction Flow Rate", key: "CONDENSER_EXTRACTION_FLOW_RATE", format: :float, units: "kg/min"},
-    %Metric{name: "Condenser Coolant Evaporated", key: "CONDENSER_COOLANT_EVAPORATED", format: :float, units: "kg/min"},
-    %Metric{name: "Condenser Pressure", key: "CONDENSER_PRESSURE", format: :float, units: "bar"},
-    %Metric{name: "Condenser Circulation Pump Active", key: "CONDENSER_CIRCULATION_PUMP_ACTIVE", format: :boolean, units: nil},
-    %Metric{name: "Freight Pump Condenser Active", key: "FREIGHT_PUMP_CONDENSER_ACTIVE", format: :boolean, units: nil},
-    %Metric{name: "Freight Pump Internal Active", key: "FREIGHT_PUMP_INTERNAL_ACTIVE", format: :boolean, units: nil},
-    %Metric{name: "Freight Pump External Active", key: "FREIGHT_PUMP_EXTERNAL_ACTIVE", format: :boolean, units: nil},
-    %Metric{name: "Freight Pump Feedwater Active", key: "FREIGHT_PUMP_FEEDWATER_ACTIVE", format: :boolean, units: nil},
-    %Metric{name: "Core Pool Coolant Tank Volume", key: "CORE_POOL_COOLANT_TANK_VOLUME", format: :float, units: "L"},
-    %Metric{name: "Core Primary Circuit Cooling Tank Volume", key: "CORE_PRIMARY_CIRCUIT_COOLING_TANK_VOLUME", format: :float, units: "L"},
-    %Metric{name: "Core External Coolant Reservoir Volume", key: "CORE_EXTERNAL_COOLANT_RESERVOIR_VOLUME", format: :float, units: "kL"},
-    %Metric{name: "Valve M01 Open", key: "VALVE_M01_OPEN", format: :float, units: "%"},
-    %Metric{name: "Valve M02 Open", key: "VALVE_M02_OPEN", format: :float, units: "%"},
-    %Metric{name: "Valve M03 Open", key: "VALVE_M03_OPEN", format: :float, units: "%"},
-    %Metric{name: "MSCV 1 Opening Actual", key: "MSCV_0_OPENING_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "MSCV 2 Opening Actual", key: "MSCV_1_OPENING_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "MSCV 3 Opening Actual", key: "MSCV_2_OPENING_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Steam Turbine 1 Bypass Actual", key: "STEAM_TURBINE_0_BYPASS_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Steam Turbine 2 Bypass Actual", key: "STEAM_TURBINE_1_BYPASS_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Steam Turbine 3 Bypass Actual", key: "STEAM_TURBINE_2_BYPASS_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Steam Generator 1 Outlet", key: "STEAM_GEN_0_OUTLET", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 1 Evaporated", key: "STEAM_GEN_0_EVAPORATED", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 1 Boiling Point", key: "STEAM_GEN_0_BOILING_POINT", format: :float, units: "℃"},
-    %Metric{name: "Steam Generator 1 Inlet", key: "STEAM_GEN_0_INLET", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 1 Return Flow Plus Condensed", key: "STEAM_GEN_0_RETURN_FLOW_PLUS_CONDENSED", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 2 Outlet", key: "STEAM_GEN_1_OUTLET", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 2 Evaporated", key: "STEAM_GEN_1_EVAPORATED", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 2 Boiling Point", key: "STEAM_GEN_1_BOILING_POINT", format: :float, units: "℃"},
-    %Metric{name: "Steam Generator 2 Inlet", key: "STEAM_GEN_1_INLET", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 2 Return Flow Plus Condensed", key: "STEAM_GEN_1_RETURN_FLOW_PLUS_CONDENSED", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 3 Outlet", key: "STEAM_GEN_2_OUTLET", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 3 Evaporated", key: "STEAM_GEN_2_EVAPORATED", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 3 Boiling Point", key: "STEAM_GEN_2_BOILING_POINT", format: :float, units: "℃"},
-    %Metric{name: "Steam Generator 3 Inlet", key: "STEAM_GEN_2_INLET", format: :float, units: "kg/min"},
-    %Metric{name: "Steam Generator 3 Return Flow Plus Condensed", key: "STEAM_GEN_2_RETURN_FLOW_PLUS_CONDENSED", format: :float, units: "kg/min"},
-    %Metric{name: "Power Demand", key: "POWER_DEMAND_MW", format: :float, units: "MW"},
-    %Metric{name: "Power Maximum Theoretical Final Plant Output", key: "POWER_MAX_THEORETICAL_FINAL_PLANT_OUTPUT_MW", format: :float, units: "MW"},
-    %Metric{name: "Power Maximum Theoretical Plant Output", key: "POWER_MAX_THEORETICAL_PLANT_OUTPUT_MW", format: :float, units: "MW"},
-    %Metric{name: "Freight Pump Condenser Switch", key: "FREIGHT_PUMP_CONDENSER_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Freight Pump Internal Switch", key: "FREIGHT_PUMP_INTERNAL_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Freight Pump External Switch", key: "FREIGHT_PUMP_EXTERNAL_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Condenser Circulation Pump Switch", key: "CONDENSER_CIRCULATION_PUMP_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Freight Pump Feedwater Switch", key: "FREIGHT_PUMP_FEEDWATER_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Steam Generator 1 Vent Switch", key: "STEAM_GEN_0_VENT_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Steam Generator 2 Vent Switch", key: "STEAM_GEN_1_VENT_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Steam Generator 3 Vent Switch", key: "STEAM_GEN_2_VENT_SWITCH", format: :boolean, units: nil},
-    %Metric{name: "Coolant Core Circulation Pump 1 Capacity", key: "COOLANT_CORE_CIRCULATION_PUMP_0_CAPACITY", format: :float, units: "L/m"},
-    %Metric{name: "Coolant Core Circulation Pump 2 Capacity", key: "COOLANT_CORE_CIRCULATION_PUMP_1_CAPACITY", format: :float, units: "L/m"},
-    %Metric{name: "Coolant Core Circulation Pump 3 Capacity", key: "COOLANT_CORE_CIRCULATION_PUMP_2_CAPACITY", format: :float, units: "L/m"},
-    %Metric{name: "Coolant Secondary Circulation Pump 1 Capacity", key: "COOLANT_SEC_CIRCULATION_PUMP_0_CAPACITY", format: :float, units: "L/m"},
-    %Metric{name: "Coolant Secondary Circulation Pump 2 Capacity", key: "COOLANT_SEC_CIRCULATION_PUMP_1_CAPACITY", format: :float, units: "L/m"},
-    %Metric{name: "Coolant Secondary Circulation Pump 3 Capacity", key: "COOLANT_SEC_CIRCULATION_PUMP_2_CAPACITY", format: :float, units: "L/m"},
-    %Metric{name: "Control Rod Bank Pos 1 Ordered", key: "ROD_BANK_POS_0_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 1 Actual", key: "ROD_BANK_POS_0_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 2 Ordered", key: "ROD_BANK_POS_1_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 2 Actual", key: "ROD_BANK_POS_1_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 3 Ordered", key: "ROD_BANK_POS_2_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 3 Actual", key: "ROD_BANK_POS_2_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 4 Ordered", key: "ROD_BANK_POS_3_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 4 Actual", key: "ROD_BANK_POS_3_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 5 Ordered", key: "ROD_BANK_POS_4_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 5 Actual", key: "ROD_BANK_POS_4_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 6 Ordered", key: "ROD_BANK_POS_5_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 6 Actual", key: "ROD_BANK_POS_5_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 7 Ordered", key: "ROD_BANK_POS_6_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 7 Actual", key: "ROD_BANK_POS_6_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 8 Ordered", key: "ROD_BANK_POS_7_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 8 Actual", key: "ROD_BANK_POS_7_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 9 Ordered", key: "ROD_BANK_POS_8_ORDERED", format: :float, units: "%"},
-    %Metric{name: "Control Rod Bank Pos 9 Actual", key: "ROD_BANK_POS_8_ACTUAL", format: :float, units: "%"},
-    %Metric{name: "Game Sim Speed", key: "GAME_SIM_SPEED", format: :float, units: "%"},
-    %Metric{name: "Fun Is Enabled", key: "FUN_IS_ENABLED", format: :boolean, units: nil},
-    %Metric{name: "Ambient Temperature", key: "AMBIENT_TEMPERATURE", format: :float, units: "℃"}
-  ]
+  @root %Folder{
+    name: :root,
+    key: :root,
+    subfolders: [
+      %Folder{
+        name: "chemicals",
+        key: "chemicals",
+        subfolders: [],
+        metrics: [
+          %Metric{
+            name: "Chemical Truck In Zone",
+            key: "CHEM_TRUCK_IN_ZONE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Truck Connected",
+            key: "CHEM_TRUCK_CONNECTED",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Boron Dosage Ordered",
+            key: "CHEM_BORON_DOSAGE_ORDERED",
+            format: :float,
+            units: "g/min"
+          },
+          %Metric{
+            name: "Chemical Boron Dosage Actual",
+            key: "CHEM_BORON_DOSAGE_ACTUAL",
+            format: :float,
+            units: "g/min"
+          },
+          %Metric{
+            name: "Chemical Boron Filter Ordered",
+            key: "CHEM_BORON_FILTER_ORDERED",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Chemical Boron Filter Actual",
+            key: "CHEM_BORON_FILTER_ACTUAL",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Chemical Boron Ppm",
+            key: "CHEM_BORON_PPM",
+            format: :float,
+            units: "ppm"
+          },
+          %Metric{
+            name: "Chemical Dosing Pump Status",
+            key: "CHEMICAL_DOSING_PUMP_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Dosing Pump Dry Status",
+            key: "CHEMICAL_DOSING_PUMP_DRY_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Dosing Pump Overload Status",
+            key: "CHEMICAL_DOSING_PUMP_OVERLOAD_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Filter Pump Status",
+            key: "CHEMICAL_FILTER_PUMP_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Filter Pump Dry Status",
+            key: "CHEMICAL_FILTER_PUMP_DRY_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Filter Pump Overload Status",
+            key: "CHEMICAL_FILTER_PUMP_OVERLOAD_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Cleaning Pump Status",
+            key: "CHEMICAL_CLEANING_PUMP_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Cleaning Pump Dry Status",
+            key: "CHEMICAL_CLEANING_PUMP_DRY_STATUS",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Chemical Cleaning Pump Overload Status",
+            key: "CHEMICAL_CLEANING_PUMP_OVERLOAD_STATUS",
+            format: :integer,
+            units: nil
+          }
+        ]
+      },
+      %Folder{
+        name: "condenser",
+        key: "condenser",
+        subfolders: [
+          %Folder{
+            name: "condenser.vacuum",
+            key: "condenser.vacuum",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Vacuum Retention Tank Volume",
+                key: "VACUUM_RETENTION_TANK_VOLUME",
+                format: :float,
+                units: "L"
+              },
+              %Metric{
+                name: "Steam Ejector Motive",
+                key: "STEAM_EJECTOR_MOTIVE",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Vacuum Retention Tank Pressure",
+                key: "VACUUM_RETENTION_TANK_PRESSURE",
+                format: :float,
+                units: "bar"
+              },
+              %Metric{
+                name: "Steam Ejector Startup Motive Valve Ordered",
+                key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Steam Ejector Startup Motive Valve Actual",
+                key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ACTUAL",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Steam Ejector Operational Motive Valve Ordered",
+                key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Steam Ejector Operational Motive Valve Actual",
+                key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ACTUAL",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Steam Ejector Condenser Return Valve Ordered",
+                key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Steam Ejector Condenser Return Valve Actual",
+                key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          }
+        ],
+        metrics: [
+          %Metric{
+            name: "Condenser Vacuum",
+            key: "CONDENSER_VACUUM",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Condenser Vacuum Relief Valve Opening",
+            key: "CONDENSER_VACUUM_RELIEF_VALVE_OPENING",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Condenser Vacuum Pump Active",
+            key: "CONDENSER_VACUUM_PUMP_ACTIVE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Condenser Vacuum Pump Mode",
+            key: "CONDENSER_VACUUM_PUMP_MODE",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Condenser Vacuum Pump Power",
+            key: "CONDENSER_VACUUM_PUMP_POWER",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Condenser Circulation Pump Overload Status",
+            key: "CONDENSER_CIRCULATION_PUMP_OVERLOAD_STATUS",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Condenser Circulation Pump Speed",
+            key: "CONDENSER_CIRCULATION_PUMP_SPEED",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Condenser Circulation Pump Ordered Speed",
+            key: "CONDENSER_CIRCULATION_PUMP_ORDERED_SPEED",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Condenser Temperature",
+            key: "CONDENSER_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Condenser Volume",
+            key: "CONDENSER_VOLUME",
+            format: :float,
+            units: "hL"
+          },
+          %Metric{
+            name: "Condenser Vapor Volume",
+            key: "CONDENSER_VAPOR_VOLUME",
+            format: :float,
+            units: "hL"
+          },
+          %Metric{
+            name: "Condenser Condensate Flow Rate",
+            key: "CONDENSER_CONDENSATE_FLOW_RATE",
+            format: :float,
+            units: "kg/min"
+          },
+          %Metric{
+            name: "Condenser Extraction Flow Rate",
+            key: "CONDENSER_EXTRACTION_FLOW_RATE",
+            format: :float,
+            units: "kg/min"
+          },
+          %Metric{
+            name: "Condenser Coolant Evaporated",
+            key: "CONDENSER_COOLANT_EVAPORATED",
+            format: :float,
+            units: "kg/min"
+          },
+          %Metric{
+            name: "Condenser Pressure",
+            key: "CONDENSER_PRESSURE",
+            format: :float,
+            units: "bar"
+          },
+          %Metric{
+            name: "Condenser Circulation Pump Active",
+            key: "CONDENSER_CIRCULATION_PUMP_ACTIVE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Condenser Circulation Pump Switch",
+            key: "CONDENSER_CIRCULATION_PUMP_SWITCH",
+            format: :boolean,
+            units: nil
+          }
+        ]
+      },
+      %Folder{
+        name: "core",
+        key: "core",
+        subfolders: [
+          %Folder{
+            name: "core.0",
+            key: "core.0",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 1 Ordered",
+                key: "ROD_BANK_POS_0_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 1 Actual",
+                key: "ROD_BANK_POS_0_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.1",
+            key: "core.1",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 2 Ordered",
+                key: "ROD_BANK_POS_1_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 2 Actual",
+                key: "ROD_BANK_POS_1_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.2",
+            key: "core.2",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 3 Ordered",
+                key: "ROD_BANK_POS_2_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 3 Actual",
+                key: "ROD_BANK_POS_2_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.3",
+            key: "core.3",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 4 Ordered",
+                key: "ROD_BANK_POS_3_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 4 Actual",
+                key: "ROD_BANK_POS_3_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.4",
+            key: "core.4",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 5 Ordered",
+                key: "ROD_BANK_POS_4_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 5 Actual",
+                key: "ROD_BANK_POS_4_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.5",
+            key: "core.5",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 6 Ordered",
+                key: "ROD_BANK_POS_5_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 6 Actual",
+                key: "ROD_BANK_POS_5_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.6",
+            key: "core.6",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 7 Ordered",
+                key: "ROD_BANK_POS_6_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 7 Actual",
+                key: "ROD_BANK_POS_6_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.7",
+            key: "core.7",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 8 Ordered",
+                key: "ROD_BANK_POS_7_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 8 Actual",
+                key: "ROD_BANK_POS_7_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.8",
+            key: "core.8",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rod Bank Pos 9 Ordered",
+                key: "ROD_BANK_POS_8_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rod Bank Pos 9 Actual",
+                key: "ROD_BANK_POS_8_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.coolant",
+            key: "core.coolant",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Coolant Core State",
+                key: "COOLANT_CORE_STATE",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Pressure",
+                key: "COOLANT_CORE_PRESSURE",
+                format: :float,
+                units: "bar"
+              },
+              %Metric{
+                name: "Coolant Core Maximum Pressure",
+                key: "COOLANT_CORE_MAX_PRESSURE",
+                format: :float,
+                units: "bar"
+              },
+              %Metric{
+                name: "Coolant Core Vessel Temperature",
+                key: "COOLANT_CORE_VESSEL_TEMPERATURE",
+                format: :float,
+                units: "℃"
+              },
+              %Metric{
+                name: "Coolant Core Quantity In Vessel",
+                key: "COOLANT_CORE_QUANTITY_IN_VESSEL",
+                format: :float,
+                units: "kL"
+              },
+              %Metric{
+                name: "Coolant Core Primary Loop Level",
+                key: "COOLANT_CORE_PRIMARY_LOOP_LEVEL",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Core Flow In",
+                key: "COOLANT_CORE_FLOW_IN",
+                format: :float,
+                units: "L/min"
+              },
+              %Metric{
+                name: "Coolant Core Flow Out",
+                key: "COOLANT_CORE_FLOW_OUT",
+                format: :float,
+                units: "L/min"
+              },
+              %Metric{
+                name: "Coolant Core Flow Speed",
+                key: "COOLANT_CORE_FLOW_SPEED",
+                format: :float,
+                units: "L/min"
+              },
+              %Metric{
+                name: "Coolant Core Flow Ordered Speed",
+                key: "COOLANT_CORE_FLOW_ORDERED_SPEED",
+                format: :float,
+                units: "L/min"
+              },
+              %Metric{
+                name: "Coolant Core Flow Reached Speed",
+                key: "COOLANT_CORE_FLOW_REACHED_SPEED",
+                format: :boolean,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Quantity Circulation Pumps Present",
+                key: "COOLANT_CORE_QUANTITY_CIRCULATION_PUMPS_PRESENT",
+                format: :integer,
+                units: "pumps"
+              },
+              %Metric{
+                name: "Coolant Core Quantity Freight Pumps Present",
+                key: "COOLANT_CORE_QUANTITY_FREIGHT_PUMPS_PRESENT",
+                format: :integer,
+                units: "pumps"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 1 Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_0_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 2 Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_1_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 3 Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_2_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 1 Dry Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_0_DRY_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 2 Dry Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_1_DRY_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 3 Dry Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_2_DRY_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 1 Overload Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_0_OVERLOAD_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 2 Overload Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_1_OVERLOAD_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 3 Overload Status",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_2_OVERLOAD_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 1 Ordered Speed",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_0_ORDERED_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 2 Ordered Speed",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_1_ORDERED_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 3 Ordered Speed",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_2_ORDERED_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 1 Speed",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_0_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 2 Speed",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_1_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 3 Speed",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_2_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 1 Capacity",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_0_CAPACITY",
+                format: :float,
+                units: "L/m"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 2 Capacity",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_1_CAPACITY",
+                format: :float,
+                units: "L/m"
+              },
+              %Metric{
+                name: "Coolant Core Circulation Pump 3 Capacity",
+                key: "COOLANT_CORE_CIRCULATION_PUMP_2_CAPACITY",
+                format: :float,
+                units: "L/m"
+              }
+            ]
+          },
+          %Folder{
+            name: "core.rods",
+            key: "core.rods",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Control Rods Status",
+                key: "RODS_STATUS",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Movement Speed",
+                key: "RODS_MOVEMENT_SPEED",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Movement Speed Decreased High Temperature",
+                key: "RODS_MOVEMENT_SPEED_DECREASED_HIGH_TEMPERATURE",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Deformed",
+                key: "RODS_DEFORMED",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Temperature",
+                key: "RODS_TEMPERATURE",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Maximum Temperature",
+                key: "RODS_MAX_TEMPERATURE",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Pos Ordered",
+                key: "RODS_POS_ORDERED",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Pos Actual",
+                key: "RODS_POS_ACTUAL",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Control Rods Pos Reached",
+                key: "RODS_POS_REACHED",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                name: "Control Rods Quantity",
+                key: "RODS_QUANTITY",
+                format: :integer,
+                units: "rods"
+              },
+              %Metric{
+                name: "Control Rods Aligned",
+                key: "RODS_ALIGNED",
+                format: :string,
+                units: nil
+              }
+            ]
+          }
+        ],
+        metrics: [
+          %Metric{
+            name: "Core Temperature",
+            key: "CORE_TEMP",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Temperature Operative",
+            key: "CORE_TEMP_OPERATIVE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Temperature Maximum",
+            key: "CORE_TEMP_MAX",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Temperature Minimum",
+            key: "CORE_TEMP_MIN",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Temperature Residual",
+            key: "CORE_TEMP_RESIDUAL",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Pressure",
+            key: "CORE_PRESSURE",
+            format: :float,
+            units: "bar"
+          },
+          %Metric{
+            name: "Core Pressure Maximum",
+            key: "CORE_PRESSURE_MAX",
+            format: :float,
+            units: "bar"
+          },
+          %Metric{
+            name: "Core Pressure Operative",
+            key: "CORE_PRESSURE_OPERATIVE",
+            format: :float,
+            units: "bar"
+          },
+          %Metric{
+            name: "Core Integrity",
+            key: "CORE_INTEGRITY",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Wear",
+            key: "CORE_WEAR",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core State",
+            key: "CORE_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core State Criticality",
+            key: "CORE_STATE_CRITICALITY",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Critical Mass Reached",
+            key: "CORE_CRITICAL_MASS_REACHED",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Critical Mass Reached Counter",
+            key: "CORE_CRITICAL_MASS_REACHED_COUNTER",
+            format: :integer,
+            units: "x"
+          },
+          %Metric{
+            name: "Core Imminent Fusion",
+            key: "CORE_IMMINENT_FUSION",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Ready For Start",
+            key: "CORE_READY_FOR_START",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Steam Present",
+            key: "CORE_STEAM_PRESENT",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core High Steam Present",
+            key: "CORE_HIGH_STEAM_PRESENT",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel Average Fissionable",
+            key: "CORE_FUEL_AVG_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel Average Temperature",
+            key: "CORE_FUEL_AVG_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel Average Power Factor",
+            key: "CORE_FUEL_AVG_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Pool Pump",
+            key: "CORE_POOL_PUMP",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Factor",
+            key: "CORE_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Factor Change",
+            key: "CORE_FACTOR_CHANGE",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Operation Mode",
+            key: "CORE_OPERATION_MODE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Iodine Generation",
+            key: "CORE_IODINE_GENERATION",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Iodine Cumulative",
+            key: "CORE_IODINE_CUMULATIVE",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Xenon Generation",
+            key: "CORE_XENON_GENERATION",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Xenon Cumulative",
+            key: "CORE_XENON_CUMULATIVE",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Pool Coolant Tank Volume",
+            key: "CORE_POOL_COOLANT_TANK_VOLUME",
+            format: :float,
+            units: "L"
+          },
+          %Metric{
+            name: "Core Primary Circuit Cooling Tank Volume",
+            key: "CORE_PRIMARY_CIRCUIT_COOLING_TANK_VOLUME",
+            format: :float,
+            units: "L"
+          },
+          %Metric{
+            name: "Core External Coolant Reservoir Volume",
+            key: "CORE_EXTERNAL_COOLANT_RESERVOIR_VOLUME",
+            format: :float,
+            units: "kL"
+          },
+          %Metric{
+            name: "Core Bay 1 State",
+            key: "CORE_BAY_1_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 1 Hatch Open",
+            key: "CORE_BAY_1_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 2 State",
+            key: "CORE_BAY_2_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 2 Hatch Open",
+            key: "CORE_BAY_2_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 3 State",
+            key: "CORE_BAY_3_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 3 Hatch Open",
+            key: "CORE_BAY_3_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 4 State",
+            key: "CORE_BAY_4_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 4 Hatch Open",
+            key: "CORE_BAY_4_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 5 State",
+            key: "CORE_BAY_5_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 5 Hatch Open",
+            key: "CORE_BAY_5_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 6 State",
+            key: "CORE_BAY_6_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 6 Hatch Open",
+            key: "CORE_BAY_6_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 7 State",
+            key: "CORE_BAY_7_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 7 Hatch Open",
+            key: "CORE_BAY_7_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 8 State",
+            key: "CORE_BAY_8_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 8 Hatch Open",
+            key: "CORE_BAY_8_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 9 State",
+            key: "CORE_BAY_9_STATE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Core Bay 9 Hatch Open",
+            key: "CORE_BAY_9_HATCH_OPEN",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 1 Temperature",
+            key: "CORE_FUEL_1_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 1 Fissionable",
+            key: "CORE_FUEL_1_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 1 Power Factor",
+            key: "CORE_FUEL_1_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 2 Temperature",
+            key: "CORE_FUEL_2_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 2 Fissionable",
+            key: "CORE_FUEL_2_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 2 Power Factor",
+            key: "CORE_FUEL_2_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 3 Temperature",
+            key: "CORE_FUEL_3_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 3 Fissionable",
+            key: "CORE_FUEL_3_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 3 Power Factor",
+            key: "CORE_FUEL_3_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 4 Temperature",
+            key: "CORE_FUEL_4_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 4 Fissionable",
+            key: "CORE_FUEL_4_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 4 Power Factor",
+            key: "CORE_FUEL_4_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 5 Temperature",
+            key: "CORE_FUEL_5_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 5 Fissionable",
+            key: "CORE_FUEL_5_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 5 Power Factor",
+            key: "CORE_FUEL_5_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 6 Temperature",
+            key: "CORE_FUEL_6_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 6 Fissionable",
+            key: "CORE_FUEL_6_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 6 Power Factor",
+            key: "CORE_FUEL_6_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 7 Temperature",
+            key: "CORE_FUEL_7_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 7 Fissionable",
+            key: "CORE_FUEL_7_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 7 Power Factor",
+            key: "CORE_FUEL_7_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 8 Temperature",
+            key: "CORE_FUEL_8_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 8 Fissionable",
+            key: "CORE_FUEL_8_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 8 Power Factor",
+            key: "CORE_FUEL_8_POWER_FACTOR",
+            format: :float,
+            units: nil
+          },
+          %Metric{
+            name: "Core Fuel 9 Temperature",
+            key: "CORE_FUEL_9_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            name: "Core Fuel 9 Fissionable",
+            key: "CORE_FUEL_9_FISSIONABLE",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Core Fuel 9 Power Factor",
+            key: "CORE_FUEL_9_POWER_FACTOR",
+            format: :float,
+            units: nil
+          }
+        ]
+      },
+      %Folder{
+        name: "emergency",
+        key: "emergency",
+        subfolders: [],
+        metrics: [
+          %Metric{
+            name: "Emergency Generator Power Output Power",
+            key: "EMERGENCY_GENERATOR_POWER_OUTPUT_KW",
+            format: :float,
+            units: "kW"
+          },
+          %Metric{
+            name: "Emergency Batteries Power Output Power",
+            key: "EMERGENCY_BATTERIES_POWER_OUTPUT_KW",
+            format: :float,
+            units: "kW"
+          },
+          %Metric{
+            name: "Emergency Batteries Mode",
+            key: "EMERGENCY_BATTERIES_MODE",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 1 Mode",
+            key: "EMERGENCY_GENERATOR_1_MODE",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 1 Status",
+            key: "EMERGENCY_GENERATOR_1_STATUS",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 1 Pressurizer",
+            key: "EMERGENCY_GENERATOR_1_PRESSURIZER",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 1 Fuel",
+            key: "EMERGENCY_GENERATOR_1_FUEL",
+            format: :integer,
+            units: "L"
+          },
+          %Metric{
+            name: "Emergency Generator 1 Maintenance Needed",
+            key: "EMERGENCY_GENERATOR_1_MAINTENANCE_NEEDED",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 2 Mode",
+            key: "EMERGENCY_GENERATOR_2_MODE",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 2 Status",
+            key: "EMERGENCY_GENERATOR_2_STATUS",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 2 Pressurizer",
+            key: "EMERGENCY_GENERATOR_2_PRESSURIZER",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Emergency Generator 2 Fuel",
+            key: "EMERGENCY_GENERATOR_2_FUEL",
+            format: :integer,
+            units: "L"
+          },
+          %Metric{
+            name: "Emergency Generator 2 Maintenance Needed",
+            key: "EMERGENCY_GENERATOR_2_MAINTENANCE_NEEDED",
+            format: :boolean,
+            units: nil
+          }
+        ]
+      },
+      %Folder{
+        name: "freight",
+        key: "freight",
+        subfolders: [],
+        metrics: [
+          %Metric{
+            name: "Freight Pump Condenser Active",
+            key: "FREIGHT_PUMP_CONDENSER_ACTIVE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Freight Pump Internal Active",
+            key: "FREIGHT_PUMP_INTERNAL_ACTIVE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Freight Pump External Active",
+            key: "FREIGHT_PUMP_EXTERNAL_ACTIVE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Freight Pump Feedwater Active",
+            key: "FREIGHT_PUMP_FEEDWATER_ACTIVE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Freight Pump Condenser Switch",
+            key: "FREIGHT_PUMP_CONDENSER_SWITCH",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Freight Pump Internal Switch",
+            key: "FREIGHT_PUMP_INTERNAL_SWITCH",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Freight Pump External Switch",
+            key: "FREIGHT_PUMP_EXTERNAL_SWITCH",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Freight Pump Feedwater Switch",
+            key: "FREIGHT_PUMP_FEEDWATER_SWITCH",
+            format: :boolean,
+            units: nil
+          }
+        ]
+      },
+      %Folder{
+        name: "misc",
+        key: "misc",
+        subfolders: [],
+        metrics: [
+          %Metric{
+            name: "Game Version",
+            key: "GAME_VERSION",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Game Difficulty",
+            key: "GAME_DIFFICULTY",
+            format: :integer,
+            units: nil
+          },
+          %Metric{name: "Time", key: "TIME", format: :string, units: nil},
+          %Metric{
+            name: "Time Stamp",
+            key: "TIME_STAMP",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Time Day",
+            key: "TIME_DAY",
+            format: :integer,
+            units: nil
+          },
+          %Metric{
+            name: "Alarms Active",
+            key: "ALARMS_ACTIVE",
+            format: :string,
+            units: nil
+          },
+          %Metric{
+            name: "Game Sim Speed",
+            key: "GAME_SIM_SPEED",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Fun Is Enabled",
+            key: "FUN_IS_ENABLED",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            name: "Ambient Temperature",
+            key: "AMBIENT_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          }
+        ]
+      },
+      %Folder{
+        name: "power",
+        key: "power",
+        subfolders: [
+          %Folder{
+            name: "power.resistors",
+            key: "power.resistors",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Resistor Bank Divert Surplus From",
+                key: "RES_DIVERT_SURPLUS_FROM_MW",
+                format: :float,
+                units: "MW"
+              },
+              %Metric{
+                name: "Resistor Bank Effectively Derived Energy",
+                key: "RES_EFFECTIVELY_DERIVED_ENERGY_MW",
+                format: :float,
+                units: "MW"
+              },
+              %Metric{
+                name: "Resistor Bank Absorption Capacity",
+                key: "RES_ABSORPTION_CAPACITY_MW",
+                format: :float,
+                units: "MW"
+              },
+              %Metric{
+                name: "Resistor Banks Main Switch",
+                key: "RESISTOR_BANKS_MAIN_SWITCH",
+                format: :boolean,
+                units: nil
+              },
+              %Metric{
+                name: "Resistor Bank 01 Switch",
+                key: "RESISTOR_BANK_01_SWITCH",
+                format: :boolean,
+                units: nil
+              },
+              %Metric{
+                name: "Resistor Bank 02 Switch",
+                key: "RESISTOR_BANK_02_SWITCH",
+                format: :boolean,
+                units: nil
+              },
+              %Metric{
+                name: "Resistor Bank 03 Switch",
+                key: "RESISTOR_BANK_03_SWITCH",
+                format: :boolean,
+                units: nil
+              },
+              %Metric{
+                name: "Resistor Bank 04 Switch",
+                key: "RESISTOR_BANK_04_SWITCH",
+                format: :boolean,
+                units: nil
+              }
+            ]
+          }
+        ],
+        metrics: [
+          %Metric{
+            name: "Power From Turbine Power",
+            key: "POWER_FROM_TURBINE_KW",
+            format: :float,
+            units: "kW"
+          },
+          %Metric{
+            name: "Power From External Power",
+            key: "POWER_FROM_EXTERNAL_KW",
+            format: :float,
+            units: "kW"
+          },
+          %Metric{
+            name: "Power Demand",
+            key: "POWER_DEMAND_MW",
+            format: :float,
+            units: "MW"
+          },
+          %Metric{
+            name: "Power Maximum Theoretical Final Plant Output",
+            key: "POWER_MAX_THEORETICAL_FINAL_PLANT_OUTPUT_MW",
+            format: :float,
+            units: "MW"
+          },
+          %Metric{
+            name: "Power Maximum Theoretical Plant Output",
+            key: "POWER_MAX_THEORETICAL_PLANT_OUTPUT_MW",
+            format: :float,
+            units: "MW"
+          }
+        ]
+      },
+      %Folder{
+        name: "secondary",
+        key: "secondary",
+        subfolders: [
+          %Folder{
+            name: "secondary.0",
+            key: "secondary.0",
+            subfolders: [
+              %Folder{
+                name: "secondary.0.generator",
+                key: "secondary.0.generator",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "Generator 1 Power",
+                    key: "GENERATOR_0_KW",
+                    format: :float,
+                    units: "kW"
+                  },
+                  %Metric{
+                    name: "Generator 1 Voltage",
+                    key: "GENERATOR_0_V",
+                    format: :float,
+                    units: "V"
+                  },
+                  %Metric{
+                    name: "Generator 1 Amperage",
+                    key: "GENERATOR_0_A",
+                    format: :float,
+                    units: "A"
+                  },
+                  %Metric{
+                    name: "Generator 1 Hertz",
+                    key: "GENERATOR_0_HERTZ",
+                    format: :float,
+                    units: "Hz"
+                  },
+                  %Metric{
+                    name: "Generator 1 Breaker",
+                    key: "GENERATOR_0_BREAKER",
+                    format: :boolean,
+                    units: nil
+                  }
+                ]
+              },
+              %Folder{
+                name: "secondary.0.steam",
+                key: "secondary.0.steam",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "MSCV 1 Opening Actual",
+                    key: "MSCV_0_OPENING_ACTUAL",
+                    format: :float,
+                    units: "%"
+                  },
+                  %Metric{
+                    name: "Steam Generator 1 Status",
+                    key: "STEAM_GEN_0_STATUS",
+                    format: :integer,
+                    units: nil
+                  },
+                  %Metric{
+                    name: "Steam Generator 1 Outlet",
+                    key: "STEAM_GEN_0_OUTLET",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 1 Evaporated",
+                    key: "STEAM_GEN_0_EVAPORATED",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 1 Boiling Point",
+                    key: "STEAM_GEN_0_BOILING_POINT",
+                    format: :float,
+                    units: "℃"
+                  },
+                  %Metric{
+                    name: "Steam Generator 1 Inlet",
+                    key: "STEAM_GEN_0_INLET",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 1 Return Flow Plus Condensed",
+                    key: "STEAM_GEN_0_RETURN_FLOW_PLUS_CONDENSED",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 1 Vent Switch",
+                    key: "STEAM_GEN_0_VENT_SWITCH",
+                    format: :boolean,
+                    units: nil
+                  }
+                ]
+              },
+              %Folder{
+                name: "secondary.0.turbine",
+                key: "secondary.0.turbine",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "Steam Turbine 1 RPM",
+                    key: "STEAM_TURBINE_0_RPM",
+                    format: :float,
+                    units: "RPM"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 1 Temperature",
+                    key: "STEAM_TURBINE_0_TEMPERATURE",
+                    format: :float,
+                    units: "℃"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 1 Pressure",
+                    key: "STEAM_TURBINE_0_PRESSURE",
+                    format: :float,
+                    units: "bar"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 1 Torque",
+                    key: "STEAM_TURBINE_0_TORQUE",
+                    format: :float,
+                    units: "%"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 1 Installed",
+                    key: "STEAM_TURBINE_0_INSTALLED",
+                    format: :boolean,
+                    units: nil
+                  },
+                  %Metric{
+                    name: "Steam Turbine 1 Bypass Actual",
+                    key: "STEAM_TURBINE_0_BYPASS_ACTUAL",
+                    format: :float,
+                    units: "%"
+                  }
+                ]
+              }
+            ],
+            metrics: [
+              %Metric{
+                name: "Coolant Secondary 1 Volume",
+                key: "COOLANT_SEC_0_VOLUME",
+                format: :float,
+                units: "hL"
+              },
+              %Metric{
+                name: "Coolant Secondary 1 Liquid Volume",
+                key: "COOLANT_SEC_0_LIQUID_VOLUME",
+                format: :float,
+                units: "hL"
+              },
+              %Metric{
+                name: "Coolant Secondary 1 Pressure",
+                key: "COOLANT_SEC_0_PRESSURE",
+                format: :float,
+                units: "bar"
+              },
+              %Metric{
+                name: "Coolant Secondary 1 Temperature",
+                key: "COOLANT_SEC_0_TEMPERATURE",
+                format: :float,
+                units: "℃"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 1 Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_0_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 1 Dry Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_0_DRY_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 1 Overload Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_0_OVERLOAD_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 1 Ordered Speed",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_0_ORDERED_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 1 Speed",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_0_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 1 Capacity",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_0_CAPACITY",
+                format: :float,
+                units: "L/m"
+              }
+            ]
+          },
+          %Folder{
+            name: "secondary.1",
+            key: "secondary.1",
+            subfolders: [
+              %Folder{
+                name: "secondary.1.generator",
+                key: "secondary.1.generator",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "Generator 2 Power",
+                    key: "GENERATOR_1_KW",
+                    format: :float,
+                    units: "kW"
+                  },
+                  %Metric{
+                    name: "Generator 2 Voltage",
+                    key: "GENERATOR_1_V",
+                    format: :float,
+                    units: "V"
+                  },
+                  %Metric{
+                    name: "Generator 2 Amperage",
+                    key: "GENERATOR_1_A",
+                    format: :float,
+                    units: "A"
+                  },
+                  %Metric{
+                    name: "Generator 2 Hertz",
+                    key: "GENERATOR_1_HERTZ",
+                    format: :float,
+                    units: "Hz"
+                  },
+                  %Metric{
+                    name: "Generator 2 Breaker",
+                    key: "GENERATOR_1_BREAKER",
+                    format: :boolean,
+                    units: nil
+                  }
+                ]
+              },
+              %Folder{
+                name: "secondary.1.steam",
+                key: "secondary.1.steam",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "MSCV 2 Opening Actual",
+                    key: "MSCV_1_OPENING_ACTUAL",
+                    format: :float,
+                    units: "%"
+                  },
+                  %Metric{
+                    name: "Steam Generator 2 Status",
+                    key: "STEAM_GEN_1_STATUS",
+                    format: :integer,
+                    units: nil
+                  },
+                  %Metric{
+                    name: "Steam Generator 2 Outlet",
+                    key: "STEAM_GEN_1_OUTLET",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 2 Evaporated",
+                    key: "STEAM_GEN_1_EVAPORATED",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 2 Boiling Point",
+                    key: "STEAM_GEN_1_BOILING_POINT",
+                    format: :float,
+                    units: "℃"
+                  },
+                  %Metric{
+                    name: "Steam Generator 2 Inlet",
+                    key: "STEAM_GEN_1_INLET",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 2 Return Flow Plus Condensed",
+                    key: "STEAM_GEN_1_RETURN_FLOW_PLUS_CONDENSED",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 2 Vent Switch",
+                    key: "STEAM_GEN_1_VENT_SWITCH",
+                    format: :boolean,
+                    units: nil
+                  }
+                ]
+              },
+              %Folder{
+                name: "secondary.1.turbine",
+                key: "secondary.1.turbine",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "Steam Turbine 2 RPM",
+                    key: "STEAM_TURBINE_1_RPM",
+                    format: :float,
+                    units: "RPM"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 2 Temperature",
+                    key: "STEAM_TURBINE_1_TEMPERATURE",
+                    format: :float,
+                    units: "℃"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 2 Pressure",
+                    key: "STEAM_TURBINE_1_PRESSURE",
+                    format: :float,
+                    units: "bar"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 2 Torque",
+                    key: "STEAM_TURBINE_1_TORQUE",
+                    format: :float,
+                    units: "%"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 2 Installed",
+                    key: "STEAM_TURBINE_1_INSTALLED",
+                    format: :boolean,
+                    units: nil
+                  },
+                  %Metric{
+                    name: "Steam Turbine 2 Bypass Actual",
+                    key: "STEAM_TURBINE_1_BYPASS_ACTUAL",
+                    format: :float,
+                    units: "%"
+                  }
+                ]
+              }
+            ],
+            metrics: [
+              %Metric{
+                name: "Coolant Secondary 2 Volume",
+                key: "COOLANT_SEC_1_VOLUME",
+                format: :float,
+                units: "hL"
+              },
+              %Metric{
+                name: "Coolant Secondary 2 Liquid Volume",
+                key: "COOLANT_SEC_1_LIQUID_VOLUME",
+                format: :float,
+                units: "hL"
+              },
+              %Metric{
+                name: "Coolant Secondary 2 Pressure",
+                key: "COOLANT_SEC_1_PRESSURE",
+                format: :float,
+                units: "bar"
+              },
+              %Metric{
+                name: "Coolant Secondary 2 Temperature",
+                key: "COOLANT_SEC_1_TEMPERATURE",
+                format: :float,
+                units: "℃"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 2 Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_1_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 2 Dry Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_1_DRY_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 2 Overload Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_1_OVERLOAD_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 2 Ordered Speed",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_1_ORDERED_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 2 Speed",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_1_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 2 Capacity",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_1_CAPACITY",
+                format: :float,
+                units: "L/m"
+              }
+            ]
+          },
+          %Folder{
+            name: "secondary.2",
+            key: "secondary.2",
+            subfolders: [
+              %Folder{
+                name: "secondary.2.generator",
+                key: "secondary.2.generator",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "Generator 3 Power",
+                    key: "GENERATOR_2_KW",
+                    format: :float,
+                    units: "kW"
+                  },
+                  %Metric{
+                    name: "Generator 3 Voltage",
+                    key: "GENERATOR_2_V",
+                    format: :float,
+                    units: "V"
+                  },
+                  %Metric{
+                    name: "Generator 3 Amperage",
+                    key: "GENERATOR_2_A",
+                    format: :float,
+                    units: "A"
+                  },
+                  %Metric{
+                    name: "Generator 3 Hertz",
+                    key: "GENERATOR_2_HERTZ",
+                    format: :float,
+                    units: "Hz"
+                  },
+                  %Metric{
+                    name: "Generator 3 Breaker",
+                    key: "GENERATOR_2_BREAKER",
+                    format: :boolean,
+                    units: nil
+                  }
+                ]
+              },
+              %Folder{
+                name: "secondary.2.steam",
+                key: "secondary.2.steam",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "MSCV 3 Opening Actual",
+                    key: "MSCV_2_OPENING_ACTUAL",
+                    format: :float,
+                    units: "%"
+                  },
+                  %Metric{
+                    name: "Steam Generator 3 Status",
+                    key: "STEAM_GEN_2_STATUS",
+                    format: :integer,
+                    units: nil
+                  },
+                  %Metric{
+                    name: "Steam Generator 3 Outlet",
+                    key: "STEAM_GEN_2_OUTLET",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 3 Evaporated",
+                    key: "STEAM_GEN_2_EVAPORATED",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 3 Boiling Point",
+                    key: "STEAM_GEN_2_BOILING_POINT",
+                    format: :float,
+                    units: "℃"
+                  },
+                  %Metric{
+                    name: "Steam Generator 3 Inlet",
+                    key: "STEAM_GEN_2_INLET",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 3 Return Flow Plus Condensed",
+                    key: "STEAM_GEN_2_RETURN_FLOW_PLUS_CONDENSED",
+                    format: :float,
+                    units: "kg/min"
+                  },
+                  %Metric{
+                    name: "Steam Generator 3 Vent Switch",
+                    key: "STEAM_GEN_2_VENT_SWITCH",
+                    format: :boolean,
+                    units: nil
+                  }
+                ]
+              },
+              %Folder{
+                name: "secondary.2.turbine",
+                key: "secondary.2.turbine",
+                subfolders: [],
+                metrics: [
+                  %Metric{
+                    name: "Steam Turbine 3 RPM",
+                    key: "STEAM_TURBINE_2_RPM",
+                    format: :float,
+                    units: "RPM"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 3 Temperature",
+                    key: "STEAM_TURBINE_2_TEMPERATURE",
+                    format: :float,
+                    units: "℃"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 3 Pressure",
+                    key: "STEAM_TURBINE_2_PRESSURE",
+                    format: :float,
+                    units: "bar"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 3 Torque",
+                    key: "STEAM_TURBINE_2_TORQUE",
+                    format: :float,
+                    units: "%"
+                  },
+                  %Metric{
+                    name: "Steam Turbine 3 Installed",
+                    key: "STEAM_TURBINE_2_INSTALLED",
+                    format: :boolean,
+                    units: nil
+                  },
+                  %Metric{
+                    name: "Steam Turbine 3 Bypass Actual",
+                    key: "STEAM_TURBINE_2_BYPASS_ACTUAL",
+                    format: :float,
+                    units: "%"
+                  }
+                ]
+              }
+            ],
+            metrics: [
+              %Metric{
+                name: "Coolant Secondary 3 Volume",
+                key: "COOLANT_SEC_2_VOLUME",
+                format: :float,
+                units: "hL"
+              },
+              %Metric{
+                name: "Coolant Secondary 3 Liquid Volume",
+                key: "COOLANT_SEC_2_LIQUID_VOLUME",
+                format: :float,
+                units: "hL"
+              },
+              %Metric{
+                name: "Coolant Secondary 3 Pressure",
+                key: "COOLANT_SEC_2_PRESSURE",
+                format: :float,
+                units: "bar"
+              },
+              %Metric{
+                name: "Coolant Secondary 3 Temperature",
+                key: "COOLANT_SEC_2_TEMPERATURE",
+                format: :float,
+                units: "℃"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 3 Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_2_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 3 Dry Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_2_DRY_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 3 Overload Status",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_2_OVERLOAD_STATUS",
+                format: :integer,
+                units: nil
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 3 Ordered Speed",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_2_ORDERED_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 3 Speed",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_2_SPEED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                name: "Coolant Secondary Circulation Pump 3 Capacity",
+                key: "COOLANT_SEC_CIRCULATION_PUMP_2_CAPACITY",
+                format: :float,
+                units: "L/m"
+              }
+            ]
+          }
+        ],
+        metrics: []
+      },
+      %Folder{
+        name: "valve",
+        key: "valve",
+        subfolders: [],
+        metrics: [
+          %Metric{
+            name: "Valve M01 Open",
+            key: "VALVE_M01_OPEN",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Valve M02 Open",
+            key: "VALVE_M02_OPEN",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            name: "Valve M03 Open",
+            key: "VALVE_M03_OPEN",
+            format: :float,
+            units: "%"
+          }
+        ]
+      }
+    ],
+    metrics: []
+  }
 
-  def metrics, do: @metrics
+  def root, do: @root
 end
