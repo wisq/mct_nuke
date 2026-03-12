@@ -34,21 +34,28 @@ defmodule MctNuke.Stats do
     |> shrink_to(@max_size)
   end
 
-  def history(%Stats{} = stats, key, range) do
+  def history(%Stats{} = stats, key, min, max) do
     stats.data
     |> :queue.to_list()
-    |> limit_history(range)
+    |> limit_history(min, max)
     |> Enum.map(fn {timestamp, values} ->
       v = Map.fetch!(values, key)
       %{id: key, timestamp: timestamp, value: v}
     end)
   end
 
-  defp limit_history(data, nil), do: data
+  defp limit_history(data, nil, nil), do: data
 
-  defp limit_history(data, _.._//_ = range) do
-    data
-    |> Enum.filter(fn {ts, _} -> ts in range end)
+  defp limit_history(data, min, nil) when is_number(min) do
+    data |> Enum.filter(fn {ts, _} -> ts >= min end)
+  end
+
+  defp limit_history(data, nil, max) when is_number(max) do
+    data |> Enum.filter(fn {ts, _} -> ts <= max end)
+  end
+
+  defp limit_history(data, min, max) when is_number(min) and is_number(max) do
+    data |> Enum.filter(fn {ts, _} -> ts >= min && ts <= max end)
   end
 
   def telemetry(%Stats{size: size} = stats) when size > 0 do
