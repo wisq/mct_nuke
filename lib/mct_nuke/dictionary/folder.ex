@@ -34,18 +34,18 @@ defmodule MctNuke.Dictionary.Folder do
     {first_index, folder.name}
   end
 
-  def generate(key, metrics_by_folder) do
+  def generate_tree(key, metrics_by_folder) do
     {metrics, sub_metrics} = Map.pop(metrics_by_folder, key, [])
 
     subfolders =
       sub_metrics
       |> Enum.group_by(fn {subkey, _} -> next_folder_key(key, subkey) end)
       |> Enum.map(fn {next_key, sub_metrics_by_key} ->
-        generate(next_key, Map.new(sub_metrics_by_key))
+        generate_tree(next_key, Map.new(sub_metrics_by_key))
       end)
 
     %Folder{
-      name: key,
+      name: folder_name(key),
       key: key,
       metrics: metrics |> Enum.sort_by(&Metric.sort_key/1),
       subfolders: subfolders |> Enum.sort_by(&sort_key/1)
@@ -67,5 +67,16 @@ defmodule MctNuke.Dictionary.Folder do
       |> Enum.at(0)
 
     "#{key}.#{rest}"
+  end
+
+  defp folder_name(:root), do: "Nucleares"
+
+  defp folder_name(key) do
+    key
+    |> String.split(".")
+    |> Enum.at(-1)
+    |> String.split("_")
+    |> Enum.map(&String.capitalize/1)
+    |> Enum.join(" ")
   end
 end

@@ -1,15 +1,15 @@
-# Auto-generated on 2026-03-12 06:51:19.006295Z from Nucleares version V 2.2.25.213.
+# Auto-generated on 2026-03-12 07:04:08.271695Z from Nucleares version V 2.2.25.213.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
   alias MctNuke.Dictionary.{Metric, Folder}
 
   @root %Folder{
-    name: :root,
+    name: "Nucleares",
     key: :root,
     subfolders: [
       %Folder{
-        name: "misc",
+        name: "Misc",
         key: "misc",
         subfolders: [],
         metrics: [
@@ -79,12 +79,12 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "core",
+        name: "Core",
         key: "core",
         subfolders: [
           %Folder{
-            name: "core.1",
-            key: "core.1",
+            name: "Bay 1",
+            key: "core.bay_1",
             subfolders: [],
             metrics: [
               %Metric{
@@ -139,8 +139,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.2",
-            key: "core.2",
+            name: "Bay 2",
+            key: "core.bay_2",
             subfolders: [],
             metrics: [
               %Metric{
@@ -195,8 +195,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.3",
-            key: "core.3",
+            name: "Bay 3",
+            key: "core.bay_3",
             subfolders: [],
             metrics: [
               %Metric{
@@ -251,8 +251,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.4",
-            key: "core.4",
+            name: "Bay 4",
+            key: "core.bay_4",
             subfolders: [],
             metrics: [
               %Metric{
@@ -307,8 +307,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.5",
-            key: "core.5",
+            name: "Bay 5",
+            key: "core.bay_5",
             subfolders: [],
             metrics: [
               %Metric{
@@ -363,8 +363,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.6",
-            key: "core.6",
+            name: "Bay 6",
+            key: "core.bay_6",
             subfolders: [],
             metrics: [
               %Metric{
@@ -419,8 +419,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.7",
-            key: "core.7",
+            name: "Bay 7",
+            key: "core.bay_7",
             subfolders: [],
             metrics: [
               %Metric{
@@ -475,8 +475,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.8",
-            key: "core.8",
+            name: "Bay 8",
+            key: "core.bay_8",
             subfolders: [],
             metrics: [
               %Metric{
@@ -531,8 +531,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.9",
-            key: "core.9",
+            name: "Bay 9",
+            key: "core.bay_9",
             subfolders: [],
             metrics: [
               %Metric{
@@ -587,7 +587,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.coolant",
+            name: "Coolant",
             key: "core.coolant",
             subfolders: [],
             metrics: [
@@ -811,7 +811,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "core.rods",
+            name: "Rods",
             key: "core.rods",
             subfolders: [],
             metrics: [
@@ -1123,12 +1123,12 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "power",
+        name: "Power",
         key: "power",
         subfolders: [
           %Folder{
-            name: "power.resistors",
-            key: "power.resistors",
+            name: "Resistor Banks",
+            key: "power.resistor_banks",
             subfolders: [],
             metrics: [
               %Metric{
@@ -1229,12 +1229,12 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "emergency",
-        key: "emergency",
+        name: "Emergency Power",
+        key: "emergency_power",
         subfolders: [
           %Folder{
-            name: "emergency.gen1",
-            key: "emergency.gen1",
+            name: "Generator 1",
+            key: "emergency_power.generator_1",
             subfolders: [],
             metrics: [
               %Metric{
@@ -1275,8 +1275,8 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "emergency.gen2",
-            key: "emergency.gen2",
+            name: "Generator 2",
+            key: "emergency_power.generator_2",
             subfolders: [],
             metrics: [
               %Metric{
@@ -1342,7 +1342,7 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "chemicals",
+        name: "Chemicals",
         key: "chemicals",
         subfolders: [],
         metrics: [
@@ -1461,16 +1461,16 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "secondary",
+        name: "Secondary",
         key: "secondary",
         subfolders: [
           %Folder{
-            name: "secondary.0",
-            key: "secondary.0",
+            name: "Loop 1",
+            key: "secondary.loop_1",
             subfolders: [
               %Folder{
-                name: "secondary.0.generator",
-                key: "secondary.0.generator",
+                name: "Generator",
+                key: "secondary.loop_1.generator",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -1511,8 +1511,8 @@ defmodule MctNuke.Dictionary.Data do
                 ]
               },
               %Folder{
-                name: "secondary.0.turbine",
-                key: "secondary.0.turbine",
+                name: "Turbine",
+                key: "secondary.loop_1.turbine",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -1560,8 +1560,8 @@ defmodule MctNuke.Dictionary.Data do
                 ]
               },
               %Folder{
-                name: "secondary.0.steam",
-                key: "secondary.0.steam",
+                name: "Steam",
+                key: "secondary.loop_1.steam",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -1697,12 +1697,12 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "secondary.1",
-            key: "secondary.1",
+            name: "Loop 2",
+            key: "secondary.loop_2",
             subfolders: [
               %Folder{
-                name: "secondary.1.generator",
-                key: "secondary.1.generator",
+                name: "Generator",
+                key: "secondary.loop_2.generator",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -1743,8 +1743,8 @@ defmodule MctNuke.Dictionary.Data do
                 ]
               },
               %Folder{
-                name: "secondary.1.turbine",
-                key: "secondary.1.turbine",
+                name: "Turbine",
+                key: "secondary.loop_2.turbine",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -1792,8 +1792,8 @@ defmodule MctNuke.Dictionary.Data do
                 ]
               },
               %Folder{
-                name: "secondary.1.steam",
-                key: "secondary.1.steam",
+                name: "Steam",
+                key: "secondary.loop_2.steam",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -1929,12 +1929,12 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "secondary.2",
-            key: "secondary.2",
+            name: "Loop 3",
+            key: "secondary.loop_3",
             subfolders: [
               %Folder{
-                name: "secondary.2.generator",
-                key: "secondary.2.generator",
+                name: "Generator",
+                key: "secondary.loop_3.generator",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -1975,8 +1975,8 @@ defmodule MctNuke.Dictionary.Data do
                 ]
               },
               %Folder{
-                name: "secondary.2.turbine",
-                key: "secondary.2.turbine",
+                name: "Turbine",
+                key: "secondary.loop_3.turbine",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -2024,8 +2024,8 @@ defmodule MctNuke.Dictionary.Data do
                 ]
               },
               %Folder{
-                name: "secondary.2.steam",
-                key: "secondary.2.steam",
+                name: "Steam",
+                key: "secondary.loop_3.steam",
                 subfolders: [],
                 metrics: [
                   %Metric{
@@ -2164,11 +2164,11 @@ defmodule MctNuke.Dictionary.Data do
         metrics: []
       },
       %Folder{
-        name: "condenser",
+        name: "Condenser",
         key: "condenser",
         subfolders: [
           %Folder{
-            name: "condenser.vacuum",
+            name: "Vacuum",
             key: "condenser.vacuum",
             subfolders: [],
             metrics: [
@@ -2361,8 +2361,8 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "freight",
-        key: "freight",
+        name: "Freight Pumps",
+        key: "freight_pumps",
         subfolders: [],
         metrics: [
           %Metric{
@@ -2424,8 +2424,8 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "valve",
-        key: "valve",
+        name: "Valves",
+        key: "valves",
         subfolders: [],
         metrics: [
           %Metric{

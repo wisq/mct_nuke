@@ -250,7 +250,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
       metrics
       |> Enum.group_by(fn %Metric{key: key} -> guess_folder(key) end)
 
-    Folder.generate(:root, by_folder)
+    Folder.generate_tree(:root, by_folder)
   end
 
   defp guess_folder("ALARMS_ACTIVE"), do: "misc"
@@ -259,13 +259,11 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp guess_folder("GAME_" <> _), do: "misc"
   defp guess_folder("TIME" <> _), do: "misc"
 
-  defp guess_folder(<<"CORE_BAY_", n::binary-size(1), "_", _::binary>>), do: "core.#{n}"
-  defp guess_folder(<<"CORE_FUEL_", n::binary-size(1), "_", _::binary>>), do: "core.#{n}"
+  defp guess_folder(<<"CORE_BAY_", n::binary-size(1), "_", _::binary>>), do: "core.bay_#{n}"
+  defp guess_folder(<<"CORE_FUEL_", n::binary-size(1), "_", _::binary>>), do: "core.bay_#{n}"
 
-  defp guess_folder(<<"ROD_BANK_POS_", n::binary-size(1), "_", _::binary>>) do
-    n = String.to_integer(n) + 1
-    "core.#{n}"
-  end
+  defp guess_folder(<<"ROD_BANK_POS_", n::binary-size(1), "_", _::binary>>),
+    do: "core.bay_#{incr(n)}"
 
   defp guess_folder("CORE_" <> _), do: "core"
   defp guess_folder("COOLANT_CORE_" <> _), do: "core.coolant"
@@ -277,36 +275,38 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp guess_folder("CONDENSER_" <> _), do: "condenser"
 
   defp guess_folder("POWER_" <> _), do: "power"
-  defp guess_folder("RES_" <> _), do: "power.resistors"
-  defp guess_folder("RESISTOR_BANK_" <> _), do: "power.resistors"
-  defp guess_folder("RESISTOR_BANKS_" <> _), do: "power.resistors"
+  defp guess_folder("RES_" <> _), do: "power.resistor_banks"
+  defp guess_folder("RESISTOR_BANK_" <> _), do: "power.resistor_banks"
+  defp guess_folder("RESISTOR_BANKS_" <> _), do: "power.resistor_banks"
 
   defp guess_folder("CHEM_" <> _), do: "chemicals"
   defp guess_folder("CHEMICAL_" <> _), do: "chemicals"
 
   defp guess_folder(<<"COOLANT_SEC_", n::binary-size(1), "_", _::binary>>),
-    do: "secondary.#{n}"
+    do: "secondary.loop_#{incr(n)}"
 
   defp guess_folder(<<"COOLANT_SEC_CIRCULATION_PUMP_", n::binary-size(1), "_", _::binary>>),
-    do: "secondary.#{n}"
+    do: "secondary.loop_#{incr(n)}"
 
   defp guess_folder(<<"GENERATOR_", n::binary-size(1), "_", _::binary>>),
-    do: "secondary.#{n}.generator"
+    do: "secondary.loop_#{incr(n)}.generator"
 
   defp guess_folder(<<"MSCV_", n::binary-size(1), "_", _::binary>>),
-    do: "secondary.#{n}.steam"
+    do: "secondary.loop_#{incr(n)}.steam"
 
   defp guess_folder(<<"STEAM_GEN_", n::binary-size(1), "_", _::binary>>),
-    do: "secondary.#{n}.steam"
+    do: "secondary.loop_#{incr(n)}.steam"
 
   defp guess_folder(<<"STEAM_TURBINE_", n::binary-size(1), "_", _::binary>>),
-    do: "secondary.#{n}.turbine"
+    do: "secondary.loop_#{incr(n)}.turbine"
 
   defp guess_folder(<<"EMERGENCY_GENERATOR_", n::binary-size(1), "_", _::binary>>),
-    do: "emergency.gen#{n}"
+    do: "emergency_power.generator_#{n}"
 
-  defp guess_folder("EMERGENCY_" <> _), do: "emergency"
+  defp guess_folder("EMERGENCY_" <> _), do: "emergency_power"
 
-  defp guess_folder("FREIGHT_" <> _), do: "freight"
-  defp guess_folder("VALVE_" <> _), do: "valve"
+  defp guess_folder("FREIGHT_" <> _), do: "freight_pumps"
+  defp guess_folder("VALVE_" <> _), do: "valves"
+
+  defp incr(num_str), do: String.to_integer(num_str) + 1
 end
