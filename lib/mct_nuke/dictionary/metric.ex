@@ -5,7 +5,9 @@ defmodule MctNuke.Dictionary.Metric do
     name: nil,
     key: nil,
     format: nil,
-    units: nil
+    units: nil,
+    min: nil,
+    max: nil
   )
 
   alias __MODULE__
@@ -22,7 +24,9 @@ defmodule MctNuke.Dictionary.Metric do
           hints: %{range: 1}
         }
         |> apply_format(metric.format)
-        |> apply_units(metric.units),
+        |> maybe_apply(:units, metric.units)
+        |> maybe_apply(:min, metric.min)
+        |> maybe_apply(:max, metric.max),
         %{
           key: "nucleares-time",
           source: "timestamp",
@@ -50,6 +54,6 @@ defmodule MctNuke.Dictionary.Metric do
     |> Map.put(:format, other)
   end
 
-  defp apply_units(map, nil), do: map
-  defp apply_units(map, units) when is_binary(units), do: map |> Map.put(:units, units)
+  defp maybe_apply(map, _key, nil), do: map
+  defp maybe_apply(map, key, value), do: map |> Map.put(key, value)
 end

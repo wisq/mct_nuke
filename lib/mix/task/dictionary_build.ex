@@ -57,12 +57,16 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
         f -> {f, nil}
       end
 
+    {min, max} = guess_min_max(format, units)
+
     %Metric{
       api_index: index,
       name: name,
       key: key,
       format: format,
-      units: units
+      units: units,
+      min: min,
+      max: max
     }
   end
 
@@ -154,7 +158,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
       key =~ ~r{_TANK_VOLUME$} -> {:float, "L"}
       # Flow rates:
       key =~ ~r{^CHEM_BORON_DOSAGE_(ORDERED|ACTUAL)$} -> {:float, "g/min"}
-      key =~ ~r{^COOLANT_(CORE|SEC)_CIRCULATION_PUMP_[0-9]_CAPACITY$} -> {:float, "L/m"}
+      key =~ ~r{^COOLANT_(CORE|SEC)_CIRCULATION_PUMP_[0-9]_CAPACITY$} -> {:float, "L/min"}
       key =~ ~r{^STEAM_GEN_[0-9]_BOILING_POINT$} -> {:float, @degrees_celsius}
       #   All of these seem to match the mass flow rate, which is in kg/min:
       key =~ ~r{^CONDENSER_(CONDENSATE|EXTRACTION)_FLOW_RATE$} -> {:float, "kg/min"}
@@ -201,6 +205,35 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp zero_digits(key) do
     String.replace(key, ~r{[1-9]}, "0")
   end
+
+  defp guess_min_max(_, nil), do: {nil, nil}
+  defp guess_min_max(:float, "%"), do: {0, 100}
+  # No negative pressures:
+  defp guess_min_max(:float, "bar"), do: {0, nil}
+  # No negative volumes:
+  defp guess_min_max(:float, "L"), do: {0, nil}
+  defp guess_min_max(:integer, "L"), do: {0, nil}
+  defp guess_min_max(:float, "kL"), do: {0, nil}
+  defp guess_min_max(:float, "hL"), do: {0, nil}
+  # No negative flows:
+  defp guess_min_max(:float, "L/min"), do: {0, nil}
+  defp guess_min_max(:float, "g/min"), do: {0, nil}
+  defp guess_min_max(:float, "kg/min"), do: {0, nil}
+  # No negative concentrations:
+  defp guess_min_max(:float, "ppm"), do: {0, nil}
+  # No negative counters / inventories:
+  defp guess_min_max(:integer, "x"), do: {0, nil}
+  defp guess_min_max(:integer, "pumps"), do: {0, nil}
+  defp guess_min_max(:integer, "rods"), do: {0, nil}
+  # No negative electricity:
+  defp guess_min_max(:float, "kW"), do: {0, nil}
+  defp guess_min_max(:float, "MW"), do: {0, nil}
+  defp guess_min_max(:float, "V"), do: {0, nil}
+  defp guess_min_max(:float, "A"), do: {0, nil}
+  defp guess_min_max(:float, "Hz"), do: {0, nil}
+  defp guess_min_max(:float, "RPM"), do: {0, nil}
+  # We don't typically deal with frozen stuff:
+  defp guess_min_max(:float, @degrees_celsius), do: {0, nil}
 
   defp renumber_groups(metrics) do
     metrics
