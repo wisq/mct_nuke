@@ -1,4 +1,4 @@
-# Auto-generated on 2026-03-12 02:06:06.307923Z from Nucleares version V 2.2.25.213.
+# Auto-generated on 2026-03-12 02:12:53.550125Z from Nucleares version V 2.2.25.213.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
@@ -1123,203 +1123,6 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "condenser",
-        key: "condenser",
-        subfolders: [
-          %Folder{
-            name: "condenser.vacuum",
-            key: "condenser.vacuum",
-            subfolders: [],
-            metrics: [
-              %Metric{
-                api_index: 78,
-                name: "Vacuum Retention Tank Volume",
-                key: "VACUUM_RETENTION_TANK_VOLUME",
-                format: :float,
-                units: "L"
-              },
-              %Metric{
-                api_index: 79,
-                name: "Steam Ejector Motive",
-                key: "STEAM_EJECTOR_MOTIVE",
-                format: :float,
-                units: "%"
-              },
-              %Metric{
-                api_index: 80,
-                name: "Vacuum Retention Tank Pressure",
-                key: "VACUUM_RETENTION_TANK_PRESSURE",
-                format: :float,
-                units: "bar"
-              },
-              %Metric{
-                api_index: 81,
-                name: "Steam Ejector Startup Motive Valve Ordered",
-                key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ORDERED",
-                format: :float,
-                units: "%"
-              },
-              %Metric{
-                api_index: 82,
-                name: "Steam Ejector Startup Motive Valve Actual",
-                key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ACTUAL",
-                format: :float,
-                units: "%"
-              },
-              %Metric{
-                api_index: 83,
-                name: "Steam Ejector Operational Motive Valve Ordered",
-                key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ORDERED",
-                format: :float,
-                units: "%"
-              },
-              %Metric{
-                api_index: 84,
-                name: "Steam Ejector Operational Motive Valve Actual",
-                key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ACTUAL",
-                format: :float,
-                units: "%"
-              },
-              %Metric{
-                api_index: 85,
-                name: "Steam Ejector Condenser Return Valve Ordered",
-                key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ORDERED",
-                format: :float,
-                units: "%"
-              },
-              %Metric{
-                api_index: 86,
-                name: "Steam Ejector Condenser Return Valve Actual",
-                key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ACTUAL",
-                format: :float,
-                units: "%"
-              }
-            ]
-          }
-        ],
-        metrics: [
-          %Metric{
-            api_index: 73,
-            name: "Condenser Vacuum",
-            key: "CONDENSER_VACUUM",
-            format: :float,
-            units: "%"
-          },
-          %Metric{
-            api_index: 74,
-            name: "Condenser Vacuum Relief Valve Opening",
-            key: "CONDENSER_VACUUM_RELIEF_VALVE_OPENING",
-            format: :float,
-            units: "%"
-          },
-          %Metric{
-            api_index: 75,
-            name: "Condenser Vacuum Pump Active",
-            key: "CONDENSER_VACUUM_PUMP_ACTIVE",
-            format: :boolean,
-            units: nil
-          },
-          %Metric{
-            api_index: 76,
-            name: "Condenser Vacuum Pump Mode",
-            key: "CONDENSER_VACUUM_PUMP_MODE",
-            format: :string,
-            units: nil
-          },
-          %Metric{
-            api_index: 77,
-            name: "Condenser Vacuum Pump Power",
-            key: "CONDENSER_VACUUM_PUMP_POWER",
-            format: :float,
-            units: "%"
-          },
-          %Metric{
-            api_index: 235,
-            name: "Condenser Circulation Pump Overload Status",
-            key: "CONDENSER_CIRCULATION_PUMP_OVERLOAD_STATUS",
-            format: :boolean,
-            units: nil
-          },
-          %Metric{
-            api_index: 236,
-            name: "Condenser Circulation Pump Speed",
-            key: "CONDENSER_CIRCULATION_PUMP_SPEED",
-            format: :float,
-            units: "%"
-          },
-          %Metric{
-            api_index: 237,
-            name: "Condenser Circulation Pump Ordered Speed",
-            key: "CONDENSER_CIRCULATION_PUMP_ORDERED_SPEED",
-            format: :float,
-            units: "%"
-          },
-          %Metric{
-            api_index: 238,
-            name: "Condenser Temperature",
-            key: "CONDENSER_TEMPERATURE",
-            format: :float,
-            units: "℃"
-          },
-          %Metric{
-            api_index: 239,
-            name: "Condenser Volume",
-            key: "CONDENSER_VOLUME",
-            format: :float,
-            units: "hL"
-          },
-          %Metric{
-            api_index: 240,
-            name: "Condenser Vapor Volume",
-            key: "CONDENSER_VAPOR_VOLUME",
-            format: :float,
-            units: "hL"
-          },
-          %Metric{
-            api_index: 241,
-            name: "Condenser Condensate Flow Rate",
-            key: "CONDENSER_CONDENSATE_FLOW_RATE",
-            format: :float,
-            units: "kg/min"
-          },
-          %Metric{
-            api_index: 242,
-            name: "Condenser Extraction Flow Rate",
-            key: "CONDENSER_EXTRACTION_FLOW_RATE",
-            format: :float,
-            units: "kg/min"
-          },
-          %Metric{
-            api_index: 243,
-            name: "Condenser Coolant Evaporated",
-            key: "CONDENSER_COOLANT_EVAPORATED",
-            format: :float,
-            units: "kg/min"
-          },
-          %Metric{
-            api_index: 244,
-            name: "Condenser Pressure",
-            key: "CONDENSER_PRESSURE",
-            format: :float,
-            units: "bar"
-          },
-          %Metric{
-            api_index: 245,
-            name: "Condenser Circulation Pump Active",
-            key: "CONDENSER_CIRCULATION_PUMP_ACTIVE",
-            format: :boolean,
-            units: nil
-          },
-          %Metric{
-            api_index: 283,
-            name: "Condenser Circulation Pump Switch",
-            key: "CONDENSER_CIRCULATION_PUMP_SWITCH",
-            format: :boolean,
-            units: nil
-          }
-        ]
-      },
-      %Folder{
         name: "power",
         key: "power",
         subfolders: [
@@ -2359,6 +2162,203 @@ defmodule MctNuke.Dictionary.Data do
           }
         ],
         metrics: []
+      },
+      %Folder{
+        name: "condenser",
+        key: "condenser",
+        subfolders: [
+          %Folder{
+            name: "condenser.vacuum",
+            key: "condenser.vacuum",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: 73,
+                name: "Condenser Vacuum",
+                key: "CONDENSER_VACUUM",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 74,
+                name: "Condenser Vacuum Relief Valve Opening",
+                key: "CONDENSER_VACUUM_RELIEF_VALVE_OPENING",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 75,
+                name: "Condenser Vacuum Pump Active",
+                key: "CONDENSER_VACUUM_PUMP_ACTIVE",
+                format: :boolean,
+                units: nil
+              },
+              %Metric{
+                api_index: 76,
+                name: "Condenser Vacuum Pump Mode",
+                key: "CONDENSER_VACUUM_PUMP_MODE",
+                format: :string,
+                units: nil
+              },
+              %Metric{
+                api_index: 77,
+                name: "Condenser Vacuum Pump Power",
+                key: "CONDENSER_VACUUM_PUMP_POWER",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 78,
+                name: "Vacuum Retention Tank Volume",
+                key: "VACUUM_RETENTION_TANK_VOLUME",
+                format: :float,
+                units: "L"
+              },
+              %Metric{
+                api_index: 79,
+                name: "Steam Ejector Motive",
+                key: "STEAM_EJECTOR_MOTIVE",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 80,
+                name: "Vacuum Retention Tank Pressure",
+                key: "VACUUM_RETENTION_TANK_PRESSURE",
+                format: :float,
+                units: "bar"
+              },
+              %Metric{
+                api_index: 81,
+                name: "Steam Ejector Startup Motive Valve Ordered",
+                key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 82,
+                name: "Steam Ejector Startup Motive Valve Actual",
+                key: "STEAM_EJECTOR_STARTUP_MOTIVE_VALVE_ACTUAL",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 83,
+                name: "Steam Ejector Operational Motive Valve Ordered",
+                key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 84,
+                name: "Steam Ejector Operational Motive Valve Actual",
+                key: "STEAM_EJECTOR_OPERATIONAL_MOTIVE_VALVE_ACTUAL",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 85,
+                name: "Steam Ejector Condenser Return Valve Ordered",
+                key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ORDERED",
+                format: :float,
+                units: "%"
+              },
+              %Metric{
+                api_index: 86,
+                name: "Steam Ejector Condenser Return Valve Actual",
+                key: "STEAM_EJECTOR_CONDENSER_RETURN_VALVE_ACTUAL",
+                format: :float,
+                units: "%"
+              }
+            ]
+          }
+        ],
+        metrics: [
+          %Metric{
+            api_index: 235,
+            name: "Condenser Circulation Pump Overload Status",
+            key: "CONDENSER_CIRCULATION_PUMP_OVERLOAD_STATUS",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            api_index: 236,
+            name: "Condenser Circulation Pump Speed",
+            key: "CONDENSER_CIRCULATION_PUMP_SPEED",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            api_index: 237,
+            name: "Condenser Circulation Pump Ordered Speed",
+            key: "CONDENSER_CIRCULATION_PUMP_ORDERED_SPEED",
+            format: :float,
+            units: "%"
+          },
+          %Metric{
+            api_index: 238,
+            name: "Condenser Temperature",
+            key: "CONDENSER_TEMPERATURE",
+            format: :float,
+            units: "℃"
+          },
+          %Metric{
+            api_index: 239,
+            name: "Condenser Volume",
+            key: "CONDENSER_VOLUME",
+            format: :float,
+            units: "hL"
+          },
+          %Metric{
+            api_index: 240,
+            name: "Condenser Vapor Volume",
+            key: "CONDENSER_VAPOR_VOLUME",
+            format: :float,
+            units: "hL"
+          },
+          %Metric{
+            api_index: 241,
+            name: "Condenser Condensate Flow Rate",
+            key: "CONDENSER_CONDENSATE_FLOW_RATE",
+            format: :float,
+            units: "kg/min"
+          },
+          %Metric{
+            api_index: 242,
+            name: "Condenser Extraction Flow Rate",
+            key: "CONDENSER_EXTRACTION_FLOW_RATE",
+            format: :float,
+            units: "kg/min"
+          },
+          %Metric{
+            api_index: 243,
+            name: "Condenser Coolant Evaporated",
+            key: "CONDENSER_COOLANT_EVAPORATED",
+            format: :float,
+            units: "kg/min"
+          },
+          %Metric{
+            api_index: 244,
+            name: "Condenser Pressure",
+            key: "CONDENSER_PRESSURE",
+            format: :float,
+            units: "bar"
+          },
+          %Metric{
+            api_index: 245,
+            name: "Condenser Circulation Pump Active",
+            key: "CONDENSER_CIRCULATION_PUMP_ACTIVE",
+            format: :boolean,
+            units: nil
+          },
+          %Metric{
+            api_index: 283,
+            name: "Condenser Circulation Pump Switch",
+            key: "CONDENSER_CIRCULATION_PUMP_SWITCH",
+            format: :boolean,
+            units: nil
+          }
+        ]
       },
       %Folder{
         name: "freight",

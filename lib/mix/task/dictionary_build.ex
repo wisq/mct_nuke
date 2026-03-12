@@ -255,16 +255,24 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp guess_folder("AMBIENT_TEMPERATURE"), do: "misc"
   defp guess_folder("FUN_IS_ENABLED"), do: "misc"
   defp guess_folder("GAME_" <> _), do: "misc"
-  defp guess_folder("TIME"), do: "misc"
-  defp guess_folder("TIME_" <> _), do: "misc"
+  defp guess_folder("TIME" <> _), do: "misc"
+
+  defp guess_folder(<<"CORE_BAY_", n::binary-size(1), "_", _::binary>>), do: "core.#{n}"
+  defp guess_folder(<<"CORE_FUEL_", n::binary-size(1), "_", _::binary>>), do: "core.#{n}"
+
+  defp guess_folder(<<"ROD_BANK_POS_", n::binary-size(1), "_", _::binary>>) do
+    n = String.to_integer(n) + 1
+    "core.#{n}"
+  end
 
   defp guess_folder("CORE_" <> _), do: "core"
   defp guess_folder("COOLANT_CORE_" <> _), do: "core.coolant"
   defp guess_folder("RODS_" <> _), do: "core.rods"
 
-  defp guess_folder("CONDENSER_" <> _), do: "condenser"
+  defp guess_folder("CONDENSER_VACUUM" <> _), do: "condenser.vacuum"
   defp guess_folder("VACUUM_" <> _), do: "condenser.vacuum"
   defp guess_folder("STEAM_EJECTOR_" <> _), do: "condenser.vacuum"
+  defp guess_folder("CONDENSER_" <> _), do: "condenser"
 
   defp guess_folder("POWER_" <> _), do: "power"
   defp guess_folder("RES_" <> _), do: "power.resistors"
@@ -273,8 +281,6 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
 
   defp guess_folder("CHEM_" <> _), do: "chemicals"
   defp guess_folder("CHEMICAL_" <> _), do: "chemicals"
-
-  defp guess_folder(<<"ROD_BANK_POS_", n::binary-size(1), "_", _::binary>>), do: "core.#{n}"
 
   defp guess_folder(<<"COOLANT_SEC_", n::binary-size(1), "_", _::binary>>),
     do: "secondary.#{n}"
@@ -294,7 +300,11 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp guess_folder(<<"STEAM_TURBINE_", n::binary-size(1), "_", _::binary>>),
     do: "secondary.#{n}.turbine"
 
+  defp guess_folder(<<"EMERGENCY_GENERATOR_", n::binary-size(1), "_", _::binary>>),
+    do: "emergency.gen#{n}"
+
   defp guess_folder("EMERGENCY_" <> _), do: "emergency"
+
   defp guess_folder("FREIGHT_" <> _), do: "freight"
   defp guess_folder("VALVE_" <> _), do: "valve"
 end
