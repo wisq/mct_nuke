@@ -63,17 +63,17 @@ defmodule MctNuke.Stats do
     }
   end
 
-  def purge_after(%Stats{} = stats, cutoff) do
+  def purge_from(%Stats{} = stats, cutoff) do
     purge_ts(stats, cutoff * @ts_factor)
   end
 
-  defp purge_ts(%Stats{latest_ts: ts} = stats, cutoff) when ts <= cutoff, do: {stats, 0}
+  defp purge_ts(%Stats{latest_ts: ts} = stats, cutoff) when ts < cutoff, do: {stats, 0}
   defp purge_ts(%Stats{latest_ts: nil} = stats, _cutoff), do: {stats, 0}
 
-  defp purge_ts(%Stats{latest_ts: ts} = old_stats, cutoff) when ts > cutoff do
+  defp purge_ts(%Stats{latest_ts: ts} = old_stats, cutoff) when ts >= cutoff do
     old_stats.data
     |> :queue.to_list()
-    |> Enum.take_while(fn {ts, _} -> ts <= cutoff end)
+    |> Enum.take_while(fn {ts, _} -> ts < cutoff end)
     |> then(fn
       [] ->
         Stats.new()

@@ -46,7 +46,7 @@ defmodule MctNuke.StatsTest do
     assert err.message == "Cannot repeat or go backwards in time: 7380000 => 7380000"
   end
 
-  test "Stats.purge_after/2 removes entries after timestamp" do
+  test "Stats.purge_from/2 removes entries from timestamp onwards" do
     stats =
       1001..1020
       |> Enum.reduce(Stats.new(), &Stats.add(&2, %{"TIME_STAMP" => &1}))
@@ -54,11 +54,11 @@ defmodule MctNuke.StatsTest do
     assert stats.size == 20
     assert stats.latest_ts == 61_200_000
 
-    assert {stats, 10} = Stats.purge_after(stats, 1010)
+    assert {stats, 10} = Stats.purge_from(stats, 1011)
     assert stats.size == 10
     assert stats.latest_ts == 60_600_000
 
-    assert {stats, 10} = Stats.purge_after(stats, 999)
+    assert {stats, 10} = Stats.purge_from(stats, 1001)
     assert stats == Stats.new()
   end
 
