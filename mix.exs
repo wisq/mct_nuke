@@ -25,7 +25,8 @@ defmodule MctNuke.MixProject do
       {:bandit, "~> 1.10"},
       {:cors_plug, "~> 3.0"},
       {:req, "~> 0.5.0"},
-      {:pubsub, "~> 1.0"}
+      {:pubsub, "~> 1.0"},
+      {:ex_git_test, "~> 0.1.2", only: [:dev, :test], runtime: false}
     ]
   end
 end
