@@ -73,14 +73,14 @@ defmodule MctNuke.Stats do
   defp purge_ts(%Stats{latest_ts: ts} = old_stats, cutoff) when ts > cutoff do
     old_stats.data
     |> :queue.to_list()
-    |> Enum.take_while(fn {ts, _} -> ts < cutoff end)
+    |> Enum.take_while(fn {ts, _} -> ts <= cutoff end)
     |> then(fn
       [] ->
         Stats.new()
 
       data ->
         %Stats{
-          data: data,
+          data: :queue.from_list(data),
           size: data |> Enum.count(),
           latest_ts: data |> Enum.at(-1) |> elem(0)
         }
@@ -88,6 +88,10 @@ defmodule MctNuke.Stats do
     |> then(fn new_stats ->
       {new_stats, old_stats.size - new_stats.size}
     end)
+  end
+
+  defp append(%Stats{latest_ts: lts}, timestamp, _values) when timestamp <= lts do
+    raise "Cannot repeat or go backwards in time: #{lts} => #{timestamp}"
   end
 
   defp append(%Stats{} = stats, timestamp, values) do

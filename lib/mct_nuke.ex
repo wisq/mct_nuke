@@ -2,15 +2,22 @@ defmodule MctNuke do
   use Application
 
   def start(_type, _args) do
-    children = [
-      PubSub,
-      MctNuke.Collector,
-      {Bandit, web_options()}
-    ]
+    children =
+      if start?() do
+        [
+          PubSub,
+          MctNuke.Collector,
+          {Bandit, web_options()}
+        ]
+      else
+        []
+      end
 
     opts = [strategy: :one_for_one, name: MctNuke.Supervisor]
     Supervisor.start_link(children, opts)
   end
+
+  defp start?, do: Application.get_env(:mct_nuke, :start, false)
 
   defp web_options do
     ip = Application.get_env(:mct_nuke, :bind_to_ip, "127.0.0.1")
