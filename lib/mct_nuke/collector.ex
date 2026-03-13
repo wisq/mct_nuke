@@ -44,9 +44,20 @@ defmodule MctNuke.Collector do
         Logger.warning(@log_prefix <> "Errors detected: #{inspect(errors)}")
       end
 
-      Logger.debug(@log_prefix <> "Collected stats for timestamp #{ts}.")
+      stats =
+        stats
+        |> Stats.purge_after(ts)
+        |> then(fn
+          {stats, 0} ->
+            stats
 
-      stats = Stats.add(stats, values)
+          {stats, n} when n > 0 ->
+            Logger.warning(@log_prefix <> "Purged #{n} stats after timestamp #{ts}.")
+            stats
+        end)
+        |> Stats.add(values)
+
+      Logger.debug(@log_prefix <> "Collected stats for timestamp #{ts}.")
       PubSub.publish(:realtime, {:telemetry, Stats.telemetry(stats)})
       {:noreply, stats}
     else

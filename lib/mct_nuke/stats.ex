@@ -22,14 +22,9 @@ defmodule MctNuke.Stats do
   def is_new?(%Stats{latest_ts: data_ts}, game_ts), do: data_ts != game_ts * @ts_factor
 
   def add(%Stats{} = stats, data) do
-    old_ts = stats.latest_ts
     new_ts = Map.fetch!(data, "TIME_STAMP") * @ts_factor
 
-    if new_ts < old_ts do
-      stats |> purge_after(new_ts)
-    else
-      stats
-    end
+    stats
     |> append(new_ts, data)
     |> shrink_to(@max_size)
   end
@@ -68,8 +63,15 @@ defmodule MctNuke.Stats do
     }
   end
 
-  defp purge_after(%Stats{} = stats, cutoff) do
-    stats.data
+  def purge_after(%Stats{} = stats, cutoff) do
+    purge_ts(stats, cutoff * @ts_factor)
+  end
+
+  defp purge_ts(%Stats{latest_ts: ts} = stats, cutoff) when ts <= cutoff, do: {stats, 0}
+  defp purge_ts(%Stats{latest_ts: nil} = stats, _cutoff), do: {stats, 0}
+
+  defp purge_ts(%Stats{latest_ts: ts} = old_stats, cutoff) when ts > cutoff do
+    old_stats.data
     |> :queue.to_list()
     |> Enum.take_while(fn {ts, _} -> ts < cutoff end)
     |> then(fn
@@ -82,6 +84,9 @@ defmodule MctNuke.Stats do
           size: data |> Enum.count(),
           latest_ts: data |> Enum.at(-1) |> elem(0)
         }
+    end)
+    |> then(fn new_stats ->
+      {new_stats, old_stats.size - new_stats.size}
     end)
   end
 
