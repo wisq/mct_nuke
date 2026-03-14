@@ -9,10 +9,15 @@ defmodule MctNuke.Dictionary.Folder do
 
   alias __MODULE__
   alias MctNuke.Dictionary.Metric
+  alias MctNuke.Dictionary.Conversion
 
   def to_json(%Folder{} = folder) do
     subfolders = folder.subfolders |> Enum.map(&to_json/1)
-    metrics = folder.metrics |> Enum.map(&Metric.to_json/1)
+
+    metrics =
+      folder.metrics
+      |> Enum.flat_map(&Conversion.with_conversions/1)
+      |> Enum.map(&Metric.to_json/1)
 
     %{
       type: :folder,

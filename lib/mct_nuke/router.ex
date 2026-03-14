@@ -4,6 +4,7 @@ defmodule MctNuke.Router do
   alias MctNuke.Collector
   alias MctNuke.Stats
   alias MctNuke.Dictionary
+  alias MctNuke.Dictionary.Conversion
 
   plug(CORSPlug)
   plug(Plug.Logger)
@@ -17,12 +18,14 @@ defmodule MctNuke.Router do
 
   get "/history/:key" do
     conn = fetch_query_params(conn)
+    {source_key, conv_fun} = Conversion.for_history(key)
 
     with {:ok, min} <- conn.query_params |> Map.get("start") |> parse_time(),
          {:ok, max} <- conn.query_params |> Map.get("end") |> parse_time() do
       data =
         Collector.get()
-        |> Stats.history(key, min, max)
+        |> Stats.history(source_key, min, max)
+        |> Enum.map(conv_fun)
 
       conn
       |> send_json(200, data)

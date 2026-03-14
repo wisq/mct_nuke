@@ -4,6 +4,7 @@ defmodule MctNuke.Collector do
 
   alias MctNuke.API
   alias MctNuke.Stats
+  alias MctNuke.Dictionary.Conversion
 
   @log_prefix "[#{inspect(__MODULE__)}] "
 
@@ -59,7 +60,8 @@ defmodule MctNuke.Collector do
           |> Stats.add(values)
 
         Logger.debug(@log_prefix <> "Collected stats for timestamp #{ts}.")
-        PubSub.publish(:realtime, {:telemetry, Stats.telemetry(stats)})
+        realtime = Stats.telemetry(stats) |> Conversion.add_telemetry()
+        PubSub.publish(:realtime, {:telemetry, realtime})
         {:noreply, stats}
       else
         {:noreply, stats}
