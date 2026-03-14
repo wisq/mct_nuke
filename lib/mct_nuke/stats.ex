@@ -29,13 +29,18 @@ defmodule MctNuke.Stats do
     |> shrink_to(@max_size)
   end
 
-  def history(%Stats{} = stats, key, min, max) do
+  def history(%Stats{} = stats, to_extract, min, max) do
+    extract_fn =
+      case to_extract do
+        key when is_binary(key) -> &Map.fetch!(&1, key)
+        keys when is_list(keys) -> &Map.take(&1, keys)
+      end
+
     stats.data
     |> :queue.to_list()
     |> limit_history(min, max)
     |> Enum.map(fn {timestamp, values} ->
-      v = Map.fetch!(values, key)
-      %{id: key, timestamp: timestamp, value: v}
+      {timestamp, extract_fn.(values)}
     end)
   end
 

@@ -91,10 +91,10 @@ defmodule MctNuke.StatsTest do
       |> Stats.add(%{"TIME_STAMP" => 105, "CORE_TEMP" => 302})
 
     assert Stats.history(stats, "CORE_TEMP", nil, nil) == [
-             %{id: "CORE_TEMP", timestamp: 6_060_000, value: 300},
-             %{id: "CORE_TEMP", timestamp: 6_120_000, value: 300},
-             %{id: "CORE_TEMP", timestamp: 6_240_000, value: 301},
-             %{id: "CORE_TEMP", timestamp: 6_300_000, value: 302}
+             {6_060_000, 300},
+             {6_120_000, 300},
+             {6_240_000, 301},
+             {6_300_000, 302}
            ]
   end
 
@@ -102,25 +102,25 @@ defmodule MctNuke.StatsTest do
     stats = generate_core_temp(201..210)
 
     history = Stats.history(stats, "CORE_TEMP", 12_360_000, nil)
-    assert Enum.at(history, 0).timestamp == 12_360_000
-    assert Enum.map(history, & &1.value) == [412, 414, 416, 418, 420]
+    assert {12_360_000, _} = Enum.at(history, 0)
+    assert Enum.map(history, &elem(&1, 1)) == [412, 414, 416, 418, 420]
   end
 
   test "Stats.history/3 with max returns history before timestamp" do
     stats = generate_core_temp(201..210)
 
     history = Stats.history(stats, "CORE_TEMP", nil, 12_360_000)
-    assert Enum.at(history, -1).timestamp == 12_360_000
-    assert Enum.map(history, & &1.value) == [402, 404, 406, 408, 410, 412]
+    assert {12_360_000, _} = Enum.at(history, -1)
+    assert Enum.map(history, &elem(&1, 1)) == [402, 404, 406, 408, 410, 412]
   end
 
   test "Stats.history/3 with min and max returns history between timestamps" do
     stats = generate_core_temp(201..210)
 
     history = Stats.history(stats, "CORE_TEMP", 12_240_000, 12_360_000)
-    assert Enum.at(history, 0).timestamp == 12_240_000
-    assert Enum.at(history, -1).timestamp == 12_360_000
-    assert Enum.map(history, & &1.value) == [408, 410, 412]
+    assert {12_240_000, _} = Enum.at(history, 0)
+    assert {12_360_000, _} = Enum.at(history, -1)
+    assert Enum.map(history, &elem(&1, 1)) == [408, 410, 412]
   end
 
   test "Stats.history/3 supports non-exact timestamps" do
@@ -147,6 +147,23 @@ defmodule MctNuke.StatsTest do
     history3 = Stats.history(stats, "CORE_TEMP", 12_180_000.0001, 12_419_999.9999)
     assert history3 != history1
     assert Enum.count(history3) == 3
+  end
+
+  test "Stats.history/3 with multiple keys returns maps with requested data" do
+    stats =
+      Stats.new()
+      |> Stats.add(%{"TIME_STAMP" => 501, "A" => 1, "B" => 10, "C" => 101})
+      |> Stats.add(%{"TIME_STAMP" => 502, "A" => 2, "B" => 20, "C" => 102})
+      |> Stats.add(%{"TIME_STAMP" => 503, "A" => 3, "B" => 30, "C" => 103})
+      |> Stats.add(%{"TIME_STAMP" => 504, "A" => 4, "B" => 40, "C" => 104})
+      |> Stats.add(%{"TIME_STAMP" => 505, "A" => 5, "B" => 50, "C" => 105})
+
+    assert Stats.history(stats, ["A", "C"], 30_120_000, 30_240_000) ==
+             [
+               {30_120_000, %{"A" => 2, "C" => 102}},
+               {30_180_000, %{"A" => 3, "C" => 103}},
+               {30_240_000, %{"A" => 4, "C" => 104}}
+             ]
   end
 
   defp generate_core_temp(range) do

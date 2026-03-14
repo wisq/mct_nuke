@@ -5,6 +5,7 @@ defmodule MctNuke.Collector do
   alias MctNuke.API
   alias MctNuke.Stats
   alias MctNuke.Dictionary.Conversion
+  alias MctNuke.Dictionary.Derived
 
   @log_prefix "[#{inspect(__MODULE__)}] "
 
@@ -60,8 +61,7 @@ defmodule MctNuke.Collector do
           |> Stats.add(values)
 
         Logger.debug(@log_prefix <> "Collected stats for timestamp #{ts}.")
-        realtime = Stats.telemetry(stats) |> Conversion.add_telemetry()
-        PubSub.publish(:realtime, {:telemetry, realtime})
+        publish_realtime(stats)
         {:noreply, stats}
       else
         {:noreply, stats}
@@ -74,4 +74,11 @@ defmodule MctNuke.Collector do
   end
 
   defp schedule_next, do: Process.send_after(self(), :loop, @loop_ms)
+
+  defp publish_realtime(stats) do
+    Stats.telemetry(stats)
+    |> Conversion.add_telemetry()
+    |> Derived.add_telemetry()
+    |> then(&PubSub.publish(:realtime, {:telemetry, &1}))
+  end
 end

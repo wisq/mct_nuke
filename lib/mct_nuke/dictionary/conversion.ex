@@ -15,9 +15,7 @@ defmodule MctNuke.Dictionary.Conversion do
     def for_unit(_), do: []
 
     def maybe_apply(_, nil), do: nil
-    def maybe_apply(name, value), do: do_apply(name, value)
-
-    def do_apply(name, value), do: apply(__MODULE__, name, [value])
+    def maybe_apply(name, value), do: apply(__MODULE__, name, [value])
   end
 
   defmodule Generator do
@@ -65,17 +63,8 @@ defmodule MctNuke.Dictionary.Conversion do
 
   def for_history(key) do
     case Map.fetch(@by_key, key) do
-      {:ok, conv} -> {conv.source_key, history_conversion_fn(conv)}
-      :error -> {key, &Function.identity/1}
-    end
-  end
-
-  defp history_conversion_fn(%Conversion{fun_name: fun_name}) do
-    convert_fn = Function.capture(Functions, fun_name, 1)
-
-    fn telemetry ->
-      telemetry
-      |> Map.update!(:value, convert_fn)
+      {:ok, c} -> {c.source_key, Function.capture(Functions, c.fun_name, 1)}
+      :error -> nil
     end
   end
 
@@ -91,6 +80,6 @@ defmodule MctNuke.Dictionary.Conversion do
     value = Map.fetch!(data, conv.source_key)
 
     data
-    |> Map.put(conv.key, Functions.do_apply(conv.fun_name, value))
+    |> Map.put(conv.key, apply(Functions, conv.fun_name, [value]))
   end
 end
