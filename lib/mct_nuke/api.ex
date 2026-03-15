@@ -9,8 +9,11 @@ defmodule MctNuke.API do
   defp req_new do
     Req.new(
       base_url: api_url(),
-      max_retries: 2,
-      retry_delay: fn _ -> 500 end
+      max_retries: 1,
+      retry_delay: fn _ -> 100 end,
+      connect_options: [
+        timeout: 100
+      ]
     )
   end
 
