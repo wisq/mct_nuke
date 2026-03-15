@@ -52,6 +52,20 @@ defmodule MctNuke.Dictionary.Derived do
           format: :float,
           units: "%",
           min: 0
+        },
+        %Derived{
+          folder: "power.resistor_banks",
+          name: "Resistor Bank Usage",
+          key: "RESISTOR_BANK_USAGE",
+          source_keys: [
+            "RES_EFFECTIVELY_DERIVED_ENERGY_MW",
+            "RES_ABSORPTION_CAPACITY_MW"
+          ],
+          fun_name: :resistor_bank_usage,
+          format: :float,
+          units: "%",
+          min: 0,
+          max: 100
         }
       ]
     end
@@ -74,6 +88,12 @@ defmodule MctNuke.Dictionary.Derived do
       absorbed = Map.get(data, "RES_EFFECTIVELY_DERIVED_ENERGY_MW", 0)
 
       (generated - used - absorbed) / demand * 100
+    end
+
+    def resistor_bank_usage(data) do
+      cur = Map.fetch!(data, "RES_EFFECTIVELY_DERIVED_ENERGY_MW")
+      max = Map.fetch!(data, "RES_ABSORPTION_CAPACITY_MW")
+      cur / max * 100
     end
   end
 
