@@ -24,7 +24,7 @@ defmodule MctNuke.Dictionary.Metric do
           hints: %{range: 1}
         }
         |> apply_format(metric.format)
-        |> maybe_apply(:units, metric.units)
+        |> maybe_apply(:unit, metric.units)
         |> maybe_apply(:min, metric.min)
         |> maybe_apply(:max, metric.max),
         %{
