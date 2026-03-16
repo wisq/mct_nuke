@@ -22,11 +22,32 @@ defmodule MctNuke.Dictionary.Derived do
       [
         %Derived{
           folder: "power",
+          name: "Total Power Generated",
+          key: "POWER_GENERATION_TOTAL",
+          source_keys: [
+            "GENERATOR_0_BREAKER",
+            "GENERATOR_0_KW",
+            "GENERATOR_1_BREAKER",
+            "GENERATOR_1_KW",
+            "GENERATOR_2_BREAKER",
+            "GENERATOR_2_KW",
+            "POWER_FROM_TURBINE_KW"
+          ],
+          fun_name: :total_power_generated,
+          format: :float,
+          units: "MW",
+          min: 0
+        },
+        %Derived{
+          folder: "power",
           name: "Power Generation vs Demand",
           key: "POWER_GENERATION_VS_DEMAND",
           source_keys: [
+            "GENERATOR_0_BREAKER",
             "GENERATOR_0_KW",
+            "GENERATOR_1_BREAKER",
             "GENERATOR_1_KW",
+            "GENERATOR_2_BREAKER",
             "GENERATOR_2_KW",
             "POWER_FROM_TURBINE_KW",
             "POWER_DEMAND_MW"
@@ -41,8 +62,11 @@ defmodule MctNuke.Dictionary.Derived do
           name: "Power Supply vs Demand",
           key: "POWER_SUPPLY_VS_DEMAND",
           source_keys: [
+            "GENERATOR_0_BREAKER",
             "GENERATOR_0_KW",
+            "GENERATOR_1_BREAKER",
             "GENERATOR_1_KW",
+            "GENERATOR_2_BREAKER",
             "GENERATOR_2_KW",
             "POWER_FROM_TURBINE_KW",
             "POWER_DEMAND_MW",
@@ -76,19 +100,22 @@ defmodule MctNuke.Dictionary.Derived do
   @by_key @derived |> Map.new(fn d -> {d.key, d} end)
 
   defmodule Functions do
-    def power_supply_versus_demand(data) do
-      generated =
-        0..2
-        |> Enum.map(&Map.fetch!(data, "GENERATOR_#{&1}_KW"))
-        |> Enum.sum()
-        |> Kernel./(1000)
+    def total_power_generated(data) do
+      0..2
+      |> Enum.reject(&Map.fetch!(data, "GENERATOR_#{&1}_BREAKER"))
+      |> Enum.map(&Map.fetch!(data, "GENERATOR_#{&1}_KW"))
+      |> Enum.sum()
+      |> Kernel.-(Map.fetch!(data, "POWER_FROM_TURBINE_KW"))
+      |> Kernel./(1000)
+    end
 
+    def power_supply_versus_demand(data) do
+      generated = total_power_generated(data)
       demand = Map.fetch!(data, "POWER_DEMAND_MW")
-      used = Map.fetch!(data, "POWER_FROM_TURBINE_KW") / 1000
       absorbed = Map.get(data, "RES_EFFECTIVELY_DERIVED_ENERGY_MW", 0)
 
       if demand > 0 do
-        (generated - used - absorbed) / demand * 100
+        (generated - absorbed) / demand * 100
       else
         nil
       end
