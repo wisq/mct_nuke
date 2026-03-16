@@ -87,13 +87,22 @@ defmodule MctNuke.Dictionary.Derived do
       used = Map.fetch!(data, "POWER_FROM_TURBINE_KW") / 1000
       absorbed = Map.get(data, "RES_EFFECTIVELY_DERIVED_ENERGY_MW", 0)
 
-      (generated - used - absorbed) / demand * 100
+      if demand > 0 do
+        (generated - used - absorbed) / demand * 100
+      else
+        nil
+      end
     end
 
     def resistor_bank_usage(data) do
       cur = Map.fetch!(data, "RES_EFFECTIVELY_DERIVED_ENERGY_MW")
       max = Map.fetch!(data, "RES_ABSORPTION_CAPACITY_MW")
-      cur / max * 100
+
+      if max > 0 do
+        cur / max * 100
+      else
+        nil
+      end
     end
   end
 
