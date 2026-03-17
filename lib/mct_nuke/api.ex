@@ -9,8 +9,7 @@ defmodule MctNuke.API do
   defp req_new do
     Req.new(
       base_url: api_url(),
-      max_retries: 1,
-      retry_delay: fn _ -> 100 end,
+      retry: false,
       connect_options: [
         timeout: 100
       ]
@@ -20,7 +19,7 @@ defmodule MctNuke.API do
   defp get(key) do
     req_new()
     |> Req.get!(url: "/", params: [variable: key])
-    |> then(fn %Req.Response{status: 200, body: body} -> body end)
+    |> then(fn %Req.Response{status: s, body: body} when s in [200, 500] -> body end)
   end
 
   def get_integer(key), do: get(key) |> String.to_integer()
