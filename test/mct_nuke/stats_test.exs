@@ -59,7 +59,8 @@ defmodule MctNuke.StatsTest do
     assert stats.latest_ts == 60_600_000
 
     assert {stats, 10} = Stats.purge_from(stats, 1001)
-    assert stats == Stats.new()
+    assert stats.size == 0
+    assert stats.latest_ts == -1
   end
 
   test "Stats.is_new?/2 returns true if timestamp changes in either direction" do

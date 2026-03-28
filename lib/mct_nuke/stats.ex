@@ -1,5 +1,5 @@
 defmodule MctNuke.Stats do
-  @enforce_keys [:data, :size, :latest_ts]
+  @enforce_keys [:ets, :size, :latest_ts]
   defstruct(@enforce_keys)
   alias __MODULE__
 
@@ -10,9 +10,9 @@ defmodule MctNuke.Stats do
   # OpenMCT expects milliseconds, so we multiply values by this factor:
   @ts_factor 60 * 1000
 
-  def new do
+  def new(ets \\ nil) do
     %Stats{
-      data: :queue.new(),
+      ets: ets || :ets.new(__MODULE__, [:ordered_set]),
       size: 0,
       latest_ts: -1
     }
@@ -29,37 +29,39 @@ defmodule MctNuke.Stats do
     |> shrink_to(@max_size)
   end
 
-  def history(%Stats{} = stats, to_extract, min, max) do
+  def history(%Stats{ets: table}, to_extract, min, max) do
     extract_fn =
       case to_extract do
         key when is_binary(key) -> &Map.fetch!(&1, key)
         keys when is_list(keys) -> &Map.take(&1, keys)
       end
 
-    stats.data
-    |> :queue.to_list()
-    |> limit_history(min, max)
+    extract_history(table, min, max)
     |> Enum.map(fn {timestamp, values} ->
       {timestamp, extract_fn.(values)}
     end)
   end
 
-  defp limit_history(data, nil, nil), do: data
+  defp extract_history(table, nil, nil), do: :ets.tab2list(table)
 
-  defp limit_history(data, min, nil) when is_number(min) do
-    data |> Enum.filter(fn {ts, _} -> ts >= min end)
+  defp extract_history(table, min, max) do
+    min = min || :ets.first(table)
+    max = max || :ets.last(table)
+
+    :ets.select(table, [
+      {
+        {:"$1", :"$2"},
+        [
+          {:>=, :"$1", min},
+          {:"=<", :"$1", max}
+        ],
+        [{{:"$1", :"$2"}}]
+      }
+    ])
   end
 
-  defp limit_history(data, nil, max) when is_number(max) do
-    data |> Enum.filter(fn {ts, _} -> ts <= max end)
-  end
-
-  defp limit_history(data, min, max) when is_number(min) and is_number(max) do
-    data |> Enum.filter(fn {ts, _} -> ts >= min && ts <= max end)
-  end
-
-  def telemetry(%Stats{size: size} = stats) when size > 0 do
-    {ts, data} = :queue.last(stats.data)
+  def telemetry(%Stats{ets: table, size: size}) when size > 0 do
+    {ts, [{ts, data}]} = :ets.last_lookup(table)
 
     %{
       type: "telemetry",
@@ -75,35 +77,46 @@ defmodule MctNuke.Stats do
   defp purge_ts(%Stats{latest_ts: ts} = stats, cutoff) when ts < cutoff, do: {stats, 0}
   defp purge_ts(%Stats{latest_ts: nil} = stats, _cutoff), do: {stats, 0}
 
-  defp purge_ts(%Stats{latest_ts: ts} = old_stats, cutoff) when ts >= cutoff do
-    old_stats.data
-    |> :queue.to_list()
-    |> Enum.take_while(fn {ts, _} -> ts < cutoff end)
-    |> then(fn
-      [] ->
-        Stats.new()
+  defp purge_ts(%Stats{ets: table, latest_ts: ts} = stats, cutoff) when ts >= cutoff do
+    if :ets.first(table) >= cutoff do
+      :ets.delete_all_objects(table)
+      {Stats.new(table), stats.size}
+    else
+      deleted = delete_after(table, cutoff)
 
-      data ->
-        %Stats{
-          data: :queue.from_list(data),
-          size: data |> Enum.count(),
-          latest_ts: data |> Enum.at(-1) |> elem(0)
-        }
-    end)
-    |> then(fn new_stats ->
-      {new_stats, old_stats.size - new_stats.size}
-    end)
+      new_stats = %Stats{
+        ets: table,
+        size: stats.size - deleted,
+        latest_ts: :ets.last(table)
+      }
+
+      {new_stats, deleted}
+    end
+  end
+
+  defp delete_after(table, cutoff) do
+    case :ets.last(table) do
+      :"$end_of_table" ->
+        raise "unexpected EOT"
+
+      ts when ts < cutoff ->
+        0
+
+      ts when ts >= cutoff ->
+        :ets.delete(table, ts)
+        delete_after(table, cutoff) + 1
+    end
   end
 
   defp append(%Stats{latest_ts: lts}, timestamp, _values) when timestamp <= lts do
     raise "Cannot repeat or go backwards in time: #{lts} => #{timestamp}"
   end
 
-  defp append(%Stats{} = stats, timestamp, values) do
-    point = {timestamp, values}
+  defp append(%Stats{ets: table} = stats, timestamp, values) do
+    :ets.insert(table, {timestamp, values})
 
     %Stats{
-      data: :queue.in(point, stats.data),
+      ets: table,
       size: stats.size + 1,
       latest_ts: timestamp
     }
@@ -113,10 +126,12 @@ defmodule MctNuke.Stats do
        when from_size <= to_size and to_size > 0,
        do: stats
 
-  defp shrink_to(%Stats{size: from_size} = stats, to_size)
+  defp shrink_to(%Stats{ets: table, size: from_size} = stats, to_size)
        when from_size > to_size and to_size > 0 do
+    :ets.delete(table, :ets.first(table))
+
     %Stats{
-      data: :queue.drop(stats.data),
+      ets: table,
       size: stats.size - 1,
       latest_ts: stats.latest_ts
     }
