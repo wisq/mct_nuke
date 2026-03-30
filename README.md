@@ -1,21 +1,18 @@
 # MctNuke
 
-**TODO: Add description**
+Backend for OpenMCT to support pulling data from Nucleares, a nuclear reactor
+simulation game.
 
-## Installation
+You'll also want [my fork of OpenMCT](https://github.com/wisq/openmct). This
+contains a fully working OpenMCT build with the Nucleares plugin ready to go.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mct_nuke` to your list of dependencies in `mix.exs`:
+For any of this data to be very useful, you'll also need to make some graphs,
+dashboards, etc.  The [examples directory](examples) contains some JSON objects
+you can use as a starting point.
 
-```elixir
-def deps do
-  [
-    {:mct_nuke, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/mct_nuke>.
-
+If you'd like a demo, check out [my own website](https://nucleares.wisq.net/)
+which will have real data from my most recent session of the game.  If it's
+updating in realtime, that means I'm playing the game right now!  Feel free to
+import JSON objects (e.g. [the dashboard I use](examples/dashboard.json)) — all
+OpenMCT objects are stored in your browser's local storage, you're not actually
+messing with my site at all.

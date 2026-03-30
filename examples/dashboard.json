@@ -1,0 +1,874 @@
+{
+   "openmct" : {
+      "29fa4042-030c-464f-b086-48968a0edbac" : {
+         "composition" : [
+            {
+               "key" : "COOLANT_CORE_CIRCULATION_PUMP_0_SPEED",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "COOLANT_CORE_CIRCULATION_PUMP_1_SPEED",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "COOLANT_CORE_CIRCULATION_PUMP_2_SPEED",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "COOLANT_SEC_0_PRESSURE",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "COOLANT_SEC_1_PRESSURE",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "COOLANT_SEC_2_PRESSURE",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "additionalYAxes" : [
+               {
+                  "autoscale" : false,
+                  "id" : 2,
+                  "label" : "bar",
+                  "range" : {
+                     "max" : 80,
+                     "min" : 40
+                  }
+               }
+            ],
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            },
+            "series" : [
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_CORE_CIRCULATION_PUMP_0_SPEED",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_CORE_CIRCULATION_PUMP_1_SPEED",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_CORE_CIRCULATION_PUMP_2_SPEED",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_SEC_0_PRESSURE",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_SEC_1_PRESSURE",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_SEC_2_PRESSURE",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               }
+            ],
+            "yAxis" : {
+               "autoscale" : false,
+               "label" : "%",
+               "range" : {
+                  "max" : 100,
+                  "min" : 0
+               }
+            }
+         },
+         "created" : 1773539224592,
+         "identifier" : {
+            "key" : "29fa4042-030c-464f-b086-48968a0edbac",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "modified" : 1774686230296,
+         "name" : "Heat Flow",
+         "persisted" : 1774686230297,
+         "type" : "telemetry.plot.overlay"
+      },
+      "619b0277-bbec-4b2b-9362-d1dc916a0d48" : {
+         "composition" : [
+            {
+               "key" : "POWER_GENERATION_VS_DEMAND",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "gaugeController" : {
+               "gaugeType" : "dial-needle",
+               "isDisplayCurVal" : true,
+               "isDisplayMinMax" : true,
+               "isDisplayUnits" : true,
+               "isUseTelemetryLimits" : false,
+               "limitHigh" : 110,
+               "limitLow" : 90,
+               "max" : 120,
+               "min" : 80,
+               "precision" : 1
+            },
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            }
+         },
+         "created" : 1773539224591,
+         "identifier" : {
+            "key" : "619b0277-bbec-4b2b-9362-d1dc916a0d48",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "locked" : true,
+         "modified" : 1773673775555,
+         "name" : "Power vs Demand",
+         "persisted" : 1773673775556,
+         "type" : "gauge"
+      },
+      "76844cf7-4dec-4202-84b2-3e8b6f52e687" : {
+         "composition" : [
+            {
+               "key" : "POWER_DEMAND_MW",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "GENERATOR_0_KW~MW",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "GENERATOR_1_KW~MW",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "GENERATOR_2_KW~MW",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "POWER_GENERATION_TOTAL",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            },
+            "series" : [
+               {
+                  "identifier" : {
+                     "key" : "POWER_DEMAND_MW",
+                     "namespace" : "nucleares.taxonomy"
+                  }
+               },
+               {
+                  "identifier" : {
+                     "key" : "GENERATOR_0_KW~MW",
+                     "namespace" : "nucleares.taxonomy"
+                  }
+               },
+               {
+                  "identifier" : {
+                     "key" : "GENERATOR_1_KW~MW",
+                     "namespace" : "nucleares.taxonomy"
+                  }
+               },
+               {
+                  "identifier" : {
+                     "key" : "GENERATOR_2_KW~MW",
+                     "namespace" : "nucleares.taxonomy"
+                  }
+               },
+               {
+                  "identifier" : {
+                     "key" : "POWER_GENERATION_TOTAL",
+                     "namespace" : "nucleares.taxonomy"
+                  }
+               }
+            ],
+            "timeOptions" : {
+               "clock" : "nucleares-clock",
+               "clockOffsets" : {
+                  "end" : 0,
+                  "start" : -1800000
+               },
+               "fixedOffsets" : {
+                  "end" : 104760000,
+                  "start" : 102960000
+               },
+               "mode" : "realtime"
+            },
+            "useIndependentTime" : false,
+            "yAxis" : {
+               "autoscale" : true,
+               "label" : "MW",
+               "logMode" : false,
+               "range" : {
+                  "max" : 20,
+                  "min" : 0
+               }
+            }
+         },
+         "created" : 1773539224591,
+         "identifier" : {
+            "key" : "76844cf7-4dec-4202-84b2-3e8b6f52e687",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "locked" : false,
+         "modified" : 1773705068713,
+         "name" : "Power Generation",
+         "persisted" : 1773705068713,
+         "type" : "telemetry.plot.overlay"
+      },
+      "af8d327b-ce38-4d94-a619-5e16160fcd09" : {
+         "composition" : [
+            {
+               "key" : "CORE_TEMP",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "gaugeController" : {
+               "gaugeType" : "dial-needle",
+               "isDisplayCurVal" : true,
+               "isDisplayMinMax" : true,
+               "isDisplayUnits" : true,
+               "isUseTelemetryLimits" : false,
+               "limitHigh" : 360,
+               "limitLow" : 270,
+               "max" : 430,
+               "min" : 200,
+               "precision" : 1
+            },
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            }
+         },
+         "created" : 1773539224590,
+         "identifier" : {
+            "key" : "af8d327b-ce38-4d94-a619-5e16160fcd09",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "locked" : false,
+         "modified" : 1773539224590,
+         "name" : "Core Temperature",
+         "persisted" : 1773539224590,
+         "type" : "gauge"
+      },
+      "b6b0f47c-5b54-4e2e-9f60-4a681646e899" : {
+         "composition" : [
+            {
+               "key" : "STEAM_TURBINE_0_BYPASS_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "STEAM_TURBINE_1_BYPASS_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "STEAM_TURBINE_2_BYPASS_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "MSCV_0_OPENING_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "MSCV_1_OPENING_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "MSCV_2_OPENING_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "additionalYAxes" : [
+               {
+                  "autoscale" : false,
+                  "id" : 2,
+                  "label" : "MSCV",
+                  "range" : {
+                     "max" : 15,
+                     "min" : 0
+                  }
+               }
+            ],
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            },
+            "series" : [
+               {
+                  "identifier" : {
+                     "key" : "STEAM_TURBINE_0_BYPASS_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "STEAM_TURBINE_1_BYPASS_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "STEAM_TURBINE_2_BYPASS_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "MSCV_0_OPENING_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               },
+               {
+                  "identifier" : {
+                     "key" : "MSCV_1_OPENING_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               },
+               {
+                  "identifier" : {
+                     "key" : "MSCV_2_OPENING_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_CORE_CIRCULATION_PUMP_0_SPEED",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_CORE_CIRCULATION_PUMP_2_SPEED",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               }
+            ],
+            "yAxis" : {
+               "autoscale" : false,
+               "label" : "%",
+               "range" : {
+                  "max" : 100,
+                  "min" : 0
+               }
+            }
+         },
+         "created" : 1773669365324,
+         "identifier" : {
+            "key" : "b6b0f47c-5b54-4e2e-9f60-4a681646e899",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "modified" : 1774686339717,
+         "name" : "Steam Flow",
+         "persisted" : 1774686339718,
+         "type" : "telemetry.plot.overlay"
+      },
+      "cd59cc82-7589-4178-a64d-f957573efea8" : {
+         "composition" : [
+            {
+               "key" : "af8d327b-ce38-4d94-a619-5e16160fcd09",
+               "namespace" : ""
+            },
+            {
+               "key" : "e9c8c972-6a18-4a9a-a380-348e50004d5d",
+               "namespace" : ""
+            },
+            {
+               "key" : "619b0277-bbec-4b2b-9362-d1dc916a0d48",
+               "namespace" : ""
+            },
+            {
+               "key" : "76844cf7-4dec-4202-84b2-3e8b6f52e687",
+               "namespace" : ""
+            },
+            {
+               "key" : "f6c0443c-0be0-4da3-b6b5-e6b71989e909",
+               "namespace" : ""
+            },
+            {
+               "key" : "29fa4042-030c-464f-b086-48968a0edbac",
+               "namespace" : ""
+            },
+            {
+               "key" : "b6b0f47c-5b54-4e2e-9f60-4a681646e899",
+               "namespace" : ""
+            },
+            {
+               "key" : "f9942a5e-ce69-4398-9de0-ee6a0f4424d8",
+               "namespace" : ""
+            },
+            {
+               "key" : "d43e79a6-8ed4-48a6-8f9e-7f814be84b4a",
+               "namespace" : ""
+            }
+         ],
+         "configuration" : {
+            "containers" : [
+               {
+                  "frames" : [
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "af8d327b-ce38-4d94-a619-5e16160fcd09",
+                           "namespace" : ""
+                        },
+                        "id" : "e94c18d0-df7c-4f7c-8af3-02f449cb9a84",
+                        "noFrame" : false,
+                        "size" : 25
+                     },
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "e9c8c972-6a18-4a9a-a380-348e50004d5d",
+                           "namespace" : ""
+                        },
+                        "id" : "104922f7-1e36-445a-aa99-4d0046fe71cf",
+                        "noFrame" : false,
+                        "size" : 38
+                     },
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "f9942a5e-ce69-4398-9de0-ee6a0f4424d8",
+                           "namespace" : ""
+                        },
+                        "id" : "cfa672e0-7725-4621-8b00-a2ca77b4eed2",
+                        "noFrame" : false,
+                        "size" : 37
+                     }
+                  ],
+                  "id" : "a5d43925-e474-4819-bc49-c8309a0aa75a",
+                  "size" : 34
+               },
+               {
+                  "frames" : [
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "619b0277-bbec-4b2b-9362-d1dc916a0d48",
+                           "namespace" : ""
+                        },
+                        "id" : "edcebfcc-ffb8-4bec-be5e-2bb243794da3",
+                        "noFrame" : false,
+                        "size" : 25
+                     },
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "76844cf7-4dec-4202-84b2-3e8b6f52e687",
+                           "namespace" : ""
+                        },
+                        "id" : "da3d189e-023c-49df-b859-a8c6674fd371",
+                        "noFrame" : false,
+                        "size" : 38
+                     },
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "b6b0f47c-5b54-4e2e-9f60-4a681646e899",
+                           "namespace" : ""
+                        },
+                        "id" : "ef7cc340-ae09-45a9-8f0e-0e0103329fc3",
+                        "noFrame" : false,
+                        "size" : 37
+                     }
+                  ],
+                  "id" : "083d65c8-63f1-4a14-a004-3702fa1470e9",
+                  "size" : 34
+               },
+               {
+                  "frames" : [
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "f6c0443c-0be0-4da3-b6b5-e6b71989e909",
+                           "namespace" : ""
+                        },
+                        "id" : "75504df3-c2b0-4cce-9ee4-d170e4ffe5d3",
+                        "noFrame" : false,
+                        "size" : 25
+                     },
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "29fa4042-030c-464f-b086-48968a0edbac",
+                           "namespace" : ""
+                        },
+                        "id" : "ef189532-1572-4532-a18d-2d49d4ecfbe6",
+                        "noFrame" : false,
+                        "size" : 38
+                     },
+                     {
+                        "domainObjectIdentifier" : {
+                           "key" : "d43e79a6-8ed4-48a6-8f9e-7f814be84b4a",
+                           "namespace" : ""
+                        },
+                        "id" : "dc4273cf-6e5d-423b-8a37-415d4615a91c",
+                        "noFrame" : false,
+                        "size" : 37
+                     }
+                  ],
+                  "id" : "eabf50d7-0077-48b3-900a-6db2d28fa0bf",
+                  "size" : 32
+               }
+            ],
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            },
+            "rowsLayout" : true
+         },
+         "created" : 1773539224589,
+         "identifier" : {
+            "key" : "cd59cc82-7589-4178-a64d-f957573efea8",
+            "namespace" : ""
+         },
+         "location" : "mine",
+         "locked" : true,
+         "modified" : 1773802581352,
+         "name" : "Main Dashboard",
+         "persisted" : 1773802581353,
+         "type" : "flexible-layout"
+      },
+      "d43e79a6-8ed4-48a6-8f9e-7f814be84b4a" : {
+         "composition" : [
+            {
+               "key" : "CORE_IODINE_GENERATION",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "CORE_XENON_GENERATION",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "CORE_IODINE_CUMULATIVE",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "CORE_XENON_CUMULATIVE",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "CORE_FACTOR",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "additionalYAxes" : [
+               {
+                  "autoscale" : true,
+                  "id" : 2,
+                  "label" : "Core Factor",
+                  "logMode" : false
+               }
+            ],
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            },
+            "series" : [
+               {
+                  "identifier" : {
+                     "key" : "CORE_IODINE_GENERATION",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "CORE_XENON_GENERATION",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "CORE_IODINE_CUMULATIVE",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "CORE_XENON_CUMULATIVE",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "CORE_FACTOR",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               }
+            ],
+            "yAxis" : {
+               "autoscale" : false,
+               "label" : "Value",
+               "range" : {
+                  "max" : 100,
+                  "min" : 0
+               }
+            }
+         },
+         "created" : 1773802366253,
+         "identifier" : {
+            "key" : "d43e79a6-8ed4-48a6-8f9e-7f814be84b4a",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "modified" : 1774562754848,
+         "name" : "Core Chemicals",
+         "persisted" : 1774562754850,
+         "type" : "telemetry.plot.overlay"
+      },
+      "e9c8c972-6a18-4a9a-a380-348e50004d5d" : {
+         "composition" : [
+            {
+               "key" : "CORE_TEMP",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "CORE_FACTOR",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "additionalYAxes" : [
+               {
+                  "id" : 3,
+                  "label" : "%"
+               }
+            ],
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            },
+            "series" : [
+               {
+                  "identifier" : {
+                     "key" : "CORE_TEMP",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "CORE_FACTOR",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_CORE_CIRCULATION_PUMP_0_SPEED",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 3
+               },
+               {
+                  "identifier" : {
+                     "key" : "COOLANT_CORE_CIRCULATION_PUMP_2_SPEED",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 3
+               }
+            ],
+            "yAxis" : {
+               "label" : "°C"
+            }
+         },
+         "created" : 1773539224590,
+         "identifier" : {
+            "key" : "e9c8c972-6a18-4a9a-a380-348e50004d5d",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "locked" : false,
+         "modified" : 1774686015807,
+         "name" : "Core Temperature",
+         "persisted" : 1774686015807,
+         "type" : "telemetry.plot.overlay"
+      },
+      "f6c0443c-0be0-4da3-b6b5-e6b71989e909" : {
+         "composition" : [
+            {
+               "key" : "RESISTOR_BANK_USAGE",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "gaugeController" : {
+               "gaugeType" : "dial-filled",
+               "isDisplayCurVal" : true,
+               "isDisplayMinMax" : true,
+               "isDisplayUnits" : true,
+               "isUseTelemetryLimits" : false,
+               "limitHigh" : 50,
+               "limitLow" : 0,
+               "max" : 100,
+               "min" : 0,
+               "precision" : 2
+            },
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            }
+         },
+         "created" : 1773539224591,
+         "identifier" : {
+            "key" : "f6c0443c-0be0-4da3-b6b5-e6b71989e909",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "modified" : 1773539224591,
+         "name" : "Resistor Bank Usage",
+         "persisted" : 1773539224591,
+         "type" : "gauge"
+      },
+      "f9942a5e-ce69-4398-9de0-ee6a0f4424d8" : {
+         "composition" : [
+            {
+               "key" : "CORE_XENON_CUMULATIVE",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "CHEM_BORON_PPM",
+               "namespace" : "nucleares.taxonomy"
+            },
+            {
+               "key" : "RODS_POS_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "additionalYAxes" : [
+               {
+                  "autoscale" : false,
+                  "id" : 2,
+                  "range" : {
+                     "max" : 2800,
+                     "min" : 0
+                  }
+               }
+            ],
+            "objectStyles" : {
+               "selectedConditionId" : ""
+            },
+            "series" : [
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_6_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  }
+               },
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_1_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_2_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_3_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_4_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_5_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "RODS_POS_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  }
+               },
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_7_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "ROD_BANK_POS_8_ACTUAL",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "CORE_XENON_CUMULATIVE",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 1
+               },
+               {
+                  "identifier" : {
+                     "key" : "CHEM_BORON_PPM",
+                     "namespace" : "nucleares.taxonomy"
+                  },
+                  "yAxisId" : 2
+               }
+            ],
+            "yAxis" : {
+               "autoscale" : false,
+               "range" : {
+                  "max" : 100,
+                  "min" : 0
+               }
+            }
+         },
+         "created" : 1773669639374,
+         "identifier" : {
+            "key" : "f9942a5e-ce69-4398-9de0-ee6a0f4424d8",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "modified" : 1774675283955,
+         "name" : "Control Rods",
+         "persisted" : 1774675283958,
+         "type" : "telemetry.plot.overlay"
+      }
+   },
+   "rootId" : "cd59cc82-7589-4178-a64d-f957573efea8"
+}
