@@ -106,6 +106,39 @@
          "persisted" : 1774686230297,
          "type" : "telemetry.plot.overlay"
       },
+      "40aa1bb4-d3ba-4795-ac47-5c0176f1659e" : {
+         "composition" : [
+            {
+               "key" : "RODS_POS_ACTUAL",
+               "namespace" : "nucleares.taxonomy"
+            }
+         ],
+         "configuration" : {
+            "gaugeController" : {
+               "gaugeType" : "meter-vertical-inverted",
+               "isDisplayCurVal" : true,
+               "isDisplayMinMax" : true,
+               "isDisplayUnits" : true,
+               "isUseTelemetryLimits" : true,
+               "limitHigh" : 90,
+               "limitLow" : 10,
+               "max" : 100,
+               "min" : 0,
+               "precision" : 2
+            },
+            "objectStyles" : {}
+         },
+         "created" : 1775842066501,
+         "identifier" : {
+            "key" : "40aa1bb4-d3ba-4795-ac47-5c0176f1659e",
+            "namespace" : ""
+         },
+         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
+         "modified" : 1775842423362,
+         "name" : "Control Rods",
+         "persisted" : 1775842423362,
+         "type" : "gauge"
+      },
       "619b0277-bbec-4b2b-9362-d1dc916a0d48" : {
          "composition" : [
             {
@@ -306,7 +339,7 @@
                   "id" : 2,
                   "label" : "MSCV",
                   "range" : {
-                     "max" : 15,
+                     "max" : 30,
                      "min" : 0
                   }
                }
@@ -387,9 +420,9 @@
             "namespace" : ""
          },
          "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
-         "modified" : 1774686339717,
+         "modified" : 1775874862416,
          "name" : "Steam Flow",
-         "persisted" : 1774686339718,
+         "persisted" : 1775874862417,
          "type" : "telemetry.plot.overlay"
       },
       "cd59cc82-7589-4178-a64d-f957573efea8" : {
@@ -411,10 +444,6 @@
                "namespace" : ""
             },
             {
-               "key" : "f6c0443c-0be0-4da3-b6b5-e6b71989e909",
-               "namespace" : ""
-            },
-            {
                "key" : "29fa4042-030c-464f-b086-48968a0edbac",
                "namespace" : ""
             },
@@ -428,6 +457,10 @@
             },
             {
                "key" : "d43e79a6-8ed4-48a6-8f9e-7f814be84b4a",
+               "namespace" : ""
+            },
+            {
+               "key" : "40aa1bb4-d3ba-4795-ac47-5c0176f1659e",
                "namespace" : ""
             }
          ],
@@ -455,10 +488,10 @@
                      },
                      {
                         "domainObjectIdentifier" : {
-                           "key" : "f9942a5e-ce69-4398-9de0-ee6a0f4424d8",
+                           "key" : "29fa4042-030c-464f-b086-48968a0edbac",
                            "namespace" : ""
                         },
-                        "id" : "cfa672e0-7725-4621-8b00-a2ca77b4eed2",
+                        "id" : "ef189532-1572-4532-a18d-2d49d4ecfbe6",
                         "noFrame" : false,
                         "size" : 37
                      }
@@ -503,19 +536,19 @@
                   "frames" : [
                      {
                         "domainObjectIdentifier" : {
-                           "key" : "f6c0443c-0be0-4da3-b6b5-e6b71989e909",
+                           "key" : "40aa1bb4-d3ba-4795-ac47-5c0176f1659e",
                            "namespace" : ""
                         },
-                        "id" : "75504df3-c2b0-4cce-9ee4-d170e4ffe5d3",
+                        "id" : "abb19cf9-4e66-4d4f-bdac-68bc817def02",
                         "noFrame" : false,
                         "size" : 25
                      },
                      {
                         "domainObjectIdentifier" : {
-                           "key" : "29fa4042-030c-464f-b086-48968a0edbac",
+                           "key" : "f9942a5e-ce69-4398-9de0-ee6a0f4424d8",
                            "namespace" : ""
                         },
-                        "id" : "ef189532-1572-4532-a18d-2d49d4ecfbe6",
+                        "id" : "cfa672e0-7725-4621-8b00-a2ca77b4eed2",
                         "noFrame" : false,
                         "size" : 38
                      },
@@ -545,9 +578,9 @@
          },
          "location" : "mine",
          "locked" : true,
-         "modified" : 1773802581352,
+         "modified" : 1775842336342,
          "name" : "Main Dashboard",
-         "persisted" : 1773802581353,
+         "persisted" : 1775842336344,
          "type" : "flexible-layout"
       },
       "d43e79a6-8ed4-48a6-8f9e-7f814be84b4a" : {
@@ -587,6 +620,7 @@
             },
             "series" : [
                {
+                  "color" : "#f059cb",
                   "identifier" : {
                      "key" : "CORE_IODINE_GENERATION",
                      "namespace" : "nucleares.taxonomy"
@@ -594,6 +628,7 @@
                   "yAxisId" : 1
                },
                {
+                  "color" : "#93b577",
                   "identifier" : {
                      "key" : "CORE_XENON_GENERATION",
                      "namespace" : "nucleares.taxonomy"
@@ -601,6 +636,7 @@
                   "yAxisId" : 1
                },
                {
+                  "color" : "#9425ea",
                   "identifier" : {
                      "key" : "CORE_IODINE_CUMULATIVE",
                      "namespace" : "nucleares.taxonomy"
@@ -608,6 +644,7 @@
                   "yAxisId" : 1
                },
                {
+                  "color" : "#46c7c0",
                   "identifier" : {
                      "key" : "CORE_XENON_CUMULATIVE",
                      "namespace" : "nucleares.taxonomy"
@@ -615,6 +652,7 @@
                   "yAxisId" : 1
                },
                {
+                  "color" : "#ffa63d",
                   "identifier" : {
                      "key" : "CORE_FACTOR",
                      "namespace" : "nucleares.taxonomy"
@@ -637,9 +675,9 @@
             "namespace" : ""
          },
          "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
-         "modified" : 1774562754848,
+         "modified" : 1775006420832,
          "name" : "Core Chemicals",
-         "persisted" : 1774562754850,
+         "persisted" : 1775006420833,
          "type" : "telemetry.plot.overlay"
       },
       "e9c8c972-6a18-4a9a-a380-348e50004d5d" : {
@@ -708,41 +746,6 @@
          "name" : "Core Temperature",
          "persisted" : 1774686015807,
          "type" : "telemetry.plot.overlay"
-      },
-      "f6c0443c-0be0-4da3-b6b5-e6b71989e909" : {
-         "composition" : [
-            {
-               "key" : "RESISTOR_BANK_USAGE",
-               "namespace" : "nucleares.taxonomy"
-            }
-         ],
-         "configuration" : {
-            "gaugeController" : {
-               "gaugeType" : "dial-filled",
-               "isDisplayCurVal" : true,
-               "isDisplayMinMax" : true,
-               "isDisplayUnits" : true,
-               "isUseTelemetryLimits" : false,
-               "limitHigh" : 50,
-               "limitLow" : 0,
-               "max" : 100,
-               "min" : 0,
-               "precision" : 2
-            },
-            "objectStyles" : {
-               "selectedConditionId" : ""
-            }
-         },
-         "created" : 1773539224591,
-         "identifier" : {
-            "key" : "f6c0443c-0be0-4da3-b6b5-e6b71989e909",
-            "namespace" : ""
-         },
-         "location" : "cd59cc82-7589-4178-a64d-f957573efea8",
-         "modified" : 1773539224591,
-         "name" : "Resistor Bank Usage",
-         "persisted" : 1773539224591,
-         "type" : "gauge"
       },
       "f9942a5e-ce69-4398-9de0-ee6a0f4424d8" : {
          "composition" : [
