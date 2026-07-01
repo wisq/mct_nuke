@@ -33,6 +33,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
       |> inspect(pretty: true, width: 90, limit: :infinity)
       |> String.replace("%MctNuke.Dictionary.", "%")
       |> String.replace("\n", "\n  ")
+      |> String.replace(~r{\n\s+api_index: \d+,\n}, "\n")
 
     File.write!("lib/mct_nuke/dictionary/data.ex", """
     # Auto-generated on #{DateTime.utc_now()} from Nucleares version #{version}.

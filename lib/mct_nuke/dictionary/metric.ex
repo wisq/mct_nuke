@@ -1,5 +1,5 @@
 defmodule MctNuke.Dictionary.Metric do
-  @enforce_keys [:name, :key, :format, :api_index]
+  @enforce_keys [:name, :key, :format]
   defstruct(
     api_index: nil,
     name: nil,
