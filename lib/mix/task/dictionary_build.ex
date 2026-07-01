@@ -152,6 +152,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
       key =~ ~r{_FISSIONABLE$} -> {:float, "%"}
       key =~ ~r{_TORQUE$} -> {:float, "%"}
       key =~ ~r{_VACUUM$} -> {:float, "%"}
+      key == "PRESSURIZER_FILL_LEVEL" -> {:float, "%"}
       # Volumes:
       key =~ ~r{^CONDENSER_(VAPOR_)?VOLUME$} -> {:float, "hL"}
       key =~ ~r{^COOLANT_SEC_[0-9]_(LIQUID_)?VOLUME$} -> {:float, "hL"}
@@ -292,6 +293,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp guess_folder("FUN_IS_ENABLED"), do: "misc"
   defp guess_folder("GAME_" <> _), do: "misc"
   defp guess_folder("TIME" <> _), do: "misc"
+  defp guess_folder("AO_" <> _), do: "misc"
 
   defp guess_folder(<<"CORE_BAY_", n::binary-size(1), "_", _::binary>>), do: "core.bay_#{n}"
   defp guess_folder(<<"CORE_FUEL_", n::binary-size(1), "_", _::binary>>), do: "core.bay_#{n}"
@@ -302,6 +304,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp guess_folder("CORE_" <> _), do: "core"
   defp guess_folder("COOLANT_CORE_" <> _), do: "core.coolant"
   defp guess_folder("RODS_" <> _), do: "core.rods"
+  defp guess_folder("PRESSURIZER_" <> _), do: "core.pressurizer"
 
   defp guess_folder("CONDENSER_VACUUM" <> _), do: "condenser.vacuum"
   defp guess_folder("VACUUM_" <> _), do: "condenser.vacuum"

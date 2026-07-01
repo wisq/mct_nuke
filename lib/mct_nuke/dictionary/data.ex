@@ -1,4 +1,4 @@
-# Auto-generated on 2026-03-12 16:32:45.250339Z from Nucleares version V 2.2.25.213.
+# Auto-generated on 2026-07-01 16:02:51.676555Z from Nucleares version V 2.2.25.217.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
@@ -62,6 +62,14 @@ defmodule MctNuke.Dictionary.Data do
             max: nil
           },
           %Metric{
+            name: "Ao Agent Status",
+            key: "AO_AGENT_STATUS",
+            format: :string,
+            units: nil,
+            min: nil,
+            max: nil
+          },
+          %Metric{
             name: "Game Sim Speed",
             key: "GAME_SIM_SPEED",
             format: :float,
@@ -91,6 +99,77 @@ defmodule MctNuke.Dictionary.Data do
         name: "Core",
         key: "core",
         subfolders: [
+          %Folder{
+            name: "Pressurizer",
+            key: "core.pressurizer",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                name: "Pressurizer Pressure",
+                key: "PRESSURIZER_PRESSURE",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                name: "Pressurizer Pressure Operative",
+                key: "PRESSURIZER_PRESSURE_OPERATIVE",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                name: "Pressurizer Pressure Deviation",
+                key: "PRESSURIZER_PRESSURE_DEVIATION",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                name: "Pressurizer Temperature",
+                key: "PRESSURIZER_TEMPERATURE",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                name: "Pressurizer Temperature Operative",
+                key: "PRESSURIZER_TEMPERATURE_OPERATIVE",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                name: "Pressurizer Fill Level",
+                key: "PRESSURIZER_FILL_LEVEL",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                name: "Pressurizer Heaters On",
+                key: "PRESSURIZER_HEATERS_ON",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                name: "Pressurizer Integrity",
+                key: "PRESSURIZER_INTEGRITY",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
           %Folder{
             name: "Bay 1",
             key: "core.bay_1",
