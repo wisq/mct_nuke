@@ -43,7 +43,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
 
           subs ->
             %Folder{
-              name: vp_type,
+              name: vp_type |> String.capitalize(),
               key: base_key,
               subfolders: subs
             }

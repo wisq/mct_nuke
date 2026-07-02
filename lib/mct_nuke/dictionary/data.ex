@@ -1,4 +1,4 @@
-# Auto-generated on 2026-07-02 18:57:08.851634Z from Nucleares version V 2.2.25.217.
+# Auto-generated on 2026-07-02 19:02:35.243707Z from Nucleares version V 2.2.25.217.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
@@ -2843,7 +2843,7 @@ defmodule MctNuke.Dictionary.Data do
         ]
       },
       %Folder{
-        name: "pumps",
+        name: "Pumps",
         key: "VALVE_PANEL.pumps",
         subfolders: [
           %Folder{
@@ -4690,7 +4690,7 @@ defmodule MctNuke.Dictionary.Data do
         metrics: []
       },
       %Folder{
-        name: "vessels",
+        name: "Vessels",
         key: "VALVE_PANEL.vessels",
         subfolders: [
           %Folder{
