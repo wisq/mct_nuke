@@ -6,6 +6,8 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   alias MctNuke.Dictionary.Metric
   alias MctNuke.Dictionary.Folder
 
+  @degrees_celsius "\u2103"
+
   def run([]) do
     {:ok, _} = Application.ensure_all_started([:req])
 
@@ -24,12 +26,36 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
         end
       end)
       |> renumber_groups()
-      |> nest_in_folders()
+
+    valve_panel =
+      MctNuke.API.get_json("VALVE_PANEL_JSON")
+      |> Enum.map(fn {vp_type, vp_entries} ->
+        vp_type_atom = String.to_existing_atom(vp_type)
+        base_key = "VALVE_PANEL.#{vp_type}"
+
+        vp_entries
+        |> Enum.map(&build_valve_panel(vp_type_atom, base_key, &1))
+        |> Enum.reject(&is_nil/1)
+        |> then(fn
+          [] ->
+            nil
+
+          subs ->
+            %Folder{
+              name: vp_type,
+              key: base_key,
+              subfolders: subs
+            }
+        end)
+      end)
+      |> Enum.reject(&is_nil/1)
 
     version = api_values |> Map.fetch!("GAME_VERSION")
 
     data =
       metrics
+      |> nest_in_folders()
+      |> Folder.add_subfolders(valve_panel)
       |> inspect(pretty: true, width: 90, limit: :infinity)
       |> String.replace("%MctNuke.Dictionary.", "%")
       |> String.replace("\n", "\n  ")
@@ -71,6 +97,114 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     }
   end
 
+  defp build_valve_panel(:vessels, base_key, {key, data}) do
+    base_key = "#{base_key}.#{key}"
+    [_volume, capacity] = data |> Map.fetch!("Volume")
+
+    %Folder{
+      name: key,
+      key: base_key,
+      metrics: [
+        %Metric{
+          name: "Pressure",
+          key: "#{base_key}.pressure",
+          format: :float,
+          units: "bar",
+          min: 0,
+          max: nil
+        },
+        %Metric{
+          name: "Temperature",
+          key: "#{base_key}.temperature",
+          format: :float,
+          units: @degrees_celsius,
+          min: 0,
+          max: nil
+        },
+        %Metric{
+          name: "Volume",
+          key: "#{base_key}.volume",
+          format: :float,
+          units: "L",
+          min: 0,
+          max: capacity
+        },
+        %Metric{
+          name: "Fill Level",
+          key: "#{base_key}.fill_level",
+          format: :float,
+          units: "%",
+          min: 0,
+          max: 100
+        }
+      ]
+    }
+  end
+
+  @pump_states [
+    active: "Active",
+    destroyed: "Destroyed",
+    dry: "Dry",
+    energy_sufficent: "Energy Sufficent",
+    flooded: "Flooded",
+    maintenance_required: "Maintenance Required",
+    overload: "Overload",
+    set_speed_reached: "Set Speed Reached",
+    under_construction: "Under Construction"
+  ]
+
+  defp build_valve_panel(:pumps, base_key, {key, _data}) do
+    base_key = "#{base_key}.#{key}"
+
+    %Folder{
+      name: key,
+      key: base_key,
+      metrics:
+        [
+          %Metric{
+            name: "Flow Rate",
+            key: "#{base_key}.flow_rate",
+            format: :float,
+            units: "L/min",
+            min: 0,
+            max: nil
+          },
+          %Metric{
+            name: "Capacity",
+            key: "#{base_key}.capacity",
+            format: :float,
+            units: "L/min",
+            min: 0,
+            max: nil
+          },
+          %Metric{
+            name: "Speed",
+            key: "#{base_key}.speed",
+            format: :float,
+            units: "%",
+            min: 0,
+            max: 100
+          }
+        ]
+        |> Kernel.++(
+          @pump_states
+          |> Enum.map(fn {key, name} ->
+            %Metric{
+              name: name,
+              key: "#{base_key}.state.#{key}",
+              format: :boolean
+            }
+          end)
+        )
+    }
+  end
+
+  # I don't currently feel like these have valuable info.
+  # The only valves that get regularly worked are MSCV and bypass,
+  # both of which are covered by standard variables.
+  defp build_valve_panel(:valves, _base_key, _entry), do: nil
+  defp build_valve_panel(:pipes, _base_key, _entry), do: nil
+
   defp guess_name(key, _) do
     key
     |> String.split("_")
@@ -107,8 +241,6 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   defp guess_type(key, nil, all), do: guess_nil(key, all)
   defp guess_type(key, value, _) when is_integer(value), do: guess_integer(key, value)
   defp guess_type(key, value, _) when is_float(value), do: guess_float(key, value)
-
-  @degrees_celsius "\u2103"
 
   defp guess_integer("GAME_DIFFICULTY", _), do: :integer
   defp guess_integer("TIME_" <> _, _), do: :integer

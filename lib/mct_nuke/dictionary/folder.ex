@@ -86,4 +86,7 @@ defmodule MctNuke.Dictionary.Folder do
     |> Enum.map(&String.capitalize/1)
     |> Enum.join(" ")
   end
+
+  def add_subfolders(%Folder{subfolders: old} = f, new),
+    do: %Folder{f | subfolders: old ++ new}
 end

@@ -1,4 +1,4 @@
-# Auto-generated on 2026-07-01 16:02:51.676555Z from Nucleares version V 2.2.25.217.
+# Auto-generated on 2026-07-02 16:29:05.667991Z from Nucleares version V 2.2.25.217.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
@@ -2841,6 +2841,2591 @@ defmodule MctNuke.Dictionary.Data do
             max: 100
           }
         ]
+      },
+      %Folder{
+        name: "pumps",
+        key: "VALVE_PANEL.pumps",
+        subfolders: [
+          %Folder{
+            name: "BC_0_CONDENSADOR_CIRCULACION",
+            key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_0_EXTERIOR_CARGA",
+            key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_0_GENERADOR_CIRCULACION",
+            key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_0_QUIMICA_CIRCULACION_QUIMICA",
+            key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_0_QUIMICA_DOSIFICADORA",
+            key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_0_REFRIGERANTE_CARGA",
+            key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_0_REFRIGERANTE_CIRCULACION",
+            key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_1_CONDENSADOR_CARGA",
+            key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_1_EXTERIOR_CARGA",
+            key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_1_GENERADOR_CIRCULACION",
+            key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_1_QUIMICA_CIRCULACION_QUIMICA",
+            key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_1_REFRIGERANTE_CIRCULACION",
+            key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_2_EXTERIOR_CARGA",
+            key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_2_GENERADOR_CIRCULACION",
+            key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_2_NUCLEO_CARGA",
+            key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          },
+          %Folder{
+            name: "BC_2_REFRIGERANTE_CIRCULACION",
+            key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Flow Rate",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.flow_rate",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Capacity",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.capacity",
+                format: :float,
+                units: "L/min",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Speed",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.speed",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              },
+              %Metric{
+                api_index: nil,
+                name: "Active",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.active",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Destroyed",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.destroyed",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Dry",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.dry",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Energy Sufficent",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.energy_sufficent",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Flooded",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.flooded",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Maintenance Required",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.maintenance_required",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Overload",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.overload",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Set Speed Reached",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.set_speed_reached",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Under Construction",
+                key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION.state.under_construction",
+                format: :boolean,
+                units: nil,
+                min: nil,
+                max: nil
+              }
+            ]
+          }
+        ],
+        metrics: []
+      },
+      %Folder{
+        name: "vessels",
+        key: "VALVE_PANEL.vessels",
+        subfolders: [
+          %Folder{
+            name: "BORIC ACID",
+            key: "VALVE_PANEL.vessels.BORIC ACID",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.BORIC ACID.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.BORIC ACID.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.BORIC ACID.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 100000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.BORIC ACID.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "CHEMICAL WASTE CONTAINER",
+            key: "VALVE_PANEL.vessels.CHEMICAL WASTE CONTAINER",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.CHEMICAL WASTE CONTAINER.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.CHEMICAL WASTE CONTAINER.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.CHEMICAL WASTE CONTAINER.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 200000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.CHEMICAL WASTE CONTAINER.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "CONDENSER",
+            key: "VALVE_PANEL.vessels.CONDENSER",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.CONDENSER.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.CONDENSER.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.CONDENSER.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 360000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.CONDENSER.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "CORE POOL",
+            key: "VALVE_PANEL.vessels.CORE POOL",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.CORE POOL.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.CORE POOL.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.CORE POOL.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 150000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.CORE POOL.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "CORE POOL STORAGE TANK",
+            key: "VALVE_PANEL.vessels.CORE POOL STORAGE TANK",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.CORE POOL STORAGE TANK.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.CORE POOL STORAGE TANK.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.CORE POOL STORAGE TANK.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 80000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.CORE POOL STORAGE TANK.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "Condenser Retention Tank",
+            key: "VALVE_PANEL.vessels.Condenser Retention Tank",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.Condenser Retention Tank.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.Condenser Retention Tank.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.Condenser Retention Tank.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 40000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.Condenser Retention Tank.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "DIESEL FUEL",
+            key: "VALVE_PANEL.vessels.DIESEL FUEL",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.DIESEL FUEL.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.DIESEL FUEL.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.DIESEL FUEL.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 4000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.DIESEL FUEL.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "EXTERNAL RESERVOIR",
+            key: "VALVE_PANEL.vessels.EXTERNAL RESERVOIR",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.EXTERNAL RESERVOIR.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.EXTERNAL RESERVOIR.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.EXTERNAL RESERVOIR.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 500000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.EXTERNAL RESERVOIR.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "OCEANO",
+            key: "VALVE_PANEL.vessels.OCEANO",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.OCEANO.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.OCEANO.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.OCEANO.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 500000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.OCEANO.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "PRESSURIZER",
+            key: "VALVE_PANEL.vessels.PRESSURIZER",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.PRESSURIZER.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.PRESSURIZER.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.PRESSURIZER.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 1200.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.PRESSURIZER.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "PRIMARY CIRCUIT STORAGE TANK",
+            key: "VALVE_PANEL.vessels.PRIMARY CIRCUIT STORAGE TANK",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.PRIMARY CIRCUIT STORAGE TANK.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.PRIMARY CIRCUIT STORAGE TANK.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.PRIMARY CIRCUIT STORAGE TANK.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 150000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.PRIMARY CIRCUIT STORAGE TANK.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "RINSE TANK",
+            key: "VALVE_PANEL.vessels.RINSE TANK",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.RINSE TANK.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.RINSE TANK.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.RINSE TANK.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 80000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.RINSE TANK.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "SODIUM HYDROXIDE",
+            key: "VALVE_PANEL.vessels.SODIUM HYDROXIDE",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.SODIUM HYDROXIDE.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.SODIUM HYDROXIDE.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.SODIUM HYDROXIDE.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 100000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.SODIUM HYDROXIDE.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "SteamGenerators_1",
+            key: "VALVE_PANEL.vessels.SteamGenerators_1",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.SteamGenerators_1.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.SteamGenerators_1.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.SteamGenerators_1.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 60000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.SteamGenerators_1.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "SteamGenerators_2",
+            key: "VALVE_PANEL.vessels.SteamGenerators_2",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.SteamGenerators_2.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.SteamGenerators_2.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.SteamGenerators_2.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 60000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.SteamGenerators_2.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "SteamGenerators_3",
+            key: "VALVE_PANEL.vessels.SteamGenerators_3",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.SteamGenerators_3.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.SteamGenerators_3.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.SteamGenerators_3.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 60000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.SteamGenerators_3.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          },
+          %Folder{
+            name: "WASTE TANK",
+            key: "VALVE_PANEL.vessels.WASTE TANK",
+            subfolders: [],
+            metrics: [
+              %Metric{
+                api_index: nil,
+                name: "Pressure",
+                key: "VALVE_PANEL.vessels.WASTE TANK.pressure",
+                format: :float,
+                units: "bar",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Temperature",
+                key: "VALVE_PANEL.vessels.WASTE TANK.temperature",
+                format: :float,
+                units: "℃",
+                min: 0,
+                max: nil
+              },
+              %Metric{
+                api_index: nil,
+                name: "Volume",
+                key: "VALVE_PANEL.vessels.WASTE TANK.volume",
+                format: :float,
+                units: "L",
+                min: 0,
+                max: 8000.0
+              },
+              %Metric{
+                api_index: nil,
+                name: "Fill Level",
+                key: "VALVE_PANEL.vessels.WASTE TANK.fill_level",
+                format: :float,
+                units: "%",
+                min: 0,
+                max: 100
+              }
+            ]
+          }
+        ],
+        metrics: []
       }
     ],
     metrics: []
