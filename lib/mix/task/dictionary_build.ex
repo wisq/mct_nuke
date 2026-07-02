@@ -5,6 +5,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
   use Mix.Task
   alias MctNuke.Dictionary.Metric
   alias MctNuke.Dictionary.Folder
+  alias MctNuke.Dictionary.Names
 
   @degrees_celsius "\u2103"
 
@@ -102,7 +103,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     [_volume, capacity] = data |> Map.fetch!("Volume")
 
     %Folder{
-      name: key,
+      name: Names.vessel(key),
       key: base_key,
       metrics: [
         %Metric{
@@ -157,7 +158,7 @@ defmodule Mix.Tasks.MctNuke.Dictionary.Build do
     base_key = "#{base_key}.#{key}"
 
     %Folder{
-      name: key,
+      name: Names.pump(key),
       key: base_key,
       metrics:
         [

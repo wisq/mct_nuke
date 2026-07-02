@@ -1,4 +1,4 @@
-# Auto-generated on 2026-07-02 16:29:05.667991Z from Nucleares version V 2.2.25.217.
+# Auto-generated on 2026-07-02 18:57:08.851634Z from Nucleares version V 2.2.25.217.
 # DO NOT EDIT.  Changes will be overwritten on next generation.
 
 defmodule MctNuke.Dictionary.Data do
@@ -2847,7 +2847,7 @@ defmodule MctNuke.Dictionary.Data do
         key: "VALVE_PANEL.pumps",
         subfolders: [
           %Folder{
-            name: "BC_0_CONDENSADOR_CIRCULACION",
+            name: "Condenser Cooling Pump",
             key: "VALVE_PANEL.pumps.BC_0_CONDENSADOR_CIRCULACION",
             subfolders: [],
             metrics: [
@@ -2962,7 +2962,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_0_EXTERIOR_CARGA",
+            name: "External Freight Pump",
             key: "VALVE_PANEL.pumps.BC_0_EXTERIOR_CARGA",
             subfolders: [],
             metrics: [
@@ -3077,7 +3077,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_0_GENERADOR_CIRCULACION",
+            name: "Secondary Pump 01",
             key: "VALVE_PANEL.pumps.BC_0_GENERADOR_CIRCULACION",
             subfolders: [],
             metrics: [
@@ -3192,7 +3192,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_0_QUIMICA_CIRCULACION_QUIMICA",
+            name: "Ion Exchange Pump",
             key: "VALVE_PANEL.pumps.BC_0_QUIMICA_CIRCULACION_QUIMICA",
             subfolders: [],
             metrics: [
@@ -3307,7 +3307,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_0_QUIMICA_DOSIFICADORA",
+            name: "Boron Dosing Pump",
             key: "VALVE_PANEL.pumps.BC_0_QUIMICA_DOSIFICADORA",
             subfolders: [],
             metrics: [
@@ -3422,7 +3422,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_0_REFRIGERANTE_CARGA",
+            name: "Primary Circuit Pump",
             key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CARGA",
             subfolders: [],
             metrics: [
@@ -3537,7 +3537,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_0_REFRIGERANTE_CIRCULACION",
+            name: "Circulation Pump 01",
             key: "VALVE_PANEL.pumps.BC_0_REFRIGERANTE_CIRCULACION",
             subfolders: [],
             metrics: [
@@ -3652,7 +3652,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_1_CONDENSADOR_CARGA",
+            name: "Secondary Circuit Freight Pump",
             key: "VALVE_PANEL.pumps.BC_1_CONDENSADOR_CARGA",
             subfolders: [],
             metrics: [
@@ -3767,7 +3767,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_1_EXTERIOR_CARGA",
+            name: "Internal Freight Pump",
             key: "VALVE_PANEL.pumps.BC_1_EXTERIOR_CARGA",
             subfolders: [],
             metrics: [
@@ -3882,7 +3882,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_1_GENERADOR_CIRCULACION",
+            name: "Secondary Pump 02",
             key: "VALVE_PANEL.pumps.BC_1_GENERADOR_CIRCULACION",
             subfolders: [],
             metrics: [
@@ -3997,7 +3997,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_1_QUIMICA_CIRCULACION_QUIMICA",
+            name: "Chemical Cleaning Pump",
             key: "VALVE_PANEL.pumps.BC_1_QUIMICA_CIRCULACION_QUIMICA",
             subfolders: [],
             metrics: [
@@ -4112,7 +4112,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_1_REFRIGERANTE_CIRCULACION",
+            name: "Circulation Pump 02",
             key: "VALVE_PANEL.pumps.BC_1_REFRIGERANTE_CIRCULACION",
             subfolders: [],
             metrics: [
@@ -4227,7 +4227,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_2_EXTERIOR_CARGA",
+            name: "Transfer Freight Pump",
             key: "VALVE_PANEL.pumps.BC_2_EXTERIOR_CARGA",
             subfolders: [],
             metrics: [
@@ -4342,7 +4342,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_2_GENERADOR_CIRCULACION",
+            name: "Secondary Pump 03",
             key: "VALVE_PANEL.pumps.BC_2_GENERADOR_CIRCULACION",
             subfolders: [],
             metrics: [
@@ -4457,7 +4457,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_2_NUCLEO_CARGA",
+            name: "Core Pool Pump",
             key: "VALVE_PANEL.pumps.BC_2_NUCLEO_CARGA",
             subfolders: [],
             metrics: [
@@ -4572,7 +4572,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "BC_2_REFRIGERANTE_CIRCULACION",
+            name: "Circulation Pump 03",
             key: "VALVE_PANEL.pumps.BC_2_REFRIGERANTE_CIRCULACION",
             subfolders: [],
             metrics: [
@@ -4694,7 +4694,7 @@ defmodule MctNuke.Dictionary.Data do
         key: "VALVE_PANEL.vessels",
         subfolders: [
           %Folder{
-            name: "BORIC ACID",
+            name: "Boric Acid Tank",
             key: "VALVE_PANEL.vessels.BORIC ACID",
             subfolders: [],
             metrics: [
@@ -4737,7 +4737,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "CHEMICAL WASTE CONTAINER",
+            name: "Chemical Waste Tank",
             key: "VALVE_PANEL.vessels.CHEMICAL WASTE CONTAINER",
             subfolders: [],
             metrics: [
@@ -4780,7 +4780,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "CONDENSER",
+            name: "Condenser",
             key: "VALVE_PANEL.vessels.CONDENSER",
             subfolders: [],
             metrics: [
@@ -4823,7 +4823,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "CORE POOL",
+            name: "Core Pool",
             key: "VALVE_PANEL.vessels.CORE POOL",
             subfolders: [],
             metrics: [
@@ -4866,7 +4866,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "CORE POOL STORAGE TANK",
+            name: "Core Pool Storage Tank",
             key: "VALVE_PANEL.vessels.CORE POOL STORAGE TANK",
             subfolders: [],
             metrics: [
@@ -4952,7 +4952,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "DIESEL FUEL",
+            name: "Diesel Fuel Tank",
             key: "VALVE_PANEL.vessels.DIESEL FUEL",
             subfolders: [],
             metrics: [
@@ -4995,7 +4995,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "EXTERNAL RESERVOIR",
+            name: "External Coolant Reservoir",
             key: "VALVE_PANEL.vessels.EXTERNAL RESERVOIR",
             subfolders: [],
             metrics: [
@@ -5038,7 +5038,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "OCEANO",
+            name: "Ocean",
             key: "VALVE_PANEL.vessels.OCEANO",
             subfolders: [],
             metrics: [
@@ -5081,7 +5081,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "PRESSURIZER",
+            name: "Pressurizer",
             key: "VALVE_PANEL.vessels.PRESSURIZER",
             subfolders: [],
             metrics: [
@@ -5124,7 +5124,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "PRIMARY CIRCUIT STORAGE TANK",
+            name: "Primary Circuit Storage Tank",
             key: "VALVE_PANEL.vessels.PRIMARY CIRCUIT STORAGE TANK",
             subfolders: [],
             metrics: [
@@ -5167,7 +5167,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "RINSE TANK",
+            name: "Rinse Tank",
             key: "VALVE_PANEL.vessels.RINSE TANK",
             subfolders: [],
             metrics: [
@@ -5210,7 +5210,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "SODIUM HYDROXIDE",
+            name: "Sodium Hydroxide Tank",
             key: "VALVE_PANEL.vessels.SODIUM HYDROXIDE",
             subfolders: [],
             metrics: [
@@ -5253,7 +5253,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "SteamGenerators_1",
+            name: "Steam Generator 01",
             key: "VALVE_PANEL.vessels.SteamGenerators_1",
             subfolders: [],
             metrics: [
@@ -5296,7 +5296,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "SteamGenerators_2",
+            name: "Steam Generator 02",
             key: "VALVE_PANEL.vessels.SteamGenerators_2",
             subfolders: [],
             metrics: [
@@ -5339,7 +5339,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "SteamGenerators_3",
+            name: "Steam Generator 03",
             key: "VALVE_PANEL.vessels.SteamGenerators_3",
             subfolders: [],
             metrics: [
@@ -5382,7 +5382,7 @@ defmodule MctNuke.Dictionary.Data do
             ]
           },
           %Folder{
-            name: "WASTE TANK",
+            name: "Waste Tank",
             key: "VALVE_PANEL.vessels.WASTE TANK",
             subfolders: [],
             metrics: [
