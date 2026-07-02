@@ -30,21 +30,15 @@ defmodule MctNuke.Stats do
   end
 
   def history(%Stats{ets: table}, to_extract, min, max) do
-    extract_fn =
-      case to_extract do
-        key when is_binary(key) -> &Map.fetch!(&1, key)
-        keys when is_list(keys) -> &Map.take(&1, keys)
-      end
-
-    extract_history(table, min, max)
+    get_history_range(table, min, max)
     |> Enum.map(fn {timestamp, values} ->
-      {timestamp, extract_fn.(values)}
+      {timestamp, extract_history_values(to_extract, values)}
     end)
   end
 
-  defp extract_history(table, nil, nil), do: :ets.tab2list(table)
+  defp get_history_range(table, nil, nil), do: :ets.tab2list(table)
 
-  defp extract_history(table, min, max) do
+  defp get_history_range(table, min, max) do
     min = min || :ets.first(table)
     max = max || :ets.last(table)
 
@@ -58,6 +52,27 @@ defmodule MctNuke.Stats do
         [{{:"$1", :"$2"}}]
       }
     ])
+  end
+
+  defp extract_history_values("VALVE_PANEL." <> rest, %{"VALVE_PANEL" => panel}) do
+    rest
+    |> String.split(".")
+    |> Enum.with_index()
+    |> Enum.map(fn
+      # Only the object name uses string keys, everything else is atoms.
+      {key, 1} -> key
+      {key, _} -> String.to_existing_atom(key)
+    end)
+    |> then(&get_in(panel, &1))
+  end
+
+  defp extract_history_values(key, values) when is_binary(key), do: Map.fetch!(values, key)
+
+  defp extract_history_values(keys, values) when is_list(keys) do
+    keys
+    |> Map.new(fn key ->
+      {key, extract_history_values(key, values)}
+    end)
   end
 
   def telemetry(%Stats{ets: table, size: size}) when size > 0 do
