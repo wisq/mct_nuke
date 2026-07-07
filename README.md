@@ -3,8 +3,21 @@
 Backend for OpenMCT to support pulling data from Nucleares, a nuclear reactor
 simulation game.
 
-You'll also want [my fork of OpenMCT](https://github.com/wisq/openmct). This
-contains a fully working OpenMCT build with the Nucleares plugin ready to go.
+## Installation
+
+- Install [Elixir](https://elixir-lang.org/install.html).
+- Run `mix deps.get` to fetch dependencies.
+- Start your Nucleares game and enable the webserver.
+- Edit `config/config.exs` to point to your Nucleares webserver.
+  - You can run the game and the `MctNuke` collector on different computers, as long as the client can reach the game.
+- Run `mix run --no-halt` to start the collector.
+
+Keep in mind, this is just the stats-collecting back-end of a working OpenMCT
+setup.  To use this, you'll also need [my fork of
+OpenMCT](https://github.com/wisq/openmct). This contains a fully working
+OpenMCT build with the Nucleares plugin ready to go.
+
+## Usage
 
 For any of this data to be very useful, you'll also need to make some graphs,
 dashboards, etc.  The [examples directory](examples) contains some JSON objects
